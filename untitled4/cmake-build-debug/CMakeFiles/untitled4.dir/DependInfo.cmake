@@ -21,7 +21,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
-  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/TextureManager.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
   )

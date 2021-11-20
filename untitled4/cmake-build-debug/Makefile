@@ -441,30 +441,6 @@ source/GameStatePlaying.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.s
 .PHONY : source/GameStatePlaying.cpp.s
 
-source/RenderManagerPlay.o: source/RenderManagerPlay.cpp.o
-.PHONY : source/RenderManagerPlay.o
-
-# target to build an object file
-source/RenderManagerPlay.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o
-.PHONY : source/RenderManagerPlay.cpp.o
-
-source/RenderManagerPlay.i: source/RenderManagerPlay.cpp.i
-.PHONY : source/RenderManagerPlay.i
-
-# target to preprocess a source file
-source/RenderManagerPlay.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.i
-.PHONY : source/RenderManagerPlay.cpp.i
-
-source/RenderManagerPlay.s: source/RenderManagerPlay.cpp.s
-.PHONY : source/RenderManagerPlay.s
-
-# target to generate assembly for a file
-source/RenderManagerPlay.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.s
-.PHONY : source/RenderManagerPlay.cpp.s
-
 source/Spawner.o: source/Spawner.cpp.o
 .PHONY : source/Spawner.o
 
@@ -561,9 +537,6 @@ help:
 	@echo "... source/GameStatePlaying.o"
 	@echo "... source/GameStatePlaying.i"
 	@echo "... source/GameStatePlaying.s"
-	@echo "... source/RenderManagerPlay.o"
-	@echo "... source/RenderManagerPlay.i"
-	@echo "... source/RenderManagerPlay.s"
 	@echo "... source/Spawner.o"
 	@echo "... source/Spawner.i"
 	@echo "... source/Spawner.s"

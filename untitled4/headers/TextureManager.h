@@ -10,6 +10,12 @@ enum TexturesID{
     TX_START,
     TX_FINISH,
     TX_MENU_BG,
+    TX_BTN_START,
+    TX_BTN_EXIT,
+    TX_BTN_CONTINUE,
+    TX_BTN_PAUSE,
+    TX_BTN_MENU,
+    TX_BTN_RESTART,
     TX_PLAYER,
     TX_BLACK_GHOST,
     TX_WHITE_GHOST

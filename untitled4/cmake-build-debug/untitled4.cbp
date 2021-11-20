@@ -142,9 +142,6 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManagerPlay.h">
-			<Option target="untitled4"/>
-		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -191,9 +188,6 @@
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp">
-			<Option target="untitled4"/>
-		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp">

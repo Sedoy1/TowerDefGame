@@ -9,6 +9,10 @@
 #define FINISH_TEXTURE "../assets/finish.png"
 #define MENU_BG_TEXTURE "../assets/bg_menu.png"
 #define PLAYER_TEXTURE "../assets/player.png"
+#define TEXT_FONT "../assets/text_font.TTF"
+#define BUTTON_RELOAD "../assets/button_restart.png"
+#define BUTTON_EXIT "../assets/button_exit.png"
+#define BUTTON_MENU "../assets/button_menu.png"
 #include <SFML/Graphics.hpp>
 
 #endif //UNTITLED4_ELEMENTSDEFINITION_H

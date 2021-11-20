@@ -16,7 +16,7 @@ void GameStateMenu::HandleInput() {
                     }
                     case sf::Keyboard::Space: {
                         LoadGame();
-                        break;
+                        return;
                     }
                 }
                 break;
@@ -26,10 +26,11 @@ void GameStateMenu::HandleInput() {
             }
         }
     }
+    return;
 }
 
 void GameStateMenu::StateRealization() {
-    RenderMnr.Draw();
+    renderManager.Draw();
 }
 
 void GameStateMenu::Update() {
@@ -47,6 +48,7 @@ GameStateMenu::~GameStateMenu() {
 
 void GameStateMenu::RenderManagerMenu::Draw() {
     DrawBg();
+    DrawMenu();
 }
 
 void GameStateMenu::RenderManagerMenu::DrawBg() {
@@ -56,4 +58,12 @@ void GameStateMenu::RenderManagerMenu::DrawBg() {
 
 void GameStateMenu::RenderManagerMenu::DrawMenu() {
     //TODO прорисовать меню
+    sf::Text text;
+    text.setFont(font);
+    text.setString("Test menu");
+    text.setCharacterSize(32);
+    text.setFillColor(sf::Color::Black);
+    text.setStyle(sf::Text::Bold);
+    text.setPosition(250, 250);
+    WindowLink.draw(text);
 }

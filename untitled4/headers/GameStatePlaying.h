@@ -6,6 +6,7 @@
 #include "GameField.h"
 #include "Player.h"
 #include "Spawner.h"
+#include "GameStateGameOver.h"
 
 class GameStatePlaying : public GameState{
 public:
@@ -33,6 +34,8 @@ private:
         void DrawPlayer(const std::shared_ptr<Player> &player);
     };
 
+    void GameOver();
+    void Win();
     TextureManager & textureManager;
     void InitPlayer();
     GameLogic LogicEvent;

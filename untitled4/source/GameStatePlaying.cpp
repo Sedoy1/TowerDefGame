@@ -14,8 +14,7 @@ void GameStatePlaying::StateRealization() {
         }
     }
     else{
-        //TODO поменять состояние на геймовер
-        std::cout<<"GameOver\n"<<std::endl;
+        GameOver();
     }
 
 }
@@ -129,4 +128,8 @@ GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
 void GameStatePlaying::RenderManagerPlay::DrawPlayer(const std::shared_ptr<Player> &player) {
     player->GetSprite().Update();
     WindowLink.draw(player->GetSprite());
+}
+
+void GameStatePlaying::GameOver() {
+    Game_->changeState(new GameStateGameOver(Game_, Game_->Window, Game_->TextureMnr));
 }

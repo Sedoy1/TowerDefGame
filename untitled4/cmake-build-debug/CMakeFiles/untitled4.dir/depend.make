@@ -15,6 +15,7 @@ CMakeFiles/untitled4.dir/main.cpp.o: \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
+ ../headers/GameStateGameOver.h \
  ../headers/GameStateMenu.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
@@ -98,12 +99,28 @@ CMakeFiles/untitled4.dir/source/GameObject.cpp.o: \
  ../headers/Movement.h \
  ../source/GameObject.cpp
 CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: \
+ ../headers/Animation.h \
+ ../headers/AnimationSprite.h \
+ ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
+ ../headers/EnemiesWave.h \
+ ../headers/Enemy.h \
+ ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostWhite.h \
  ../headers/Game.h \
+ ../headers/GameField.h \
+ ../headers/GameLogic.h \
+ ../headers/GameObject.h \
  ../headers/GameState.h \
  ../headers/GameStateGameOver.h \
+ ../headers/GameStatePlaying.h \
+ ../headers/Map.h \
+ ../headers/Movement.h \
+ ../headers/Player.h \
  ../headers/RenderManager.h \
+ ../headers/Spawner.h \
  ../headers/TextureManager.h \
+ ../headers/Tile.h \
  ../source/GameStateGameOver.cpp
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/Animation.h \
@@ -119,6 +136,7 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
+ ../headers/GameStateGameOver.h \
  ../headers/GameStateMenu.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
@@ -143,6 +161,7 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
+ ../headers/GameStateGameOver.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -152,22 +171,6 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
  ../source/GameStatePlaying.cpp
-CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o: \
- ../headers/Animation.h \
- ../headers/AnimationSprite.h \
- ../headers/Coordinate.h \
- ../headers/ElementsDefinition.h \
- ../headers/Enemy.h \
- ../headers/GameField.h \
- ../headers/GameObject.h \
- ../headers/Map.h \
- ../headers/Movement.h \
- ../headers/Player.h \
- ../headers/RenderManager.h \
- ../headers/RenderManagerPlay.h \
- ../headers/TextureManager.h \
- ../headers/Tile.h \
- ../source/RenderManagerPlay.cpp
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \

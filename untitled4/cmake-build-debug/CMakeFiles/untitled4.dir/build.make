@@ -92,22 +92,9 @@ CMakeFiles/untitled4.dir/source/GameField.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/GameField.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameField.cpp -o CMakeFiles/untitled4.dir/source/GameField.cpp.s
 
-CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o: CMakeFiles/untitled4.dir/flags.make
-CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o: ../source/RenderManagerPlay.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp
-
-CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp > CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.i
-
-CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp -o CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.s
-
 CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: ../source/GameStatePlaying.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp
 
 CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.i: cmake_force
@@ -120,7 +107,7 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/GameLogic.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/GameLogic.cpp.o: ../source/GameLogic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled4.dir/source/GameLogic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled4.dir/source/GameLogic.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameLogic.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameLogic.cpp
 
 CMakeFiles/untitled4.dir/source/GameLogic.cpp.i: cmake_force
@@ -133,7 +120,7 @@ CMakeFiles/untitled4.dir/source/GameLogic.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/GameObject.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/GameObject.cpp.o: ../source/GameObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled4.dir/source/GameObject.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled4.dir/source/GameObject.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameObject.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameObject.cpp
 
 CMakeFiles/untitled4.dir/source/GameObject.cpp.i: cmake_force
@@ -146,7 +133,7 @@ CMakeFiles/untitled4.dir/source/GameObject.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o: ../source/EnemyGhost.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp
 
 CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.i: cmake_force
@@ -159,7 +146,7 @@ CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/TextureManager.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/TextureManager.cpp.o: ../source/TextureManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/TextureManager.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/TextureManager.cpp
 
 CMakeFiles/untitled4.dir/source/TextureManager.cpp.i: cmake_force
@@ -172,7 +159,7 @@ CMakeFiles/untitled4.dir/source/TextureManager.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o: ../source/AnimationSprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/AnimationSprite.cpp
 
 CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.i: cmake_force
@@ -185,7 +172,7 @@ CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/Game.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/Game.cpp.o: ../source/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/untitled4.dir/source/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/untitled4.dir/source/Game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/Game.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Game.cpp
 
 CMakeFiles/untitled4.dir/source/Game.cpp.i: cmake_force
@@ -198,7 +185,7 @@ CMakeFiles/untitled4.dir/source/Game.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: ../source/GameStateMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp
 
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.i: cmake_force
@@ -211,7 +198,7 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/Animation.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/Animation.cpp.o: ../source/Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/untitled4.dir/source/Animation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/untitled4.dir/source/Animation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/Animation.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Animation.cpp
 
 CMakeFiles/untitled4.dir/source/Animation.cpp.i: cmake_force
@@ -224,7 +211,7 @@ CMakeFiles/untitled4.dir/source/Animation.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o: ../source/EnemyGhostWhite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostWhite.cpp
 
 CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.i: cmake_force
@@ -237,7 +224,7 @@ CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o: ../source/EnemiesWave.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp
 
 CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.i: cmake_force
@@ -250,7 +237,7 @@ CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o: ../source/Spawner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/Spawner.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp
 
 CMakeFiles/untitled4.dir/source/Spawner.cpp.i: cmake_force
@@ -263,7 +250,7 @@ CMakeFiles/untitled4.dir/source/Spawner.cpp.s: cmake_force
 
 CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: ../source/GameStateGameOver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp
 
 CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i: cmake_force
@@ -278,7 +265,6 @@ CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s: cmake_force
 untitled4_OBJECTS = \
 "CMakeFiles/untitled4.dir/main.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameField.cpp.o" \
-"CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameLogic.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameObject.cpp.o" \
@@ -298,7 +284,6 @@ untitled4_EXTERNAL_OBJECTS =
 
 untitled4: CMakeFiles/untitled4.dir/main.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameField.cpp.o
-untitled4: CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameLogic.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameObject.cpp.o
@@ -318,7 +303,7 @@ untitled4: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
 untitled4: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 untitled4: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 untitled4: CMakeFiles/untitled4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable untitled4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable untitled4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

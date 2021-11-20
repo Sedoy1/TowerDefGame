@@ -12,7 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
   "CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o"
   "CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
-  "CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.o"
   "CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
   "CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
   "untitled4"

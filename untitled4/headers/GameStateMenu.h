@@ -8,7 +8,7 @@ public:
     void StateRealization() override;
     void HandleInput() override;
     void Update() override;
-    GameStateMenu(Game * game, sf::RenderWindow &window, TextureManager & textureManager): GameState(game), RenderMnr(window, textureManager) {}
+    GameStateMenu(Game * game, sf::RenderWindow &window, TextureManager & textureManager): GameState(game), renderManager(window, textureManager) {}
     ~GameStateMenu();
 private:
     void LoadGame();
@@ -22,7 +22,7 @@ private:
         void DrawMenu();
         void DrawBg();
     };
-    RenderManagerMenu RenderMnr;
+    RenderManagerMenu renderManager;
 };
 
 
