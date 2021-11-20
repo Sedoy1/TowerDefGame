@@ -14,6 +14,7 @@ private:
     void UpdateAnimation();
     void UpdateMovements();
 public:
+    //TODO movement(int) конструктор убрать костыль
     AnimationSprite(sf::Texture & texture, Animation & new_animation, Coordinate coord): animation(new_animation), movement(1){
         this->setTexture(texture);
         this->setPosition(coord.x * frameWidth, coord.y * frameHeight);

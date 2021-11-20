@@ -94,6 +94,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -118,6 +121,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -136,10 +142,10 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManagerMenu.h">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManagerPlay.h">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManagerPlay.h">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h">
@@ -155,6 +161,9 @@
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/AnimationSprite.cpp">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp">
@@ -175,16 +184,19 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameObject.cpp">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerMenu.cpp">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/RenderManagerPlay.cpp">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/TextureManager.cpp">

@@ -5,11 +5,11 @@
 
 class Enemy : public GameObject{
 protected:
-    int currentStep;
+    int currentStep = 0;
     int speed;
 public:
-    Enemy(sf::Texture & texture, Animation & animation, const std::map<int, Coordinate>::iterator & newStep):
-    GameObject(texture, animation, newStep->second), currentStep(newStep->first){}
+    Enemy(sf::Texture & texture, Animation & animation, Coordinate & startPosition):
+    GameObject(texture, animation, startPosition){}
     void SetSpeed(int newSpeed){speed = newSpeed;}
     int GetSpeed(){return speed;}
     int GetStep(){return currentStep;}

@@ -4,8 +4,15 @@
 
 void GameStatePlaying::StateRealization() {
     LogicEvent.MoveObject();
-    if(LogicEvent.IsPlayerAlive())
-    RenderMnr.Draw(Enemies, player);
+    if(LogicEvent.IsPlayerAlive()) {
+        spawnerManager.UpdateWaves();
+        RenderMnr.Draw(Enemies, player);
+
+        if(spawnerManager.GetWaveState()){
+            //TODO поменять состояние на победу
+            std::cout<<"Win\n"<<std::endl;
+        }
+    }
     else{
         //TODO поменять состояние на геймовер
         std::cout<<"GameOver\n"<<std::endl;
@@ -39,12 +46,12 @@ void GameStatePlaying::Update() {
     Game_->Window.clear();
 }
 
-GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &textureManager): GameState(game),
-RenderMnr(window, textureManager), LogicEvent(){
+GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &newTextureManager): GameState(game),
+textureManager(newTextureManager), RenderMnr(window, newTextureManager), spawnerManager(newTextureManager){
     InitPlayer();
-    InitLevelComplexity();
+    //TODO enemyPath нужно вытащить и высчитыват где то НЕ В РЕНДЕРЕ БЛЯТЬ ЧТО ПРОИСХОДИИИИТ
     LogicEvent.SetPlayableRules(RenderMnr.EnemyPath(), &Enemies, player);
-
+    spawnerManager.InitSpawnerOption(&Enemies, &RenderMnr.EnemyPath()->begin()->second);
 }
 
 GameStatePlaying::~GameStatePlaying() {
@@ -60,12 +67,66 @@ void GameStatePlaying::InitPlayer() {
     player = std::make_shared<Player>(RenderMnr.TextureMnr.getTexture(TX_PLAYER), playerAnimation, RenderMnr.EnemyPath()->rbegin()->second);
 }
 
-void GameStatePlaying::SpawnEnemies() {
 
+void GameStatePlaying::RenderManagerPlay::DrawField() {
+    for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
+        iterator.GetTile().sprite.Update();
+        WindowLink.draw(iterator.GetTile().sprite);
+    }
 }
 
-void GameStatePlaying::InitLevelComplexity() {
-    EnemiesNumber[ENEMY_BLACK_GHOST] = 5;
-    EnemiesNumber[ENEMY_WHITE_GHOST] = 2;
+
+void GameStatePlaying::RenderManagerPlay::LoadField() {
+    TextureMnr.LoadTexture(TX_GRASS, GRASS_TEXTURE);
+    TextureMnr.LoadTexture(TX_START, START_TEXTURE);
+    TextureMnr.LoadTexture(TX_PLAIN, PLAIN_TEXTURE);
+    TextureMnr.LoadTexture(TX_TRAIL, TRAIL_TEXTURE);
+    TextureMnr.LoadTexture(TX_FINISH, FINISH_TEXTURE);
+
+    gameField.InitField();
+
+    for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
+        int id = iterator.GetTile().tileType;
+        sf::Texture & texture = TextureMnr.getTexture(TexturesID(id));
+        iterator.GetTile().sprite.setTexture(texture);
+        iterator.GetTile().sprite.setPosition(iterator.coordinates.x * RenderManagerPlay::TILE_WIDTH,
+                                              iterator.coordinates.y * RenderManagerPlay::TILE_HEIGHT);
+    }
 }
 
+
+void GameStatePlaying::RenderManagerPlay::Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player) {
+    DrawField();
+    DrawEnemies(enemyVector);
+    DrawPlayer(player);
+}
+
+
+void GameStatePlaying::RenderManagerPlay::DrawEnemies(std::vector<Enemy *> &enemyVector) {
+    for(auto object: enemyVector){
+        object->GetSprite().Update();
+        WindowLink.draw(object->GetSprite());
+    }
+}
+
+unsigned int GameStatePlaying::RenderManagerPlay::TILE_WIDTH = 50;
+unsigned int GameStatePlaying::RenderManagerPlay::TILE_HEIGHT = 50;
+
+void GameStatePlaying::RenderManagerPlay::LoadEnemies() {
+    TextureMnr.LoadTexture(TX_BLACK_GHOST, BLACK_GHOST_TEXTURE);
+    TextureMnr.LoadTexture(TX_PLAYER, PLAYER_TEXTURE);
+    TextureMnr.LoadTexture(TX_WHITE_GHOST, WHITE_GHOST_TEXTURE);
+}
+
+std::map<int, Coordinate> *GameStatePlaying::RenderManagerPlay::EnemyPath() {
+    return gameField.ComputeEnemiesPath();
+}
+
+GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
+    std::cout<<"Destructor Manager Play\n";
+}
+
+void GameStatePlaying::RenderManagerPlay::DrawPlayer(const std::shared_ptr<Player> &player) {
+    player->GetSprite().Update();
+    WindowLink.draw(player->GetSprite());
+}

@@ -1,6 +1,6 @@
 #ifndef UNTITLED4_GAMELOGIC_H
 #define UNTITLED4_GAMELOGIC_H
-#include "EnemyGhost.h"
+#include "Enemy.h"
 #include "Player.h"
 #include "SFML/Graphics.hpp"
 #include "memory"
@@ -17,7 +17,6 @@ class GameLogic {
     /*Function create and init Enemy Type 1
  *return ptr on this obj*/
     std::map<int, Coordinate> *enemiesPath;
-    Enemy * CreateGhostEnemy(sf::Texture &texture);
     void MoveEnemies();
     int ComputeDirection(int direction1, int direction2);
     std::vector<Enemy *> * vectorEnemy;
@@ -26,8 +25,6 @@ class GameLogic {
     ~GameLogic();
     void SetPlayableRules(std::map<int, Coordinate> *newEnemyPath, std::vector<Enemy *> * newVectorEnemy, const std::shared_ptr<Player>& newPlayer);
     /*Add new Enemy to the vector*/
-    void SpawnEnemy();
-    void AddEnemy(int id, sf::Texture & TX_ENEMY);
     void MoveObject();
     bool IsPlayerAlive();
 };

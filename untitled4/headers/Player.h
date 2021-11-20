@@ -5,7 +5,7 @@
 class Player:public GameObject{
 public:
     Player(sf::Texture & texture, Animation & animation, Coordinate & newPosition): GameObject(texture, animation, newPosition){
-        health = 100;
+        health = 1000;
         damage = 0;
     }
 };

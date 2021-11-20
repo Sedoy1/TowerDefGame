@@ -30,7 +30,7 @@ public:
         timeStart = 0.f;
     }
     Movement(int){
-        isArrived = false;
+        isArrived = true;
         timeStep = 1.0f;
         timeStart = 0.f;
     }

@@ -1,7 +1,7 @@
 #include "../headers/EnemyGhostWhite.h"
-
-EnemyGhost::EnemyGhost(sf::Texture &texture, Animation &animation, const std::map<int, Coordinate>::iterator & iter):
-        Enemy(texture, animation, iter) {
+EnemyGhostWhite::EnemyGhostWhite(sf::Texture &texture, Animation &animation, Coordinate &startPosition) : Enemy(texture,
+                                                                                                                animation,
+                                                                                                                startPosition) {
     health = 15;
     damage = 5;
     speed = 3;

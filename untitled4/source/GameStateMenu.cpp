@@ -44,3 +44,16 @@ void GameStateMenu::LoadGame() {
 GameStateMenu::~GameStateMenu() {
     std::cout<<"Game stateMenu destructor\n";
 }
+
+void GameStateMenu::RenderManagerMenu::Draw() {
+    DrawBg();
+}
+
+void GameStateMenu::RenderManagerMenu::DrawBg() {
+    MenuBg.setTexture(TextureMnr.getTexture(TX_MENU_BG));
+    WindowLink.draw(MenuBg);
+}
+
+void GameStateMenu::RenderManagerMenu::DrawMenu() {
+    //TODO прорисовать меню
+}

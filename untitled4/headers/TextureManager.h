@@ -11,7 +11,8 @@ enum TexturesID{
     TX_FINISH,
     TX_MENU_BG,
     TX_PLAYER,
-    TX_EN_GHOST,
+    TX_BLACK_GHOST,
+    TX_WHITE_GHOST
 };
 
 class TextureManager{

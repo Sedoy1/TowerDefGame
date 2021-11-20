@@ -201,6 +201,30 @@ source/AnimationSprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.s
 .PHONY : source/AnimationSprite.cpp.s
 
+source/EnemiesWave.o: source/EnemiesWave.cpp.o
+.PHONY : source/EnemiesWave.o
+
+# target to build an object file
+source/EnemiesWave.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o
+.PHONY : source/EnemiesWave.cpp.o
+
+source/EnemiesWave.i: source/EnemiesWave.cpp.i
+.PHONY : source/EnemiesWave.i
+
+# target to preprocess a source file
+source/EnemiesWave.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.i
+.PHONY : source/EnemiesWave.cpp.i
+
+source/EnemiesWave.s: source/EnemiesWave.cpp.s
+.PHONY : source/EnemiesWave.s
+
+# target to generate assembly for a file
+source/EnemiesWave.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.s
+.PHONY : source/EnemiesWave.cpp.s
+
 source/EnemyGhost.o: source/EnemyGhost.cpp.o
 .PHONY : source/EnemyGhost.o
 
@@ -345,6 +369,30 @@ source/GameObject.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
 
+source/GameStateGameOver.o: source/GameStateGameOver.cpp.o
+.PHONY : source/GameStateGameOver.o
+
+# target to build an object file
+source/GameStateGameOver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o
+.PHONY : source/GameStateGameOver.cpp.o
+
+source/GameStateGameOver.i: source/GameStateGameOver.cpp.i
+.PHONY : source/GameStateGameOver.i
+
+# target to preprocess a source file
+source/GameStateGameOver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i
+.PHONY : source/GameStateGameOver.cpp.i
+
+source/GameStateGameOver.s: source/GameStateGameOver.cpp.s
+.PHONY : source/GameStateGameOver.s
+
+# target to generate assembly for a file
+source/GameStateGameOver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s
+.PHONY : source/GameStateGameOver.cpp.s
+
 source/GameStateMenu.o: source/GameStateMenu.cpp.o
 .PHONY : source/GameStateMenu.o
 
@@ -393,30 +441,6 @@ source/GameStatePlaying.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.s
 .PHONY : source/GameStatePlaying.cpp.s
 
-source/RenderManagerMenu.o: source/RenderManagerMenu.cpp.o
-.PHONY : source/RenderManagerMenu.o
-
-# target to build an object file
-source/RenderManagerMenu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerMenu.cpp.o
-.PHONY : source/RenderManagerMenu.cpp.o
-
-source/RenderManagerMenu.i: source/RenderManagerMenu.cpp.i
-.PHONY : source/RenderManagerMenu.i
-
-# target to preprocess a source file
-source/RenderManagerMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerMenu.cpp.i
-.PHONY : source/RenderManagerMenu.cpp.i
-
-source/RenderManagerMenu.s: source/RenderManagerMenu.cpp.s
-.PHONY : source/RenderManagerMenu.s
-
-# target to generate assembly for a file
-source/RenderManagerMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerMenu.cpp.s
-.PHONY : source/RenderManagerMenu.cpp.s
-
 source/RenderManagerPlay.o: source/RenderManagerPlay.cpp.o
 .PHONY : source/RenderManagerPlay.o
 
@@ -440,6 +464,30 @@ source/RenderManagerPlay.s: source/RenderManagerPlay.cpp.s
 source/RenderManagerPlay.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/RenderManagerPlay.cpp.s
 .PHONY : source/RenderManagerPlay.cpp.s
+
+source/Spawner.o: source/Spawner.cpp.o
+.PHONY : source/Spawner.o
+
+# target to build an object file
+source/Spawner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Spawner.cpp.o
+.PHONY : source/Spawner.cpp.o
+
+source/Spawner.i: source/Spawner.cpp.i
+.PHONY : source/Spawner.i
+
+# target to preprocess a source file
+source/Spawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Spawner.cpp.i
+.PHONY : source/Spawner.cpp.i
+
+source/Spawner.s: source/Spawner.cpp.s
+.PHONY : source/Spawner.s
+
+# target to generate assembly for a file
+source/Spawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Spawner.cpp.s
+.PHONY : source/Spawner.cpp.s
 
 source/TextureManager.o: source/TextureManager.cpp.o
 .PHONY : source/TextureManager.o
@@ -483,6 +531,9 @@ help:
 	@echo "... source/AnimationSprite.o"
 	@echo "... source/AnimationSprite.i"
 	@echo "... source/AnimationSprite.s"
+	@echo "... source/EnemiesWave.o"
+	@echo "... source/EnemiesWave.i"
+	@echo "... source/EnemiesWave.s"
 	@echo "... source/EnemyGhost.o"
 	@echo "... source/EnemyGhost.i"
 	@echo "... source/EnemyGhost.s"
@@ -501,18 +552,21 @@ help:
 	@echo "... source/GameObject.o"
 	@echo "... source/GameObject.i"
 	@echo "... source/GameObject.s"
+	@echo "... source/GameStateGameOver.o"
+	@echo "... source/GameStateGameOver.i"
+	@echo "... source/GameStateGameOver.s"
 	@echo "... source/GameStateMenu.o"
 	@echo "... source/GameStateMenu.i"
 	@echo "... source/GameStateMenu.s"
 	@echo "... source/GameStatePlaying.o"
 	@echo "... source/GameStatePlaying.i"
 	@echo "... source/GameStatePlaying.s"
-	@echo "... source/RenderManagerMenu.o"
-	@echo "... source/RenderManagerMenu.i"
-	@echo "... source/RenderManagerMenu.s"
 	@echo "... source/RenderManagerPlay.o"
 	@echo "... source/RenderManagerPlay.i"
 	@echo "... source/RenderManagerPlay.s"
+	@echo "... source/Spawner.o"
+	@echo "... source/Spawner.i"
+	@echo "... source/Spawner.s"
 	@echo "... source/TextureManager.o"
 	@echo "... source/TextureManager.i"
 	@echo "... source/TextureManager.s"

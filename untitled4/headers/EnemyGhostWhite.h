@@ -3,9 +3,9 @@
 
 #include "Enemy.h"
 
-class EnemyGhost : public Enemy{
+class EnemyGhostWhite : public Enemy{
 public:
-    EnemyGhost(sf::Texture & texture, Animation & animation, const std::map<int, Coordinate>::iterator &iter);
+    EnemyGhostWhite(sf::Texture & texture, Animation & animation, Coordinate & startPosition);
 };
 
 #endif //UNTITLED4_ENEMYGHOSTWHITE_H

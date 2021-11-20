@@ -2,32 +2,17 @@
 #include "../headers/GameLogic.h"
 #include "../headers/ElementsDefinition.h"
 
-void GameLogic::AddEnemy(int id, sf::Texture &TX_ENEMY) {
-    switch (id) {
-        case ENEMY_BLACK_GHOST:{
-            vectorEnemy->push_back(CreateGhostEnemy(TX_ENEMY));
-        };
-    }
-}
-
-Enemy * GameLogic::CreateGhostEnemy(sf::Texture &texture) {
-    Animation new_animation(0, 2, 1.0f, 0.2f);
-    auto * enemy = new EnemyGhost(texture, new_animation, enemiesPath->begin());
-    return enemy;
-}
-
 void GameLogic::MoveEnemies() {
     for(auto enemy: *vectorEnemy){
+        // last element of path is Finish, finish is player
         if(enemiesPath->rbegin()->first > enemy->GetStep()){
             if (enemy->GetSprite().IsArrived()) {
-                enemy->NextStep();
-            }
-            else {
                 int x = enemy->GetSpeed();
                 int y = x;
                 x *= ComputeDirection(enemiesPath->at(enemy->GetStep()).x, enemiesPath->at(enemy->GetStep() + 1).x);
                 y *= ComputeDirection(enemiesPath->at(enemy->GetStep()).y, enemiesPath->at(enemy->GetStep() + 1).y);
                 enemy->GetSprite().movement.SetSpeed(x, y);
+                enemy->NextStep();
             }
         }
         else{
@@ -42,7 +27,6 @@ void GameLogic::MoveEnemies() {
 void GameLogic::SetPlayableRules(std::map<int, Coordinate> *newEnemyPath, std::vector<Enemy *> * newVectorEnemy, const std::shared_ptr<Player>& newPlayer) {
     enemiesPath = newEnemyPath;
     vectorEnemy = newVectorEnemy;
-    std::cout<<newPlayer.use_count()<<std::endl;
     player = newPlayer;
 }
 
@@ -67,8 +51,4 @@ bool GameLogic::IsPlayerAlive() {
         return true;
     else
         return false;
-}
-
-void GameLogic::SpawnEnemy() {
-
 }
