@@ -24,10 +24,10 @@ void GameField::InitField() {
         iter.GetTile().tileType = MAP[iter.coordinates.y][iter.coordinates.x];
         if(iter.GetTile().tileType == TR_GRASS){
             Animation grass(0, 2, 1.0f, 0.1f);
-            iter.GetTile().sprite.animation = grass;
+            iter.GetTile().sprite.SetAnimation(grass);
         }
         else
-            iter.GetTile().sprite.animation = staticAnimation;
+            iter.GetTile().sprite.SetAnimation(staticAnimation);
     }
 }
 

@@ -11,9 +11,9 @@ struct Animation{
     float timeStart=0.f;
     float timeStep=0.f;
     Animation(unsigned int new_startFrame, unsigned int new_endFrame, float new_duration, float new_timeStep);
+    Animation(Animation & other);
     //default constructor for arr
     Animation();
-
 };
 
 #endif //UNTITLED4_ANIMATION_H

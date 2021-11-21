@@ -8,14 +8,14 @@ CMakeFiles/untitled4.dir/main.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Game.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameField.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameLogic.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Map.h
@@ -46,15 +46,15 @@ CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Coordinate.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp
 CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
@@ -98,21 +98,21 @@ CMakeFiles/untitled4.dir/source/GameObject.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameObject.cpp
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Coordinate.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Game.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameField.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameLogic.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Map.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
@@ -121,7 +121,7 @@ CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Tile.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
@@ -129,14 +129,14 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Game.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameField.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameLogic.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Map.h
@@ -154,14 +154,14 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Game.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameField.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameLogic.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Map.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
@@ -178,7 +178,7 @@ CMakeFiles/untitled4.dir/source/Spawner.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/ElementsDefinition.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemiesWave.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
- /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameLogic.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h

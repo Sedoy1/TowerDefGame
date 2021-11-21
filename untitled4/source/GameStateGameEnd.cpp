@@ -1,11 +1,11 @@
-#include "../headers/GameStateGameOver.h"
+#include "../headers/GameStateGameEnd.h"
 #include "../headers/GameStatePlaying.h"
 
-void GameStateGameOver::StateRealization() {
-    renderManger.Draw(textGameOver, buttonRestart, buttonBackMenu, buttonExit);
+void GameStateGameEnd::StateRealization() {
+    renderManger.Draw(textGameResult, buttonRestart, buttonBackMenu, buttonExit);
 }
 
-void GameStateGameOver::HandleInput() {
+void GameStateGameEnd::HandleInput() {
     sf::Event event;
     while (Game_->Window.pollEvent(event)){
         switch (event.type) {
@@ -40,6 +40,29 @@ void GameStateGameOver::HandleInput() {
                 }
                 break;
             }
+
+            case sf::Event::MouseMoved:{
+                int xPosition = event.mouseMove.x;
+                int yPosition = event.mouseMove.y;
+                if(buttonRestart.getGlobalBounds().contains(xPosition, yPosition)){
+                    sf::IntRect bound(100, 0, 100, 50);
+                    buttonRestart.setTextureRect(bound);
+                }
+                else if(buttonBackMenu.getGlobalBounds().contains(xPosition, yPosition)){
+                    sf::IntRect bound(100, 0, 100, 50);
+                    buttonBackMenu.setTextureRect(bound);
+                }
+                else if(buttonExit.getGlobalBounds().contains(xPosition, yPosition)){
+                    sf::IntRect bound(100, 0, 100, 50);
+                    buttonExit.setTextureRect(bound);
+                }
+                else{
+                    sf::IntRect bound(0, 0, 100, 50);
+                    buttonRestart.setTextureRect(bound);
+                    buttonBackMenu.setTextureRect(bound);
+                    buttonExit.setTextureRect(bound);
+                }
+            }
             default:{
                 break;
             }
@@ -47,70 +70,76 @@ void GameStateGameOver::HandleInput() {
     }
 }
 
-void GameStateGameOver::Update() {
+void GameStateGameEnd::Update() {
     Game_->Window.display();
     Game_->Window.clear();
 }
 
-GameStateGameOver::~GameStateGameOver() {
+GameStateGameEnd::~GameStateGameEnd() {
 
 }
 
-void GameStateGameOver::RestartGame() {
+void GameStateGameEnd::RestartGame() {
     Game_->changeState(new GameStatePlaying(Game_, Game_->Window, Game_->TextureMnr));
 }
 
-void GameStateGameOver::InitText() {
-    textGameOver.setFont(renderManger.font);
-    textGameOver.setString("Game Over");
-    textGameOver.setCharacterSize(32);
-    textGameOver.setFillColor(sf::Color::White);
-    textGameOver.setStyle(sf::Text::Bold);
-    sf::FloatRect textRect = textGameOver.getLocalBounds();
-    textGameOver.setOrigin(textRect.left + textRect.width/2.0f,
+void GameStateGameEnd::InitText(int endID) {
+    textGameResult.setFont(renderManger.font);
+    std::string gameResult;
+    (endID == LOOSE)? gameResult="Game Over":gameResult="You win!";
+    textGameResult.setString(gameResult);
+    textGameResult.setCharacterSize(32);
+    textGameResult.setFillColor(sf::Color::White);
+    textGameResult.setStyle(sf::Text::Bold);
+    sf::FloatRect textRect = textGameResult.getLocalBounds();
+    textGameResult.setOrigin(textRect.left + textRect.width / 2.0f,
                    textRect.top  + textRect.height/2.0f);
-    textGameOver.setPosition(sf::Vector2f(SCREEN_HEIGHT/2.0f,SCREEN_WIDTH/2.0f));
+    textGameResult.setPosition(sf::Vector2f(SCREEN_HEIGHT / 2.0f, SCREEN_WIDTH / 2.0f));
 }
 
-void GameStateGameOver::InitButtons() {
+void GameStateGameEnd::InitButtons() {
     unsigned int IndentY = SCREEN_HEIGHT * 0.15f;
-    sf::FloatRect textRect = textGameOver.getLocalBounds();
+    sf::FloatRect textRect = textGameResult.getLocalBounds();
 
     buttonRestart.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
     buttonRestart.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_RESTART));
     sf::FloatRect buttonRect = buttonRestart.getLocalBounds();
     buttonRestart.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
-    buttonRestart.setPosition(sf::Vector2f (textGameOver.getPosition().x, textGameOver.getPosition().y + IndentY));
+    buttonRestart.setPosition(sf::Vector2f (textGameResult.getPosition().x, textGameResult.getPosition().y + IndentY));
+    sf::IntRect bound(0, 0, 100, 50);
+    buttonRestart.setTextureRect(bound);
 
     buttonBackMenu.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
     buttonBackMenu.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_MENU));
     buttonRect = buttonBackMenu.getLocalBounds();
     buttonBackMenu.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
     buttonBackMenu.setPosition(sf::Vector2f (buttonRestart.getPosition().x, buttonRestart.getPosition().y + IndentY));
+    buttonBackMenu.setTextureRect(bound);
 
     buttonExit.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
     buttonExit.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_EXIT));
     buttonRect = buttonExit.getLocalBounds();
     buttonExit.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
     buttonExit.setPosition(sf::Vector2f (buttonBackMenu.getPosition().x, buttonBackMenu.getPosition().y + IndentY));
+    buttonExit.setTextureRect(bound);
 }
 
-void GameStateGameOver::Back2Menu() {
+void GameStateGameEnd::Back2Menu() {
     Game_->popState();
 }
 
-void GameStateGameOver::RenderManagerGameOver::Draw(sf::Text & newTextGameOver, sf::RectangleShape & newButtonRestart,
+void GameStateGameEnd::RenderManagerGameOver::Draw(sf::Text & newTextGameOver, sf::RectangleShape & newButtonRestart,
                                                     sf::RectangleShape &newButtonMenu,
                                                     sf::RectangleShape &newButtonExit) {
     DrawText(newTextGameOver);
     DrawButtons(newButtonRestart, newButtonMenu, newButtonExit);
 }
 
-void GameStateGameOver::RenderManagerGameOver::DrawText(sf::Text & newTextGameOver) {
+void GameStateGameEnd::RenderManagerGameOver::DrawText(sf::Text & newTextGameOver) {
     WindowLink.draw(newTextGameOver);
 }
 
-void GameStateGameOver::RenderManagerGameOver::DrawButtons(sf::RectangleShape &newButtonRestart, sf::RectangleShape &newButtonMenu,
+void GameStateGameEnd::RenderManagerGameOver::DrawButtons(sf::RectangleShape &newButtonRestart, sf::RectangleShape &newButtonMenu,
                                                            sf::RectangleShape &newButtonExit) {
     WindowLink.draw(newButtonRestart);
     WindowLink.draw(newButtonMenu);

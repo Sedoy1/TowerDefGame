@@ -225,29 +225,29 @@ source/EnemiesWave.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.s
 .PHONY : source/EnemiesWave.cpp.s
 
-source/EnemyGhost.o: source/EnemyGhost.cpp.o
-.PHONY : source/EnemyGhost.o
+source/EnemyGhostBlack.o: source/EnemyGhostBlack.cpp.o
+.PHONY : source/EnemyGhostBlack.o
 
 # target to build an object file
-source/EnemyGhost.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o
-.PHONY : source/EnemyGhost.cpp.o
+source/EnemyGhostBlack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o
+.PHONY : source/EnemyGhostBlack.cpp.o
 
-source/EnemyGhost.i: source/EnemyGhost.cpp.i
-.PHONY : source/EnemyGhost.i
+source/EnemyGhostBlack.i: source/EnemyGhostBlack.cpp.i
+.PHONY : source/EnemyGhostBlack.i
 
 # target to preprocess a source file
-source/EnemyGhost.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.i
-.PHONY : source/EnemyGhost.cpp.i
+source/EnemyGhostBlack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.i
+.PHONY : source/EnemyGhostBlack.cpp.i
 
-source/EnemyGhost.s: source/EnemyGhost.cpp.s
-.PHONY : source/EnemyGhost.s
+source/EnemyGhostBlack.s: source/EnemyGhostBlack.cpp.s
+.PHONY : source/EnemyGhostBlack.s
 
 # target to generate assembly for a file
-source/EnemyGhost.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.s
-.PHONY : source/EnemyGhost.cpp.s
+source/EnemyGhostBlack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.s
+.PHONY : source/EnemyGhostBlack.cpp.s
 
 source/EnemyGhostWhite.o: source/EnemyGhostWhite.cpp.o
 .PHONY : source/EnemyGhostWhite.o
@@ -369,29 +369,29 @@ source/GameObject.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
 
-source/GameStateGameOver.o: source/GameStateGameOver.cpp.o
-.PHONY : source/GameStateGameOver.o
+source/GameStateGameEnd.o: source/GameStateGameEnd.cpp.o
+.PHONY : source/GameStateGameEnd.o
 
 # target to build an object file
-source/GameStateGameOver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o
-.PHONY : source/GameStateGameOver.cpp.o
+source/GameStateGameEnd.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o
+.PHONY : source/GameStateGameEnd.cpp.o
 
-source/GameStateGameOver.i: source/GameStateGameOver.cpp.i
-.PHONY : source/GameStateGameOver.i
+source/GameStateGameEnd.i: source/GameStateGameEnd.cpp.i
+.PHONY : source/GameStateGameEnd.i
 
 # target to preprocess a source file
-source/GameStateGameOver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i
-.PHONY : source/GameStateGameOver.cpp.i
+source/GameStateGameEnd.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.i
+.PHONY : source/GameStateGameEnd.cpp.i
 
-source/GameStateGameOver.s: source/GameStateGameOver.cpp.s
-.PHONY : source/GameStateGameOver.s
+source/GameStateGameEnd.s: source/GameStateGameEnd.cpp.s
+.PHONY : source/GameStateGameEnd.s
 
 # target to generate assembly for a file
-source/GameStateGameOver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s
-.PHONY : source/GameStateGameOver.cpp.s
+source/GameStateGameEnd.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.s
+.PHONY : source/GameStateGameEnd.cpp.s
 
 source/GameStateMenu.o: source/GameStateMenu.cpp.o
 .PHONY : source/GameStateMenu.o
@@ -510,9 +510,9 @@ help:
 	@echo "... source/EnemiesWave.o"
 	@echo "... source/EnemiesWave.i"
 	@echo "... source/EnemiesWave.s"
-	@echo "... source/EnemyGhost.o"
-	@echo "... source/EnemyGhost.i"
-	@echo "... source/EnemyGhost.s"
+	@echo "... source/EnemyGhostBlack.o"
+	@echo "... source/EnemyGhostBlack.i"
+	@echo "... source/EnemyGhostBlack.s"
 	@echo "... source/EnemyGhostWhite.o"
 	@echo "... source/EnemyGhostWhite.i"
 	@echo "... source/EnemyGhostWhite.s"
@@ -528,9 +528,9 @@ help:
 	@echo "... source/GameObject.o"
 	@echo "... source/GameObject.i"
 	@echo "... source/GameObject.s"
-	@echo "... source/GameStateGameOver.o"
-	@echo "... source/GameStateGameOver.i"
-	@echo "... source/GameStateGameOver.s"
+	@echo "... source/GameStateGameEnd.o"
+	@echo "... source/GameStateGameEnd.i"
+	@echo "... source/GameStateGameEnd.s"
 	@echo "... source/GameStateMenu.o"
 	@echo "... source/GameStateMenu.i"
 	@echo "... source/GameStateMenu.s"

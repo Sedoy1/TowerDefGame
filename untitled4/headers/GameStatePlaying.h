@@ -6,7 +6,7 @@
 #include "GameField.h"
 #include "Player.h"
 #include "Spawner.h"
-#include "GameStateGameOver.h"
+#include "GameStateGameEnd.h"
 
 class GameStatePlaying : public GameState{
 public:
@@ -19,16 +19,17 @@ private:
     // subclass of render objects
     class RenderManagerPlay: public RenderManager{
     private:
-        GameField gameField;
-        void DrawField();
+        void DrawField(GameField &newGameField);
         void DrawEnemies(std::vector<Enemy *> &enemyVector);
-        void LoadField();
-        void LoadEnemies();
+        void LoadObjectsTexture();
+        void LoadFieldTexture();
     public:
-        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager):RenderManager(window, textureManager){LoadField(); LoadEnemies();}
+        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager):RenderManager(window, textureManager){
+            LoadFieldTexture();
+            LoadObjectsTexture();}
         ~RenderManagerPlay();
-        std::map<int, Coordinate> * EnemyPath();
-        void Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player);
+        void Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player,
+                  GameField &gameField);
         static unsigned int TILE_HEIGHT;
         static unsigned int TILE_WIDTH;
         void DrawPlayer(const std::shared_ptr<Player> &player);
@@ -36,12 +37,15 @@ private:
 
     void GameOver();
     void Win();
-    TextureManager & textureManager;
     void InitPlayer();
+    void LoadField();
+    TextureManager & textureManager;
+    GameField gameField;
     GameLogic LogicEvent;
     RenderManagerPlay RenderMnr;
     Spawner spawnerManager;
     std::vector<Enemy * > Enemies;
+    std::map<int, Coordinate> enemyPath;
     std::shared_ptr<Player> player;
 };
 

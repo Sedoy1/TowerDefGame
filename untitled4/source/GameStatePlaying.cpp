@@ -1,16 +1,14 @@
 #include "../headers/GameStatePlaying.h"
-
 #include <memory>
 
 void GameStatePlaying::StateRealization() {
     LogicEvent.MoveObject();
     if(LogicEvent.IsPlayerAlive()) {
         spawnerManager.UpdateWaves();
-        RenderMnr.Draw(Enemies, player);
+        RenderMnr.Draw(Enemies, player, gameField);
 
         if(spawnerManager.GetWaveState()){
-            //TODO поменять состояние на победу
-            std::cout<<"Win\n"<<std::endl;
+            Win();
         }
     }
     else{
@@ -47,10 +45,10 @@ void GameStatePlaying::Update() {
 
 GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &newTextureManager): GameState(game),
 textureManager(newTextureManager), RenderMnr(window, newTextureManager), spawnerManager(newTextureManager){
+    LoadField();
     InitPlayer();
-    //TODO enemyPath нужно вытащить и высчитыват где то НЕ В РЕНДЕРЕ БЛЯТЬ ЧТО ПРОИСХОДИИИИТ
-    LogicEvent.SetPlayableRules(RenderMnr.EnemyPath(), &Enemies, player);
-    spawnerManager.InitSpawnerOption(&Enemies, &RenderMnr.EnemyPath()->begin()->second);
+    LogicEvent.SetPlayableRules(&enemyPath, &Enemies, player);
+    spawnerManager.InitSpawnerOption(&Enemies, &enemyPath.begin()->second);
 }
 
 GameStatePlaying::~GameStatePlaying() {
@@ -62,40 +60,34 @@ GameStatePlaying::~GameStatePlaying() {
 }
 
 void GameStatePlaying::InitPlayer() {
-    Animation playerAnimation (0, 2, 1.0f, 0.2f);
-    player = std::make_shared<Player>(RenderMnr.TextureMnr.getTexture(TX_PLAYER), playerAnimation, RenderMnr.EnemyPath()->rbegin()->second);
+    player = std::make_shared<Player>(RenderMnr.TextureMnr.getTexture(TX_PLAYER), enemyPath.rbegin()->second);
 }
 
 
-void GameStatePlaying::RenderManagerPlay::DrawField() {
-    for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
+void GameStatePlaying::RenderManagerPlay::DrawField(GameField &newGameField) {
+    for(GameField::Iterator iterator = newGameField.Begin(); iterator != newGameField.End(); iterator ++){
         iterator.GetTile().sprite.Update();
         WindowLink.draw(iterator.GetTile().sprite);
     }
 }
 
 
-void GameStatePlaying::RenderManagerPlay::LoadField() {
-    TextureMnr.LoadTexture(TX_GRASS, GRASS_TEXTURE);
-    TextureMnr.LoadTexture(TX_START, START_TEXTURE);
-    TextureMnr.LoadTexture(TX_PLAIN, PLAIN_TEXTURE);
-    TextureMnr.LoadTexture(TX_TRAIL, TRAIL_TEXTURE);
-    TextureMnr.LoadTexture(TX_FINISH, FINISH_TEXTURE);
-
+void GameStatePlaying::LoadField() {
     gameField.InitField();
-
     for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
         int id = iterator.GetTile().tileType;
-        sf::Texture & texture = TextureMnr.getTexture(TexturesID(id));
+        sf::Texture & texture = textureManager.getTexture(TexturesID(id));
         iterator.GetTile().sprite.setTexture(texture);
         iterator.GetTile().sprite.setPosition(iterator.coordinates.x * RenderManagerPlay::TILE_WIDTH,
                                               iterator.coordinates.y * RenderManagerPlay::TILE_HEIGHT);
     }
+    enemyPath = *gameField.ComputeEnemiesPath();
 }
 
 
-void GameStatePlaying::RenderManagerPlay::Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player) {
-    DrawField();
+void GameStatePlaying::RenderManagerPlay::Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player,
+                                               GameField &gameField) {
+    DrawField(gameField);
     DrawEnemies(enemyVector);
     DrawPlayer(player);
 }
@@ -111,14 +103,10 @@ void GameStatePlaying::RenderManagerPlay::DrawEnemies(std::vector<Enemy *> &enem
 unsigned int GameStatePlaying::RenderManagerPlay::TILE_WIDTH = 50;
 unsigned int GameStatePlaying::RenderManagerPlay::TILE_HEIGHT = 50;
 
-void GameStatePlaying::RenderManagerPlay::LoadEnemies() {
+void GameStatePlaying::RenderManagerPlay::LoadObjectsTexture() {
     TextureMnr.LoadTexture(TX_BLACK_GHOST, BLACK_GHOST_TEXTURE);
-    TextureMnr.LoadTexture(TX_PLAYER, PLAYER_TEXTURE);
     TextureMnr.LoadTexture(TX_WHITE_GHOST, WHITE_GHOST_TEXTURE);
-}
-
-std::map<int, Coordinate> *GameStatePlaying::RenderManagerPlay::EnemyPath() {
-    return gameField.ComputeEnemiesPath();
+    TextureMnr.LoadTexture(TX_PLAYER, PLAYER_TEXTURE);
 }
 
 GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
@@ -130,6 +118,18 @@ void GameStatePlaying::RenderManagerPlay::DrawPlayer(const std::shared_ptr<Playe
     WindowLink.draw(player->GetSprite());
 }
 
+void GameStatePlaying::RenderManagerPlay::LoadFieldTexture() {
+    TextureMnr.LoadTexture(TX_GRASS, GRASS_TEXTURE);
+    TextureMnr.LoadTexture(TX_START, START_TEXTURE);
+    TextureMnr.LoadTexture(TX_PLAIN, PLAIN_TEXTURE);
+    TextureMnr.LoadTexture(TX_TRAIL, TRAIL_TEXTURE);
+    TextureMnr.LoadTexture(TX_FINISH, FINISH_TEXTURE);
+}
+
 void GameStatePlaying::GameOver() {
-    Game_->changeState(new GameStateGameOver(Game_, Game_->Window, Game_->TextureMnr));
+    Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, LOOSE));
+}
+
+void GameStatePlaying::Win() {
+    Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, WIN));
 }

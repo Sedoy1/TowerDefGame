@@ -7,7 +7,6 @@
 class GameState{
     public:
     Game * Game_;
-    //TODO просмтреть фабричный паттерн для использования виртуального конструткора
     GameState(Game * game){ Game_ = game;};
     virtual ~GameState(){std::cout<<"State destructor\n";};
     virtual void StateRealization() = 0;

@@ -5,7 +5,7 @@
 
 class EnemyGhostWhite : public Enemy{
 public:
-    EnemyGhostWhite(sf::Texture & texture, Animation & animation, Coordinate & startPosition);
+    EnemyGhostWhite(sf::Texture & texture, Coordinate & startPosition);
 };
 
 #endif //UNTITLED4_ENEMYGHOSTWHITE_H

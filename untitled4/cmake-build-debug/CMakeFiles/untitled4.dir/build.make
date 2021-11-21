@@ -131,18 +131,18 @@ CMakeFiles/untitled4.dir/source/GameObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/GameObject.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameObject.cpp -o CMakeFiles/untitled4.dir/source/GameObject.cpp.s
 
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o: CMakeFiles/untitled4.dir/flags.make
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o: ../source/EnemyGhost.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o: CMakeFiles/untitled4.dir/flags.make
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o: ../source/EnemyGhostBlack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp
 
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp > CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.i
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp > CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.i
 
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp -o CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.s
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp -o CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.s
 
 CMakeFiles/untitled4.dir/source/TextureManager.cpp.o: CMakeFiles/untitled4.dir/flags.make
 CMakeFiles/untitled4.dir/source/TextureManager.cpp.o: ../source/TextureManager.cpp
@@ -248,18 +248,18 @@ CMakeFiles/untitled4.dir/source/Spawner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/Spawner.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp -o CMakeFiles/untitled4.dir/source/Spawner.cpp.s
 
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: CMakeFiles/untitled4.dir/flags.make
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: ../source/GameStateGameOver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: CMakeFiles/untitled4.dir/flags.make
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: ../source/GameStateGameEnd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o -c /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp
 
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp > CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.i
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp > CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.i
 
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp -o CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.s
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp -o CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.s
 
 # Object files for target untitled4
 untitled4_OBJECTS = \
@@ -268,7 +268,7 @@ untitled4_OBJECTS = \
 "CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameLogic.cpp.o" \
 "CMakeFiles/untitled4.dir/source/GameObject.cpp.o" \
-"CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o" \
+"CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o" \
 "CMakeFiles/untitled4.dir/source/TextureManager.cpp.o" \
 "CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o" \
 "CMakeFiles/untitled4.dir/source/Game.cpp.o" \
@@ -277,7 +277,7 @@ untitled4_OBJECTS = \
 "CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o" \
 "CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o" \
 "CMakeFiles/untitled4.dir/source/Spawner.cpp.o" \
-"CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o"
+"CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o"
 
 # External object files for target untitled4
 untitled4_EXTERNAL_OBJECTS =
@@ -287,7 +287,7 @@ untitled4: CMakeFiles/untitled4.dir/source/GameField.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameLogic.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/GameObject.cpp.o
-untitled4: CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o
+untitled4: CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/TextureManager.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/Game.cpp.o
@@ -296,7 +296,7 @@ untitled4: CMakeFiles/untitled4.dir/source/Animation.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o
 untitled4: CMakeFiles/untitled4.dir/source/Spawner.cpp.o
-untitled4: CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o
+untitled4: CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o
 untitled4: CMakeFiles/untitled4.dir/build.make
 untitled4: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 untitled4: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1

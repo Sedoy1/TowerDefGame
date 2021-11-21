@@ -1,17 +1,14 @@
 #include "../headers/Spawner.h"
 #include "iostream"
 
-//TODO спавнивтаь нужно с переодичностью в проходе цикла, тк накладываются можельки
 void Spawner::CreateGhostEnemy() {
-    Animation new_animation(0, 2, 1.0f, 0.2f);
-    auto * enemy = new EnemyGhost(textureManager.getTexture(TX_BLACK_GHOST), new_animation, *startEnemyPosition);
+    auto * enemy = new EnemyGhostBlack(textureManager.getTexture(TX_BLACK_GHOST), *startEnemyPosition);
     enemiesVector->push_back(enemy);
     std::cout<<"Black ghost created\n";
 }
 
 void Spawner::CreateWhiteGhostEnemy() {
-    Animation new_animation(0, 2, 1.0f, 0.2f);
-    auto * enemy = new EnemyGhostWhite(textureManager.getTexture(TX_WHITE_GHOST), new_animation, *startEnemyPosition);
+    auto * enemy = new EnemyGhostWhite(textureManager.getTexture(TX_WHITE_GHOST), *startEnemyPosition);
     enemiesVector->push_back(enemy);
     std::cout<<"White ghost created\n";
 }
@@ -51,18 +48,14 @@ void Spawner::InitSpawnerOption(std::vector<Enemy *> *newEnemiesVector, Coordina
     InitWaves();
 }
 
-void Spawner::CreateEnemies(std::pair<int, int> enemiesParams) {
+void Spawner::CreateEnemies(int enemiesType) {
     //first parameter equal to type of enemy
-    switch (enemiesParams.first) {
+    switch (enemiesType) {
         case ENEMY_BLACK_GHOST:
-            for(int count = 0; count<enemiesParams.second; count++){
-                CreateGhostEnemy();
-            }
+            CreateGhostEnemy();
             break;
         case ENEMY_WHITE_GHOST:
-            for(int count = 0; count<enemiesParams.second; count++){
-                CreateWhiteGhostEnemy();
-            }
+            CreateWhiteGhostEnemy();
             break;
     }
 }

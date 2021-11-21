@@ -14,11 +14,11 @@ private:
     // Number of enemies which can be spawn at once should be got the value from constructor
     int maxSpawnPerTime = 3;
     bool waveReleased = false;
-    std::vector<std::pair<int, int>> * GetEnemiesToSpawn();
+    std::vector<int> * GetEnemiesToSpawn();
 public:
     EnemiesWave(int numberEnemiesBlackGhost, int numberEnemiesWhiteGhost);
     // return an enemies types to spawn
-    std::vector<std::pair<int, int>> * Update();
+    std::vector<int> * Update();
     bool IsWaveReleased() const{return waveReleased;}
 };
 

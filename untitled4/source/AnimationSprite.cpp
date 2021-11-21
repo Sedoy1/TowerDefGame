@@ -30,12 +30,26 @@ void AnimationSprite::UpdateAnimation() {
 void AnimationSprite::UpdateMovements() {
     if(movement.timeStart < movement.GetDuration()){
         movement.isArrived = false;
-        this->move(movement.GetSpeed());
+        sf::Vector2f speed = movement.GetSpeed();
+        this->move(speed);
         movement.timeStart += movement.timeStep;
     }
     else{
         movement.isArrived = true;
         movement.timeStart = 0.f;
     }
+}
+
+Animation & AnimationSprite::GetAnimation() {
+    return animation;
+}
+
+void AnimationSprite::SetAnimation(Animation & newAnimation) {
+    animation = newAnimation;
+}
+
+void AnimationSprite::InitSprite(sf::Texture &newTexture, Coordinate &newPosition) {
+    this->setTexture(newTexture);
+    this->setPosition(newPosition.x * frameWidth, newPosition.y * frameHeight);
 }
 

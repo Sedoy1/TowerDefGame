@@ -4,7 +4,10 @@
 
 class Player:public GameObject{
 public:
-    Player(sf::Texture & texture, Animation & animation, Coordinate & newPosition): GameObject(texture, animation, newPosition){
+    Player(sf::Texture & texture, Coordinate & newPosition){
+        aSprite.InitSprite(texture, newPosition);
+        Animation newAnimation(0, 2, 1.0f, 0.2f);
+        aSprite.SetAnimation(newAnimation);
         health = 100;
         damage = 0;
     }

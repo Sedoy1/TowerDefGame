@@ -26,12 +26,7 @@ public:
     }
     Movement(){
         isArrived = true;
-        timeStep = 0.f;
-        timeStart = 0.f;
-    }
-    Movement(int){
-        isArrived = true;
-        timeStep = 1.0f;
+        timeStep = 1.f;
         timeStart = 0.f;
     }
 

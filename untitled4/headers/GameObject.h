@@ -9,8 +9,8 @@ class GameObject {
         int health;
         int damage;
         AnimationSprite aSprite;
+
     public:
-        GameObject(sf::Texture & texture, Animation & animation, Coordinate & newPosition): aSprite(texture, animation, newPosition){}
         int GetHealth();
         void SetHealth(int new_health);
         int GetDamage();

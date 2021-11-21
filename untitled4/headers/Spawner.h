@@ -1,7 +1,7 @@
 #ifndef UNTITLED4_SPAWNER_H
 #define UNTITLED4_SPAWNER_H
 #include "EnemiesWave.h"
-#include "EnemyGhost.h"
+#include "EnemyGhostBlack.h"
 #include "EnemyGhostWhite.h"
 #include "stack"
 #include "TextureManager.h"
@@ -14,7 +14,7 @@ private:
     Coordinate * startEnemyPosition;
     void CreateGhostEnemy();
     void CreateWhiteGhostEnemy();
-    void CreateEnemies(std::pair<int, int> enemiesParams);
+    void CreateEnemies(int enemiesType);
     bool isWaveEnd = false;
 public:
     Spawner(TextureManager &newTextureMng);

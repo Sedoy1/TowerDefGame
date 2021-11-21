@@ -100,7 +100,7 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhost.h">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostBlack.h">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/EnemyGhostWhite.h">
@@ -121,7 +121,7 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameOver.h">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h">
@@ -163,7 +163,7 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhost.cpp">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostWhite.cpp">
@@ -181,7 +181,7 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameObject.cpp">
 			<Option target="untitled4"/>
 		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameOver.cpp">
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp">

@@ -13,18 +13,16 @@ private:
     const int frameHeight = 50;
     void UpdateAnimation();
     void UpdateMovements();
+    Animation animation;
 public:
-    //TODO movement(int) конструктор убрать костыль
-    AnimationSprite(sf::Texture & texture, Animation & new_animation, Coordinate coord): animation(new_animation), movement(1){
-        this->setTexture(texture);
-        this->setPosition(coord.x * frameWidth, coord.y * frameHeight);
-    }
     //constructor for arr use only in tiles
     AnimationSprite() = default;
+    void InitSprite(sf::Texture &newTexture, Coordinate &newPosition);
     void Update();
     bool IsArrived() const;
+    void SetAnimation(Animation & newAnimation);
+    Animation & GetAnimation();
     Movement movement;
-    Animation animation;
 };
 
 #endif //UNTITLED4_ANIMATIONSPRITE_H

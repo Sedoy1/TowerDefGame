@@ -25,3 +25,12 @@ Animation::Animation() {
     timeStart = duration;
     currentAnim = 0;
 }
+
+Animation::Animation(Animation & other) {
+    startFrame = other.startFrame;
+    endFrame = other.endFrame;
+    duration = other.duration;
+    timeStart = other.timeStart;
+    timeStep = other.timeStep;
+    currentAnim = other.currentAnim;
+}

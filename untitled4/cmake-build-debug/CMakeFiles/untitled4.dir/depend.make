@@ -8,14 +8,14 @@ CMakeFiles/untitled4.dir/main.cpp.o: \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/Game.h \
  ../headers/GameField.h \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
- ../headers/GameStateGameOver.h \
+ ../headers/GameStateGameEnd.h \
  ../headers/GameStateMenu.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
@@ -46,15 +46,15 @@ CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o: \
  ../headers/Movement.h \
  ../headers/Player.h \
  ../source/EnemiesWave.cpp
-CMakeFiles/untitled4.dir/source/EnemyGhost.cpp.o: \
+CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/Coordinate.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/GameObject.h \
  ../headers/Movement.h \
- ../source/EnemyGhost.cpp
+ ../source/EnemyGhostBlack.cpp
 CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
@@ -98,21 +98,21 @@ CMakeFiles/untitled4.dir/source/GameObject.cpp.o: \
  ../headers/GameObject.h \
  ../headers/Movement.h \
  ../source/GameObject.cpp
-CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: \
+CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/Game.h \
  ../headers/GameField.h \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
- ../headers/GameStateGameOver.h \
+ ../headers/GameStateGameEnd.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -121,7 +121,7 @@ CMakeFiles/untitled4.dir/source/GameStateGameOver.cpp.o: \
  ../headers/Spawner.h \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
- ../source/GameStateGameOver.cpp
+ ../source/GameStateGameEnd.cpp
 CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
@@ -129,14 +129,14 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/Game.h \
  ../headers/GameField.h \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
- ../headers/GameStateGameOver.h \
+ ../headers/GameStateGameEnd.h \
  ../headers/GameStateMenu.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
@@ -154,14 +154,14 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/Game.h \
  ../headers/GameField.h \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
  ../headers/GameState.h \
- ../headers/GameStateGameOver.h \
+ ../headers/GameStateGameEnd.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -178,7 +178,7 @@ CMakeFiles/untitled4.dir/source/Spawner.cpp.o: \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
- ../headers/EnemyGhost.h \
+ ../headers/EnemyGhostBlack.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/GameLogic.h \
  ../headers/GameObject.h \
