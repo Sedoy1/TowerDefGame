@@ -13,6 +13,10 @@
 #define BUTTON_RELOAD "../assets/button_restart.png"
 #define BUTTON_EXIT "../assets/button_exit.png"
 #define BUTTON_MENU "../assets/button_menu.png"
+#define BUTTON_CONTINUE "../assets/button_continue.png"
+#define BUTTON_PAUSE "../assets/button_pause.png"
+#define BUTTON_PAUSE_CONTINUE "../assets/button_pause_continue.png"
+#define BUTTON_SAVE "../assets/button_save.png"
 #include <SFML/Graphics.hpp>
 
 #endif //UNTITLED4_ELEMENTSDEFINITION_H

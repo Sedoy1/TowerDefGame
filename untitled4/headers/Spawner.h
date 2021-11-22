@@ -9,7 +9,7 @@
 class Spawner {
 private:
     std::stack <EnemiesWave> enemiesWaves;
-    std::vector<Enemy * > * enemiesVector;
+    std::vector<std::shared_ptr<Enemy>> * enemiesVector;
     TextureManager & textureManager;
     Coordinate * startEnemyPosition;
     void CreateGhostEnemy();
@@ -18,7 +18,7 @@ private:
     bool isWaveEnd = false;
 public:
     Spawner(TextureManager &newTextureMng);
-    void InitSpawnerOption(std::vector<Enemy * > * newEnemiesVector, Coordinate * newStartEnemyPosition);
+    void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> *newEnemiesVector, Coordinate * newStartEnemyPosition);
     void UpdateWaves();
     void CreateWeaponCannon(Coordinate & position);
     void InitWaves();

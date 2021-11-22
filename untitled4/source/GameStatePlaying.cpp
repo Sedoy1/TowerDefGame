@@ -5,7 +5,7 @@ void GameStatePlaying::StateRealization() {
     LogicEvent.MoveObject();
     if(LogicEvent.IsPlayerAlive()) {
         spawnerManager.UpdateWaves();
-        RenderMnr.Draw(Enemies, player, gameField);
+        RenderMnr.Draw(Enemies, player, gameField, buttonPauseContinue, buttonSave);
 
         if(spawnerManager.GetWaveState()){
             Win();
@@ -33,6 +33,17 @@ void GameStatePlaying::HandleInput() {
                 if(event.key.code == sf::Keyboard::Escape) this->Game_->Window.close();
                 break;
             }
+            case sf::Event::MouseButtonPressed:
+            {
+                if(event.mouseButton.button == sf::Mouse::Left) {
+                    int xPosition = event.mouseButton.x;
+                    int yPosition = event.mouseButton.y;
+                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)) {
+                        Pause();
+                    }
+                }
+                break;
+            }
             default: break;
         }
     }
@@ -44,19 +55,18 @@ void GameStatePlaying::Update() {
 }
 
 GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &newTextureManager): GameState(game),
-textureManager(newTextureManager), RenderMnr(window, newTextureManager), spawnerManager(newTextureManager){
+RenderMnr(window, newTextureManager), spawnerManager(newTextureManager), textureManager(newTextureManager){
     LoadField();
     InitPlayer();
-    LogicEvent.SetPlayableRules(&enemyPath, &Enemies, player);
+    InitButtons();
+    LogicEvent.SetPlayableRules(enemyPath, &Enemies, player);
     spawnerManager.InitSpawnerOption(&Enemies, &enemyPath.begin()->second);
 }
 
 GameStatePlaying::~GameStatePlaying() {
     std::cout<<"Destructor Game state Playing"<<std::endl;
     // clear mem from enemies
-    for(auto enemy: Enemies){
-        delete enemy;
-    }
+    std::cout<<"end"<<std::endl;
 }
 
 void GameStatePlaying::InitPlayer() {
@@ -85,15 +95,17 @@ void GameStatePlaying::LoadField() {
 }
 
 
-void GameStatePlaying::RenderManagerPlay::Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player,
-                                               GameField &gameField) {
+void GameStatePlaying::RenderManagerPlay::Draw(std::vector<std::shared_ptr<Enemy>> &enemyVector, const std::shared_ptr<Player> &player,
+                                               GameField &gameField,
+                                               sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave) {
     DrawField(gameField);
     DrawEnemies(enemyVector);
     DrawPlayer(player);
+    DrawButtons(buttonPause, buttonSave);
 }
 
 
-void GameStatePlaying::RenderManagerPlay::DrawEnemies(std::vector<Enemy *> &enemyVector) {
+void GameStatePlaying::RenderManagerPlay::DrawEnemies(std::vector<std::shared_ptr<Enemy>> &enemyVector) {
     for(auto object: enemyVector){
         object->GetSprite().Update();
         WindowLink.draw(object->GetSprite());
@@ -110,7 +122,8 @@ void GameStatePlaying::RenderManagerPlay::LoadObjectsTexture() {
 }
 
 GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
-    std::cout<<"Destructor Manager Play\n";
+    std::cout<<"Destructor renderManager Play\n";
+    std::cout<<"end renderManager play\n";
 }
 
 void GameStatePlaying::RenderManagerPlay::DrawPlayer(const std::shared_ptr<Player> &player) {
@@ -126,10 +139,59 @@ void GameStatePlaying::RenderManagerPlay::LoadFieldTexture() {
     TextureMnr.LoadTexture(TX_FINISH, FINISH_TEXTURE);
 }
 
+void GameStatePlaying::RenderManagerPlay::LoadButtonsTexture() {
+    TextureMnr.LoadTexture(TX_BTN_PAUSE, BUTTON_PAUSE_CONTINUE);
+    TextureMnr.LoadTexture(TX_BTN_SAVE, BUTTON_SAVE);
+}
+
+GameStatePlaying::RenderManagerPlay::RenderManagerPlay(sf::RenderWindow &window, TextureManager &textureManager)
+        : RenderManager(window, textureManager) {
+    LoadFieldTexture();
+    LoadObjectsTexture();
+    LoadButtonsTexture();
+}
+
+void GameStatePlaying::RenderManagerPlay::DrawButtons(sf::RectangleShape &newButtonPause,
+                                                      sf::RectangleShape &newButtonSave) {
+    WindowLink.draw(newButtonPause);
+    WindowLink.draw(newButtonSave);
+}
+
 void GameStatePlaying::GameOver() {
     Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, LOOSE));
 }
 
 void GameStatePlaying::Win() {
     Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, WIN));
+}
+
+void GameStatePlaying::InitButtons() {
+    buttonPauseContinue.setSize(sf::Vector2f (50, 50));
+    buttonPauseContinue.setTexture(&textureManager.getTexture(TX_BTN_PAUSE));
+    sf::FloatRect buttonRect = buttonPauseContinue.getLocalBounds();
+    buttonPauseContinue.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
+    buttonPauseContinue.setPosition(SCREEN_WIDTH - 75, 25);
+    sf::IntRect bound(0, 0, 50, 50);
+    buttonPauseContinue.setTextureRect(bound);
+
+    buttonSave.setSize(sf::Vector2f (50, 50));
+    buttonSave.setTexture(&textureManager.getTexture(TX_BTN_SAVE));
+    buttonRect = buttonSave.getLocalBounds();
+    buttonSave.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
+    buttonSave.setPosition(SCREEN_WIDTH - 25, 25);
+}
+
+void GameStatePlaying::Pause() {
+    //TODO продумать паузу по другому, тк при выполнении цикла gamelogic отстает
+    sf::IntRect bound(50, 0, 50, 50);
+    buttonPauseContinue.setTextureRect(bound);
+    Game_->Window.clear();
+    RenderMnr.Draw(Enemies, player, gameField, buttonPauseContinue, buttonSave);
+    Game_->Window.display();
+    auto bgTexture = new sf::Texture;
+    bgTexture->create(SCREEN_WIDTH, SCREEN_HEIGHT);
+    bgTexture->update(Game_->Window);
+    Game_->pushState(new GameStatePause(Game_, Game_->Window, Game_->TextureMnr, bgTexture));
+    bound.left -= 50;
+    buttonPauseContinue.setTextureRect(bound);
 }

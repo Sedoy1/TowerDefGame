@@ -145,3 +145,9 @@ void GameStateGameEnd::RenderManagerGameOver::DrawButtons(sf::RectangleShape &ne
     WindowLink.draw(newButtonMenu);
     WindowLink.draw(newButtonExit);
 }
+
+void GameStateGameEnd::RenderManagerGameOver::LoadTexture() {
+    TextureMnr.LoadTexture(TX_BTN_RESTART, BUTTON_RELOAD);
+    TextureMnr.LoadTexture(TX_BTN_MENU, BUTTON_MENU);
+    TextureMnr.LoadTexture(TX_BTN_EXIT, BUTTON_EXIT);
+}

@@ -7,8 +7,9 @@
 #include "Player.h"
 #include "Spawner.h"
 #include "GameStateGameEnd.h"
+#include "GameStatePause.h"
 
-class GameStatePlaying : public GameState{
+class   GameStatePlaying : public GameState{
 public:
     void StateRealization() override;
     void HandleInput() override;
@@ -20,16 +21,16 @@ private:
     class RenderManagerPlay: public RenderManager{
     private:
         void DrawField(GameField &newGameField);
-        void DrawEnemies(std::vector<Enemy *> &enemyVector);
+        void DrawEnemies(std::vector<std::shared_ptr<Enemy>> &enemyVector);
+        void DrawButtons(sf::RectangleShape &newButtonPause, sf::RectangleShape &newButtonSave);
         void LoadObjectsTexture();
         void LoadFieldTexture();
+        void LoadButtonsTexture();
     public:
-        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager):RenderManager(window, textureManager){
-            LoadFieldTexture();
-            LoadObjectsTexture();}
+        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager);
         ~RenderManagerPlay();
-        void Draw(std::vector<Enemy *> &enemyVector, const std::shared_ptr<Player> &player,
-                  GameField &gameField);
+        void Draw(std::vector<std::shared_ptr<Enemy>> &enemyVector, const std::shared_ptr<Player> &player, GameField &gameField,
+                  sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave);
         static unsigned int TILE_HEIGHT;
         static unsigned int TILE_WIDTH;
         void DrawPlayer(const std::shared_ptr<Player> &player);
@@ -37,16 +38,20 @@ private:
 
     void GameOver();
     void Win();
+    void Pause();
     void InitPlayer();
     void LoadField();
-    TextureManager & textureManager;
+    void InitButtons();
     GameField gameField;
     GameLogic LogicEvent;
     RenderManagerPlay RenderMnr;
     Spawner spawnerManager;
-    std::vector<Enemy * > Enemies;
+    std::vector<std::shared_ptr<Enemy> > Enemies;
     std::map<int, Coordinate> enemyPath;
     std::shared_ptr<Player> player;
+    sf::RectangleShape buttonPauseContinue;
+    sf::RectangleShape buttonSave;
+    TextureManager & textureManager;
 };
 
 #endif //UNTITLED4_GAMESTATEPLAYING_H

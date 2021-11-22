@@ -32,8 +32,7 @@ std::vector<int> * EnemiesWave::Update() {
     }
     else{
         timeStart += timeStep;
-        auto enemiesWaveToSpawn = new std::vector<int>;
-        return enemiesWaveToSpawn;
+        return nullptr;
     }
 }
 

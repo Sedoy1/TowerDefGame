@@ -3,29 +3,28 @@
 #include "../headers/ElementsDefinition.h"
 
 void GameLogic::MoveEnemies() {
-    for(auto enemy: *vectorEnemy){
+    for(auto enemy = vectorEnemy->begin(); enemy!= vectorEnemy->end(); enemy++){
         // last element of path is Finish, finish is player
-        if(enemiesPath->rbegin()->first > enemy->GetStep()){
-            if (enemy->GetSprite().IsArrived()) {
-                int x = enemy->GetSpeed();
+        if(enemiesPath->rbegin()->first > (*enemy)->GetStep() ){
+            if ((*enemy)->GetSprite().IsArrived()) {
+                int x = (*enemy)->GetSpeed();
                 int y = x;
-                x *= ComputeDirection(enemiesPath->at(enemy->GetStep()).x, enemiesPath->at(enemy->GetStep() + 1).x);
-                y *= ComputeDirection(enemiesPath->at(enemy->GetStep()).y, enemiesPath->at(enemy->GetStep() + 1).y);
-                enemy->GetSprite().movement.SetSpeed(x, y);
-                enemy->NextStep();
+                x *= ComputeDirection(enemiesPath->at((*enemy)->GetStep()).x, enemiesPath->at((*enemy)->GetStep() + 1).x);
+                y *= ComputeDirection(enemiesPath->at((*enemy)->GetStep()).y, enemiesPath->at((*enemy)->GetStep() + 1).y);
+                (*enemy)->GetSprite().movement.SetSpeed(x, y);
+                (*enemy)->NextStep();
             }
         }
         else{
-            int newHp = player->GetHealth() - enemy->GetDamage();
+            int newHp = player->GetHealth() - (*enemy)->GetDamage();
             player->SetHealth(newHp);
-            vectorEnemy->erase(std::find(vectorEnemy->begin(), vectorEnemy->end(), enemy));
-            delete enemy;
+            enemy = vectorEnemy->erase(enemy);
         }
     }
 }
 
-void GameLogic::SetPlayableRules(std::map<int, Coordinate> *newEnemyPath, std::vector<Enemy *> * newVectorEnemy, const std::shared_ptr<Player>& newPlayer) {
-    enemiesPath = newEnemyPath;
+void GameLogic::SetPlayableRules(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> *newVectorEnemy, const std::shared_ptr<Player> newPlayer) {
+    enemiesPath = &newEnemyPath;
     vectorEnemy = newVectorEnemy;
     player = newPlayer;
 }
@@ -43,7 +42,9 @@ int GameLogic::ComputeDirection(int direction1, int direction2) {
 }
 
 GameLogic::~GameLogic() {
-    delete enemiesPath;
+    std::cout<<"Destructor gamelogic\n";
+    //delete enemiesPath;
+    std::cout<<"end gamelogic\n";
 }
 
 bool GameLogic::IsPlayerAlive() {

@@ -7,8 +7,8 @@ class GameState;
 void Game::gameLoop() {
     while (this->Window.isOpen()){
         if (getState() != nullptr) {
-            getState()->HandleInput();
             getState()->StateRealization();
+            getState()->HandleInput();
             getState()->Update();
         }
     }

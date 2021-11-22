@@ -17,6 +17,7 @@ CMakeFiles/untitled4.dir/main.cpp.o: \
  ../headers/GameState.h \
  ../headers/GameStateGameEnd.h \
  ../headers/GameStateMenu.h \
+ ../headers/GameStatePause.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -113,6 +114,7 @@ CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: \
  ../headers/GameObject.h \
  ../headers/GameState.h \
  ../headers/GameStateGameEnd.h \
+ ../headers/GameStatePause.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -138,6 +140,7 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/GameState.h \
  ../headers/GameStateGameEnd.h \
  ../headers/GameStateMenu.h \
+ ../headers/GameStatePause.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \
@@ -147,6 +150,14 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
  ../source/GameStateMenu.cpp
+CMakeFiles/untitled4.dir/source/GameStatePause.cpp.o: \
+ ../headers/ElementsDefinition.h \
+ ../headers/Game.h \
+ ../headers/GameState.h \
+ ../headers/GameStatePause.h \
+ ../headers/RenderManager.h \
+ ../headers/TextureManager.h \
+ ../source/GameStatePause.cpp
 CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
@@ -162,6 +173,7 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/GameObject.h \
  ../headers/GameState.h \
  ../headers/GameStateGameEnd.h \
+ ../headers/GameStatePause.h \
  ../headers/GameStatePlaying.h \
  ../headers/Map.h \
  ../headers/Movement.h \

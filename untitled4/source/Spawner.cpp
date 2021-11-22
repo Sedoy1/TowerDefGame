@@ -2,13 +2,13 @@
 #include "iostream"
 
 void Spawner::CreateGhostEnemy() {
-    auto * enemy = new EnemyGhostBlack(textureManager.getTexture(TX_BLACK_GHOST), *startEnemyPosition);
+    std::shared_ptr<Enemy> enemy(new EnemyGhostBlack(textureManager.getTexture(TX_BLACK_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"Black ghost created\n";
 }
 
 void Spawner::CreateWhiteGhostEnemy() {
-    auto * enemy = new EnemyGhostWhite(textureManager.getTexture(TX_WHITE_GHOST), *startEnemyPosition);
+    std::shared_ptr<Enemy> enemy (new EnemyGhostWhite(textureManager.getTexture(TX_WHITE_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"White ghost created\n";
 }
@@ -24,8 +24,10 @@ void Spawner::InitWaves() {
 void Spawner::UpdateWaves() {
     if(!enemiesWaves.empty() && !enemiesWaves.top().IsWaveReleased()){
         auto vector = enemiesWaves.top().Update();
-        for(auto i: *vector){
-            CreateEnemies(i);
+        if (vector != nullptr) {
+            for (auto i: *vector) {
+                CreateEnemies(i);
+            }
         }
     }
     else {
@@ -42,7 +44,7 @@ void Spawner::UpdateWaves() {
     }
 }
 
-void Spawner::InitSpawnerOption(std::vector<Enemy *> *newEnemiesVector, Coordinate *newStartEnemyPosition) {
+void Spawner::InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> *newEnemiesVector, Coordinate *newStartEnemyPosition) {
     enemiesVector = newEnemiesVector;
     startEnemyPosition = newStartEnemyPosition;
     InitWaves();

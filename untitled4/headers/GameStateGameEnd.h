@@ -13,12 +13,9 @@ public:
     void StateRealization() override;
     void HandleInput() override;
     void Update() override;
-    GameStateGameEnd(Game * game, sf::RenderWindow &window, TextureManager & textureManager, int endID): GameState(game), renderManger(window, textureManager) {
-        SCREEN_HEIGHT = Game_->Window.getSize().y;
-        SCREEN_WIDTH = Game_->Window.getSize().x;
-        textureManager.LoadTexture(TX_BTN_RESTART, BUTTON_RELOAD);
-        textureManager.LoadTexture(TX_BTN_MENU, BUTTON_MENU);
-        textureManager.LoadTexture(TX_BTN_EXIT, BUTTON_EXIT);
+    GameStateGameEnd(Game * game, sf::RenderWindow &window, TextureManager & textureManager, int endID):
+    GameState(game), renderManger(window, textureManager) {
+        renderManger.LoadTexture();
         InitText(endID);
         InitButtons();
     }
@@ -33,6 +30,7 @@ private:
         RenderManagerGameOver(sf::RenderWindow & window, TextureManager & textureManager): RenderManager(window, textureManager){}
         void Draw(sf::Text & newTextGameOver, sf::RectangleShape & newButtonRestart, sf::RectangleShape &newButtonMenu,
                   sf::RectangleShape &newButtonExit);
+        void LoadTexture();
 
     private:
         void DrawButtons(sf::RectangleShape &newButtonRestart, sf::RectangleShape &newButtonMenu,
@@ -45,9 +43,6 @@ private:
     sf::RectangleShape buttonExit;
     sf::RectangleShape buttonRestart;
     sf::RectangleShape buttonBackMenu;
-    unsigned int SCREEN_WIDTH;
-    unsigned int SCREEN_HEIGHT;
-    friend RenderManagerGameOver;
 };
 
 

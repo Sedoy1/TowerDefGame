@@ -417,6 +417,30 @@ source/GameStateMenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.s
 .PHONY : source/GameStateMenu.cpp.s
 
+source/GameStatePause.o: source/GameStatePause.cpp.o
+.PHONY : source/GameStatePause.o
+
+# target to build an object file
+source/GameStatePause.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePause.cpp.o
+.PHONY : source/GameStatePause.cpp.o
+
+source/GameStatePause.i: source/GameStatePause.cpp.i
+.PHONY : source/GameStatePause.i
+
+# target to preprocess a source file
+source/GameStatePause.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePause.cpp.i
+.PHONY : source/GameStatePause.cpp.i
+
+source/GameStatePause.s: source/GameStatePause.cpp.s
+.PHONY : source/GameStatePause.s
+
+# target to generate assembly for a file
+source/GameStatePause.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePause.cpp.s
+.PHONY : source/GameStatePause.cpp.s
+
 source/GameStatePlaying.o: source/GameStatePlaying.cpp.o
 .PHONY : source/GameStatePlaying.o
 
@@ -534,6 +558,9 @@ help:
 	@echo "... source/GameStateMenu.o"
 	@echo "... source/GameStateMenu.i"
 	@echo "... source/GameStateMenu.s"
+	@echo "... source/GameStatePause.o"
+	@echo "... source/GameStatePause.i"
+	@echo "... source/GameStatePause.s"
 	@echo "... source/GameStatePlaying.o"
 	@echo "... source/GameStatePlaying.i"
 	@echo "... source/GameStatePlaying.s"
