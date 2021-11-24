@@ -13,8 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/AnimationSprite.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/BlinkingText.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/BlinkingText.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o"
-  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostBlack.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o"
-  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemyGhostWhite.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/FriendObject.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/FriendObject.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Game.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Game.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameField.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameField.cpp.o"

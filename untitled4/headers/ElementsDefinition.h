@@ -5,6 +5,8 @@
 #define TRAIL_TEXTURE "../assets/trail.png"
 #define BLACK_GHOST_TEXTURE "../assets/black_ghost.png"
 #define WHITE_GHOST_TEXTURE "../assets/white_ghost.png"
+#define RED_GHOST_TEXTURE "../assets/red_ghost.png"
+#define BROWN_GHOST_TEXTURE "../assets/brown_ghost.png"
 #define START_TEXTURE "../assets/start.png"
 #define FINISH_TEXTURE "../assets/finish.png"
 #define MENU_BG_TEXTURE "../assets/bg_menu.png"
@@ -19,7 +21,14 @@
 #define BUTTON_LOAD_GAME  "../assets/button_load_game.png"
 #define BUTTON_PAUSE_CONTINUE "../assets/button_pause_continue.png"
 #define BUTTON_SAVE "../assets/button_save.png"
-#define CANNON_TEXTURE "../assets/cannon.png"
+#define CANNON_BLUE_TEXTURE "../assets/cannon.png"
+#define CANNON_ORANGE_TEXTURE "../assets/cannon_orange.png"
+#define CANNON_BLACK_TEXTURE "../assets/cannon_black.png"
+#define BG_BUTTONS "../assets/bg_buttons.png"
+#define BUTTON_CANNON_BLUE "../assets/button_cannon_blue.png"
+#define BUTTON_CANNON_ORANGE "../assets/button_cannon_orange.png"
+#define BUTTON_CANNON_BLACK "../assets/button_cannon_black.png"
+#define HEALTH_TEXTURE "../assets/health.png"
 #include <SFML/Graphics.hpp>
 
 #endif //UNTITLED4_ELEMENTSDEFINITION_H

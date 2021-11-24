@@ -3,7 +3,7 @@
 #include "../headers/ElementsDefinition.h"
 
 void GameLogic::MoveEnemies() {
-    for(auto enemy = vectorEnemy->begin(); enemy!= vectorEnemy->end(); enemy++){
+    for(auto enemy = vectorEnemy->begin(); enemy!= vectorEnemy->end();){
         // last element of path is Finish, finish is player
         if(enemiesPath->rbegin()->first > (*enemy)->GetStep() ){
             if ((*enemy)->GetSprite().IsArrived()) {
@@ -14,6 +14,7 @@ void GameLogic::MoveEnemies() {
                 (*enemy)->GetSprite().movement.SetSpeed(x, y);
                 (*enemy)->NextStep();
             }
+            enemy++;
         }
         else{
             int newHp = player->GetHealth() - (*enemy)->GetDamage();
@@ -26,12 +27,13 @@ void GameLogic::MoveEnemies() {
 void GameLogic::SetPlayableRules(std::map<int, Coordinate> &newEnemyPath,
                                  std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
                                  Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
-                                 GameField &newGameField) {
+                                 GameField &newGameField, sf::Text &newTextHealth) {
     enemiesPath = &newEnemyPath;
     vectorEnemy = &newVectorEnemy;
     vectorFriends = &newVectorFriends;
     player = &newPlayer;
     gameField = &newGameField;
+    textHealth = &newTextHealth;
 }
 
 int GameLogic::ComputeDirection(int direction1, int direction2) {
@@ -95,4 +97,6 @@ void GameLogic::DoAnimation() {
 
     //animation player
     player->GetSprite().Update();
+
+    textHealth->setString(std::to_string(player->GetHealth()));
 }

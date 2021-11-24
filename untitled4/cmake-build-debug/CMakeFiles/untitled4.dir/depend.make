@@ -5,12 +5,16 @@ CMakeFiles/untitled4.dir/main.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/BlinkingText.h \
- ../headers/Cannon.h \
+ ../headers/CannonBlack.h \
+ ../headers/CannonBlue.h \
+ ../headers/CannonOrange.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
  ../headers/EnemyGhostBlack.h \
+ ../headers/EnemyGhostBrown.h \
+ ../headers/EnemyGhostRed.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/FriendObject.h \
  ../headers/Game.h \
@@ -59,24 +63,6 @@ CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o: \
  ../headers/Player.h \
  ../headers/Tile.h \
  ../source/EnemiesWave.cpp
-CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o: \
- ../headers/Animation.h \
- ../headers/AnimationSprite.h \
- ../headers/Coordinate.h \
- ../headers/Enemy.h \
- ../headers/EnemyGhostBlack.h \
- ../headers/GameObject.h \
- ../headers/Movement.h \
- ../source/EnemyGhostBlack.cpp
-CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o: \
- ../headers/Animation.h \
- ../headers/AnimationSprite.h \
- ../headers/Coordinate.h \
- ../headers/Enemy.h \
- ../headers/EnemyGhostWhite.h \
- ../headers/GameObject.h \
- ../headers/Movement.h \
- ../source/EnemyGhostWhite.cpp
 CMakeFiles/untitled4.dir/source/FriendObject.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
@@ -128,12 +114,16 @@ CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/BlinkingText.h \
- ../headers/Cannon.h \
+ ../headers/CannonBlack.h \
+ ../headers/CannonBlue.h \
+ ../headers/CannonOrange.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
  ../headers/EnemyGhostBlack.h \
+ ../headers/EnemyGhostBrown.h \
+ ../headers/EnemyGhostRed.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/FriendObject.h \
  ../headers/Game.h \
@@ -156,12 +146,16 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/BlinkingText.h \
- ../headers/Cannon.h \
+ ../headers/CannonBlack.h \
+ ../headers/CannonBlue.h \
+ ../headers/CannonOrange.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
  ../headers/EnemyGhostBlack.h \
+ ../headers/EnemyGhostBrown.h \
+ ../headers/EnemyGhostRed.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/FriendObject.h \
  ../headers/Game.h \
@@ -195,12 +189,16 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
  ../headers/BlinkingText.h \
- ../headers/Cannon.h \
+ ../headers/CannonBlack.h \
+ ../headers/CannonBlue.h \
+ ../headers/CannonOrange.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
  ../headers/EnemyGhostBlack.h \
+ ../headers/EnemyGhostBrown.h \
+ ../headers/EnemyGhostRed.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/FriendObject.h \
  ../headers/Game.h \
@@ -222,12 +220,16 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \
- ../headers/Cannon.h \
+ ../headers/CannonBlack.h \
+ ../headers/CannonBlue.h \
+ ../headers/CannonOrange.h \
  ../headers/Coordinate.h \
  ../headers/ElementsDefinition.h \
  ../headers/EnemiesWave.h \
  ../headers/Enemy.h \
  ../headers/EnemyGhostBlack.h \
+ ../headers/EnemyGhostBrown.h \
+ ../headers/EnemyGhostRed.h \
  ../headers/EnemyGhostWhite.h \
  ../headers/FriendObject.h \
  ../headers/GameField.h \

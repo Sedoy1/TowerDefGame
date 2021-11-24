@@ -20,11 +20,18 @@ enum TexturesID{
     TX_BTN_MENU,
     TX_BTN_RESTART,
     TX_PLAYER,
+    TX_BG_BUTTONS,
+    TX_BTN_WEAPON_BLUE,
+    TX_BTN_WEAPON_ORANGE,
+    TX_BTN_WEAPON_BLACK,
     TX_BLACK_GHOST,
     TX_WHITE_GHOST,
     TX_RED_GHOST, //TODO добавить еще 2 вида врагов
-    TX_BLUE_GHOST,
-    TX_CANNON
+    TX_BROWN_GHOST,
+    TX_BLUE_CANNON,
+    TX_ORANGE_CANNON,
+    TX_BLACK_CANNON,
+    TX_HEALTH
 };
 
 class TextureManager{

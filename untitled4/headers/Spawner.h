@@ -3,9 +3,14 @@
 #include "EnemiesWave.h"
 #include "EnemyGhostBlack.h"
 #include "EnemyGhostWhite.h"
+#include "EnemyGhostBrown.h"
+#include "EnemyGhostRed.h"
 #include "stack"
 #include "TextureManager.h"
-#include "Cannon.h"
+#include "CannonBlue.h"
+#include "CannonBlack.h"
+#include "CannonOrange.h"
+
 
 class Spawner {
 private:
@@ -14,7 +19,9 @@ private:
     std::vector<std::shared_ptr<FriendObject>> * friendsObjects;
     TextureManager & textureManager;
     Coordinate * startEnemyPosition;
-    void CreateGhostEnemy();
+    void CreateBlackGhostEnemy();
+    void CreateRedGhostEnemy();
+    void CreateBrownGhostEnemy();
     void CreateWhiteGhostEnemy();
     void CreateEnemies(int enemiesType);
 
@@ -24,7 +31,9 @@ public:
     void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> &newEnemiesVector, Coordinate *newStartEnemyPosition,
                            std::vector<std::shared_ptr<FriendObject>> &friendsVector);
     void UpdateWaves();
-    void CreateWeaponCannon(Coordinate & position);
+    void CreateWeaponCannonBlue(Coordinate & position);
+    void CreateWeaponCannonOrange(Coordinate & position);
+    void CreateWeaponCannonBlack(Coordinate & position);
     void InitWaves();
     bool GetWaveState();
 };

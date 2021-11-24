@@ -94,14 +94,15 @@ void GameStateGameEnd::InitText(int endID) {
     sf::FloatRect textRect = textGameResult.getLocalBounds();
     textGameResult.setOrigin(textRect.left + textRect.width / 2.0f,
                    textRect.top  + textRect.height/2.0f);
-    textGameResult.setPosition(sf::Vector2f(SCREEN_HEIGHT / 2.0f, SCREEN_WIDTH / 2.0f));
+    textGameResult.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f));
 }
 
 void GameStateGameEnd::InitButtons() {
     unsigned int IndentY = SCREEN_HEIGHT * 0.15f;
-    sf::FloatRect textRect = textGameResult.getLocalBounds();
+    float width = SCREEN_WIDTH / 4.0f;
+    float height = SCREEN_HEIGHT / 10.0f;
 
-    buttonRestart.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
+    buttonRestart.setSize(sf::Vector2f (width, height));
     buttonRestart.setTexture(&renderManger.textureManager.getTexture(TX_BTN_RESTART));
     sf::FloatRect buttonRect = buttonRestart.getLocalBounds();
     buttonRestart.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
@@ -109,18 +110,18 @@ void GameStateGameEnd::InitButtons() {
     sf::IntRect bound(0, 0, 100, 50);
     buttonRestart.setTextureRect(bound);
 
-    buttonBackMenu.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
+    buttonBackMenu.setSize(sf::Vector2f (width, height));
     buttonBackMenu.setTexture(&renderManger.textureManager.getTexture(TX_BTN_MENU));
     buttonRect = buttonBackMenu.getLocalBounds();
     buttonBackMenu.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
-    buttonBackMenu.setPosition(sf::Vector2f (buttonRestart.getPosition().x, buttonRestart.getPosition().y + IndentY));
+    buttonBackMenu.setPosition(sf::Vector2f (textGameResult.getPosition().x, buttonRestart.getPosition().y + IndentY));
     buttonBackMenu.setTextureRect(bound);
 
-    buttonExit.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
+    buttonExit.setSize(sf::Vector2f (width, height));
     buttonExit.setTexture(&renderManger.textureManager.getTexture(TX_BTN_EXIT));
     buttonRect = buttonExit.getLocalBounds();
     buttonExit.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
-    buttonExit.setPosition(sf::Vector2f (buttonBackMenu.getPosition().x, buttonBackMenu.getPosition().y + IndentY));
+    buttonExit.setPosition(sf::Vector2f (textGameResult.getPosition().x, buttonBackMenu.getPosition().y + IndentY));
     buttonExit.setTextureRect(bound);
 }
 

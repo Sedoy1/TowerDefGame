@@ -35,7 +35,7 @@ void Game::changeState(GameState *state) {
 }
 
 Game::Game() {
-    Window.create(sf::VideoMode(500, 500), "Game");
+    Window.create(sf::VideoMode(500, 600), "Game");
     Window.setFramerateLimit(60);
     TextureMnr.LoadTexture(TX_MENU_BG, MENU_BG_TEXTURE);
 }

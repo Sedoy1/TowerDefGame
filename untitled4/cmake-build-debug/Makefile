@@ -249,54 +249,6 @@ source/EnemiesWave.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.s
 .PHONY : source/EnemiesWave.cpp.s
 
-source/EnemyGhostBlack.o: source/EnemyGhostBlack.cpp.o
-.PHONY : source/EnemyGhostBlack.o
-
-# target to build an object file
-source/EnemyGhostBlack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o
-.PHONY : source/EnemyGhostBlack.cpp.o
-
-source/EnemyGhostBlack.i: source/EnemyGhostBlack.cpp.i
-.PHONY : source/EnemyGhostBlack.i
-
-# target to preprocess a source file
-source/EnemyGhostBlack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.i
-.PHONY : source/EnemyGhostBlack.cpp.i
-
-source/EnemyGhostBlack.s: source/EnemyGhostBlack.cpp.s
-.PHONY : source/EnemyGhostBlack.s
-
-# target to generate assembly for a file
-source/EnemyGhostBlack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.s
-.PHONY : source/EnemyGhostBlack.cpp.s
-
-source/EnemyGhostWhite.o: source/EnemyGhostWhite.cpp.o
-.PHONY : source/EnemyGhostWhite.o
-
-# target to build an object file
-source/EnemyGhostWhite.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o
-.PHONY : source/EnemyGhostWhite.cpp.o
-
-source/EnemyGhostWhite.i: source/EnemyGhostWhite.cpp.i
-.PHONY : source/EnemyGhostWhite.i
-
-# target to preprocess a source file
-source/EnemyGhostWhite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.i
-.PHONY : source/EnemyGhostWhite.cpp.i
-
-source/EnemyGhostWhite.s: source/EnemyGhostWhite.cpp.s
-.PHONY : source/EnemyGhostWhite.s
-
-# target to generate assembly for a file
-source/EnemyGhostWhite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.s
-.PHONY : source/EnemyGhostWhite.cpp.s
-
 source/FriendObject.o: source/FriendObject.cpp.o
 .PHONY : source/FriendObject.o
 
@@ -585,12 +537,6 @@ help:
 	@echo "... source/EnemiesWave.o"
 	@echo "... source/EnemiesWave.i"
 	@echo "... source/EnemiesWave.s"
-	@echo "... source/EnemyGhostBlack.o"
-	@echo "... source/EnemyGhostBlack.i"
-	@echo "... source/EnemyGhostBlack.s"
-	@echo "... source/EnemyGhostWhite.o"
-	@echo "... source/EnemyGhostWhite.i"
-	@echo "... source/EnemyGhostWhite.s"
 	@echo "... source/FriendObject.o"
 	@echo "... source/FriendObject.i"
 	@echo "... source/FriendObject.s"

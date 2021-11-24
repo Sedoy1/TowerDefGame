@@ -4,8 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"
   "CMakeFiles/untitled4.dir/source/BlinkingText.cpp.o"
   "CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o"
-  "CMakeFiles/untitled4.dir/source/EnemyGhostBlack.cpp.o"
-  "CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.o"
   "CMakeFiles/untitled4.dir/source/FriendObject.cpp.o"
   "CMakeFiles/untitled4.dir/source/Game.cpp.o"
   "CMakeFiles/untitled4.dir/source/GameField.cpp.o"

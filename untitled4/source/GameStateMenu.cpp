@@ -97,7 +97,10 @@ renderManager(window,textureManager, bgSprite, textMenu, buttonStartGame, button
 }
 
 void GameStateMenu::InitBg() {
-    bgSprite.setTexture(renderManager.GetTexture(TX_MENU_BG));
+    Coordinate coord(0,0);
+    bgSprite.InitSprite(renderManager.GetTexture(TX_MENU_BG), coord, 500, 600);
+    Animation animation(10.0f);
+    bgSprite.SetAnimation(animation);
 }
 
 void GameStateMenu::InitButtons() {
@@ -161,11 +164,12 @@ void GameStateMenu::RenderManagerMenu::Draw() {
 }
 
 void GameStateMenu::RenderManagerMenu::DrawBg() {
+    bgSprite->Update();
     WindowLink.draw(*bgSprite);
 }
 
 GameStateMenu::RenderManagerMenu::RenderManagerMenu(sf::RenderWindow &window, TextureManager &textureManager,
-                                                    sf::Sprite &newBgSprite,
+                                                    AnimationSprite &newBgSprite,
                                                     BlinkingText &newTextMenu, sf::RectangleShape &newButtonStartGame,
                                                     sf::RectangleShape &newButtonOptions,
                                                     sf::RectangleShape &newButtonLoadGame,

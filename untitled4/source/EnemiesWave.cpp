@@ -19,9 +19,12 @@ std::vector<int> * EnemiesWave::GetEnemiesToSpawn(){
     return enemiesWaveToSpawn;
 }
 
-EnemiesWave::EnemiesWave(int numberEnemiesBlackGhost, int numberEnemiesWhiteGhost){
+EnemiesWave::EnemiesWave(int numberEnemiesBlackGhost, int numberEnemiesWhiteGhost, int numberEnemiesRedGhost,
+                         int numberEnemiesBrownGhost) {
     enemiesNumber[ENEMY_BLACK_GHOST] = numberEnemiesBlackGhost;
     enemiesNumber[ENEMY_WHITE_GHOST] = numberEnemiesWhiteGhost;
+    enemiesNumber[ENEMY_RED_GHOST] = numberEnemiesRedGhost;
+    enemiesNumber[ENEMY_BROWN_GHOST] = numberEnemiesBrownGhost;
 }
 
 // Update waves timer

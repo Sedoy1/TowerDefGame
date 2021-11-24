@@ -16,7 +16,8 @@ private:
     bool waveReleased = false;
     std::vector<int> * GetEnemiesToSpawn();
 public:
-    EnemiesWave(int numberEnemiesBlackGhost, int numberEnemiesWhiteGhost);
+    EnemiesWave(int numberEnemiesBlackGhost, int numberEnemiesWhiteGhost, int numberEnemiesRedGhost,
+                int numberEnemiesBrownGhost);
     // return an enemies types to spawn
     std::vector<int> * Update();
     bool IsWaveReleased() const{return waveReleased;}

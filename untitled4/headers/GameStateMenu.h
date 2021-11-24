@@ -20,7 +20,7 @@ private:
     void InitText();
     class RenderManagerMenu: public RenderManager{
     public:
-        RenderManagerMenu(sf::RenderWindow &window, TextureManager &textureManager, sf::Sprite &newBgSprite,
+        RenderManagerMenu(sf::RenderWindow &window, TextureManager &textureManager, AnimationSprite &newBgSprite,
                           BlinkingText &newTextMenu, sf::RectangleShape &newButtonStartGame,
                           sf::RectangleShape &newButtonOptions, sf::RectangleShape &newButtonLoadGame,
                           sf::RectangleShape &newButtonExit);
@@ -30,7 +30,7 @@ private:
         void DrawBg();
         void DrawButtons();
         void DrawText();
-        sf::Sprite * bgSprite;
+        AnimationSprite * bgSprite;
         BlinkingText * textMenu;
         sf::RectangleShape * buttonStartGame;
         sf::RectangleShape * buttonOptions;
@@ -38,7 +38,7 @@ private:
         sf::RectangleShape * buttonExit;
     };
     RenderManagerMenu renderManager;
-    sf::Sprite bgSprite;
+    AnimationSprite bgSprite;
     BlinkingText textMenu;
     sf::RectangleShape buttonStartGame;
     sf::RectangleShape buttonOptions;

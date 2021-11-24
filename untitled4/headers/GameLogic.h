@@ -10,8 +10,8 @@
 enum{
     ENEMY_BLACK_GHOST,
     ENEMY_WHITE_GHOST,
-    ENEMY_BLUE_GHOST,
-    ENEMY_RED_GHOST
+    ENEMY_RED_GHOST,
+    ENEMY_BROWN_GHOST
 };
 
 class GameLogic {
@@ -24,12 +24,13 @@ class GameLogic {
     std::map<int, Coordinate> * enemiesPath;
     std::vector<std::shared_ptr<Enemy>> * vectorEnemy;
     std::vector<std::shared_ptr<FriendObject>> * vectorFriends;
+    sf::Text * textHealth;
     GameField * gameField;
     Player * player;
     public:
     void SetPlayableRules(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
                           Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
-                          GameField &newGameField);
+                          GameField &newGameField, sf::Text &newTextHealth);
     /*Add new Enemy to the vector*/
     void GameRealization();
     bool IsPlayerAlive();
