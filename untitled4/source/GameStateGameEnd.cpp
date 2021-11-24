@@ -102,7 +102,7 @@ void GameStateGameEnd::InitButtons() {
     sf::FloatRect textRect = textGameResult.getLocalBounds();
 
     buttonRestart.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
-    buttonRestart.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_RESTART));
+    buttonRestart.setTexture(&renderManger.textureManager.getTexture(TX_BTN_RESTART));
     sf::FloatRect buttonRect = buttonRestart.getLocalBounds();
     buttonRestart.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
     buttonRestart.setPosition(sf::Vector2f (textGameResult.getPosition().x, textGameResult.getPosition().y + IndentY));
@@ -110,14 +110,14 @@ void GameStateGameEnd::InitButtons() {
     buttonRestart.setTextureRect(bound);
 
     buttonBackMenu.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
-    buttonBackMenu.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_MENU));
+    buttonBackMenu.setTexture(&renderManger.textureManager.getTexture(TX_BTN_MENU));
     buttonRect = buttonBackMenu.getLocalBounds();
     buttonBackMenu.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
     buttonBackMenu.setPosition(sf::Vector2f (buttonRestart.getPosition().x, buttonRestart.getPosition().y + IndentY));
     buttonBackMenu.setTextureRect(bound);
 
     buttonExit.setSize(sf::Vector2f (textRect.width, SCREEN_HEIGHT / 10.0f));
-    buttonExit.setTexture(&renderManger.TextureMnr.getTexture(TX_BTN_EXIT));
+    buttonExit.setTexture(&renderManger.textureManager.getTexture(TX_BTN_EXIT));
     buttonRect = buttonExit.getLocalBounds();
     buttonExit.setOrigin(buttonRect.left + buttonRect.width/2.0f, buttonRect.top + buttonRect.height/2.0f);
     buttonExit.setPosition(sf::Vector2f (buttonBackMenu.getPosition().x, buttonBackMenu.getPosition().y + IndentY));
@@ -147,7 +147,7 @@ void GameStateGameEnd::RenderManagerGameOver::DrawButtons(sf::RectangleShape &ne
 }
 
 void GameStateGameEnd::RenderManagerGameOver::LoadTexture() {
-    TextureMnr.LoadTexture(TX_BTN_RESTART, BUTTON_RELOAD);
-    TextureMnr.LoadTexture(TX_BTN_MENU, BUTTON_MENU);
-    TextureMnr.LoadTexture(TX_BTN_EXIT, BUTTON_EXIT);
+    textureManager.LoadTexture(TX_BTN_RESTART, BUTTON_RELOAD);
+    textureManager.LoadTexture(TX_BTN_MENU, BUTTON_MENU);
+    textureManager.LoadTexture(TX_BTN_EXIT, BUTTON_EXIT);
 }

@@ -14,9 +14,12 @@
 #define BUTTON_EXIT "../assets/button_exit.png"
 #define BUTTON_MENU "../assets/button_menu.png"
 #define BUTTON_CONTINUE "../assets/button_continue.png"
-#define BUTTON_PAUSE "../assets/button_pause.png"
+#define BUTTON_PLAY "../assets/button_play.png"
+#define BUTTON_OPTIONS "../assets/button_option.png"
+#define BUTTON_LOAD_GAME  "../assets/button_load_game.png"
 #define BUTTON_PAUSE_CONTINUE "../assets/button_pause_continue.png"
 #define BUTTON_SAVE "../assets/button_save.png"
+#define CANNON_TEXTURE "../assets/cannon.png"
 #include <SFML/Graphics.hpp>
 
 #endif //UNTITLED4_ELEMENTSDEFINITION_H

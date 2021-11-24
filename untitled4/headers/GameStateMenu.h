@@ -2,27 +2,48 @@
 #define UNTITLED4_GAMESTATEMENU_H
 #include "GameState.h"
 #include "GameStatePlaying.h"
+#include "BlinkingText.h"
 
 class GameStateMenu : public GameState{
 public:
     void StateRealization() override;
     void HandleInput() override;
     void Update() override;
-    GameStateMenu(Game * game, sf::RenderWindow &window, TextureManager & textureManager): GameState(game), renderManager(window, textureManager) {}
+    GameStateMenu(Game * game, sf::RenderWindow &window, TextureManager & textureManager);
     ~GameStateMenu();
 private:
     void LoadGame();
+    void Options();
+    void StartGame();
+    void InitBg();
+    void InitButtons();
+    void InitText();
     class RenderManagerMenu: public RenderManager{
     public:
-        RenderManagerMenu(sf::RenderWindow & window, TextureManager & textureManager): RenderManager(window, textureManager){}
+        RenderManagerMenu(sf::RenderWindow &window, TextureManager &textureManager, sf::Sprite &newBgSprite,
+                          BlinkingText &newTextMenu, sf::RectangleShape &newButtonStartGame,
+                          sf::RectangleShape &newButtonOptions, sf::RectangleShape &newButtonLoadGame,
+                          sf::RectangleShape &newButtonExit);
         void Draw();
-
     private:
-        sf::Sprite MenuBg;
-        void DrawMenu();
+        void LoadTextures();
         void DrawBg();
+        void DrawButtons();
+        void DrawText();
+        sf::Sprite * bgSprite;
+        BlinkingText * textMenu;
+        sf::RectangleShape * buttonStartGame;
+        sf::RectangleShape * buttonOptions;
+        sf::RectangleShape * buttonLoadGame;
+        sf::RectangleShape * buttonExit;
     };
     RenderManagerMenu renderManager;
+    sf::Sprite bgSprite;
+    BlinkingText textMenu;
+    sf::RectangleShape buttonStartGame;
+    sf::RectangleShape buttonOptions;
+    sf::RectangleShape buttonLoadGame;
+    sf::RectangleShape buttonExit;
 };
 
 

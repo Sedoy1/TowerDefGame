@@ -23,14 +23,15 @@ void GameLogic::MoveEnemies() {
     }
 }
 
-void GameLogic::SetPlayableRules(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> *newVectorEnemy, const std::shared_ptr<Player> newPlayer) {
+void GameLogic::SetPlayableRules(std::map<int, Coordinate> &newEnemyPath,
+                                 std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
+                                 Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
+                                 GameField &newGameField) {
     enemiesPath = &newEnemyPath;
-    vectorEnemy = newVectorEnemy;
-    player = newPlayer;
-}
-
-void GameLogic::MoveObject() {
-    MoveEnemies();
+    vectorEnemy = &newVectorEnemy;
+    vectorFriends = &newVectorFriends;
+    player = &newPlayer;
+    gameField = &newGameField;
 }
 
 int GameLogic::ComputeDirection(int direction1, int direction2) {
@@ -41,15 +42,57 @@ int GameLogic::ComputeDirection(int direction1, int direction2) {
     return 1;
 }
 
-GameLogic::~GameLogic() {
-    std::cout<<"Destructor gamelogic\n";
-    //delete enemiesPath;
-    std::cout<<"end gamelogic\n";
-}
-
 bool GameLogic::IsPlayerAlive() {
     if(player->GetHealth() > 0)
         return true;
     else
         return false;
+}
+
+void GameLogic::GameRealization() {
+    WeaponsShot();
+    CheckEnemiesViability();
+    DoAnimation();
+    MoveEnemies();
+}
+
+void GameLogic::WeaponsShot() {
+    for (auto weapon: *vectorFriends){
+        weapon->Update();
+    }
+}
+
+void GameLogic::CheckEnemiesViability() {
+    for(auto enemy = vectorEnemy->begin(); enemy != vectorEnemy->end();){
+        if ((*enemy)->GetHealth() < 0){
+            enemy = vectorEnemy->erase(enemy);
+        }
+        else{
+            enemy ++;
+        }
+    }
+}
+
+void GameLogic::DoAnimation() {
+    //animation for enemies
+    for(auto object: *vectorEnemy){
+        object->GetSprite().Update();
+    }
+
+    //animation for field
+    for(GameField::Iterator iterator = gameField->Begin(); iterator != gameField->End(); iterator ++){
+        iterator.GetTile().GetTile().Update();
+    }
+
+    //animation for friends
+    for(auto weapon : *vectorFriends) {
+        if (weapon->GetShootingState()) {
+            if (weapon->GetSprite().GetAnimation().currentAnim == weapon->GetSprite().GetAnimation().endFrame)
+                weapon->SetShootingState(false);
+            weapon->GetSprite().Update();
+        }
+    }
+
+    //animation player
+    player->GetSprite().Update();
 }

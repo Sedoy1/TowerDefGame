@@ -2,8 +2,10 @@
 #define UNTITLED4_GAMELOGIC_H
 #include "Enemy.h"
 #include "Player.h"
+#include "FriendObject.h"
 #include "SFML/Graphics.hpp"
 #include "memory"
+#include "GameField.h"
 
 enum{
     ENEMY_BLACK_GHOST,
@@ -14,17 +16,22 @@ enum{
 
 class GameLogic {
     private:
-    std::map<int, Coordinate> * enemiesPath;
     void MoveEnemies();
+    void WeaponsShot();
+    void CheckEnemiesViability();
+    void DoAnimation();
     int ComputeDirection(int direction1, int direction2);
+    std::map<int, Coordinate> * enemiesPath;
     std::vector<std::shared_ptr<Enemy>> * vectorEnemy;
-    std::shared_ptr<Player> player;
+    std::vector<std::shared_ptr<FriendObject>> * vectorFriends;
+    GameField * gameField;
+    Player * player;
     public:
-    ~GameLogic();
-    void SetPlayableRules(std::map<int, Coordinate> &newEnemyPath,
-                          std::vector<std::shared_ptr<Enemy>> *newVectorEnemy, const std::shared_ptr<Player> newPlayer);
+    void SetPlayableRules(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
+                          Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
+                          GameField &newGameField);
     /*Add new Enemy to the vector*/
-    void MoveObject();
+    void GameRealization();
     bool IsPlayerAlive();
 };
 

@@ -201,6 +201,30 @@ source/AnimationSprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.s
 .PHONY : source/AnimationSprite.cpp.s
 
+source/BlinkingText.o: source/BlinkingText.cpp.o
+.PHONY : source/BlinkingText.o
+
+# target to build an object file
+source/BlinkingText.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/BlinkingText.cpp.o
+.PHONY : source/BlinkingText.cpp.o
+
+source/BlinkingText.i: source/BlinkingText.cpp.i
+.PHONY : source/BlinkingText.i
+
+# target to preprocess a source file
+source/BlinkingText.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/BlinkingText.cpp.i
+.PHONY : source/BlinkingText.cpp.i
+
+source/BlinkingText.s: source/BlinkingText.cpp.s
+.PHONY : source/BlinkingText.s
+
+# target to generate assembly for a file
+source/BlinkingText.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/BlinkingText.cpp.s
+.PHONY : source/BlinkingText.cpp.s
+
 source/EnemiesWave.o: source/EnemiesWave.cpp.o
 .PHONY : source/EnemiesWave.o
 
@@ -272,6 +296,30 @@ source/EnemyGhostWhite.s: source/EnemyGhostWhite.cpp.s
 source/EnemyGhostWhite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemyGhostWhite.cpp.s
 .PHONY : source/EnemyGhostWhite.cpp.s
+
+source/FriendObject.o: source/FriendObject.cpp.o
+.PHONY : source/FriendObject.o
+
+# target to build an object file
+source/FriendObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/FriendObject.cpp.o
+.PHONY : source/FriendObject.cpp.o
+
+source/FriendObject.i: source/FriendObject.cpp.i
+.PHONY : source/FriendObject.i
+
+# target to preprocess a source file
+source/FriendObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/FriendObject.cpp.i
+.PHONY : source/FriendObject.cpp.i
+
+source/FriendObject.s: source/FriendObject.cpp.s
+.PHONY : source/FriendObject.s
+
+# target to generate assembly for a file
+source/FriendObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/FriendObject.cpp.s
+.PHONY : source/FriendObject.cpp.s
 
 source/Game.o: source/Game.cpp.o
 .PHONY : source/Game.o
@@ -531,6 +579,9 @@ help:
 	@echo "... source/AnimationSprite.o"
 	@echo "... source/AnimationSprite.i"
 	@echo "... source/AnimationSprite.s"
+	@echo "... source/BlinkingText.o"
+	@echo "... source/BlinkingText.i"
+	@echo "... source/BlinkingText.s"
 	@echo "... source/EnemiesWave.o"
 	@echo "... source/EnemiesWave.i"
 	@echo "... source/EnemiesWave.s"
@@ -540,6 +591,9 @@ help:
 	@echo "... source/EnemyGhostWhite.o"
 	@echo "... source/EnemyGhostWhite.i"
 	@echo "... source/EnemyGhostWhite.s"
+	@echo "... source/FriendObject.o"
+	@echo "... source/FriendObject.i"
+	@echo "... source/FriendObject.s"
 	@echo "... source/Game.o"
 	@echo "... source/Game.i"
 	@echo "... source/Game.s"

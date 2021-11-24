@@ -4,8 +4,8 @@
 
 class Player:public GameObject{
 public:
-    Player(sf::Texture & texture, Coordinate & newPosition){
-        aSprite.InitSprite(texture, newPosition);
+    void InitPlayer(sf::Texture & texture, Coordinate & newPosition){
+        aSprite.InitSprite(texture, newPosition, 50, 50);
         Animation newAnimation(0, 2, 1.0f, 0.2f);
         aSprite.SetAnimation(newAnimation);
         health = 100;

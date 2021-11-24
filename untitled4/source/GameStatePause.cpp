@@ -1,14 +1,9 @@
 #include "../headers/GameStatePause.h"
 
 void GameStatePause::InitText() {
-    font.loadFromFile(TEXT_FONT);
-    textPause.setFont(font);
     std::string gameResult;
     gameResult="Pause";
-    textPause.setString(gameResult);
-    textPause.setCharacterSize(32);
-    textPause.setFillColor(sf::Color::White);
-    textPause.setStyle(sf::Text::Bold);
+    textPause.InitText(gameResult);
     sf::FloatRect textRect = textPause.getLocalBounds();
     textPause.setOrigin(textRect.left + textRect.width / 2.0f,
                              textRect.top  + textRect.height/2.0f);
@@ -70,13 +65,13 @@ void GameStatePause::ContinueGame() {
 
 void GameStatePause::InitButtons() {
     buttonContinueGame.setSize(sf::Vector2f (50, 50));
-    buttonContinueGame.setTexture(&renderManager.TextureMnr.getTexture(TX_BTN_CONTINUE));
+    buttonContinueGame.setTexture(&renderManager.textureManager.getTexture(TX_BTN_CONTINUE));
     sf::FloatRect buttonRect = buttonContinueGame.getLocalBounds();
     buttonContinueGame.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonContinueGame.setPosition(SCREEN_WIDTH - 75, 25);
 
     buttonSaveGame.setSize(sf::Vector2f (50, 50));
-    buttonSaveGame.setTexture(&renderManager.TextureMnr.getTexture(TX_BTN_SAVE));
+    buttonSaveGame.setTexture(&renderManager.textureManager.getTexture(TX_BTN_SAVE));
     buttonRect = buttonSaveGame.getLocalBounds();
     buttonSaveGame.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonSaveGame.setPosition(SCREEN_WIDTH - 25, 25);
@@ -88,7 +83,7 @@ void GameStatePause::InitBg(sf::Texture *newBgTexture) {
     bgShape.setTexture(bgTexture);
 }
 
-void GameStatePause::RenderManagerPause::Draw(sf::Text &newTextPause, sf::RectangleShape &newButtonContinue,
+void GameStatePause::RenderManagerPause::Draw(BlinkingText &newTextPause, sf::RectangleShape &newButtonContinue,
                                               sf::RectangleShape &newButtonSave, sf::RectangleShape &bgShape) {
     DrawBg(bgShape);
     DrawButtons(newButtonContinue, newButtonSave);
@@ -96,8 +91,8 @@ void GameStatePause::RenderManagerPause::Draw(sf::Text &newTextPause, sf::Rectan
 }
 
 void GameStatePause::RenderManagerPause::LoadTexture() {
-    TextureMnr.LoadTexture(TX_BTN_CONTINUE, BUTTON_CONTINUE);
-    TextureMnr.LoadTexture(TX_BTN_SAVE, BUTTON_SAVE);
+    textureManager.LoadTexture(TX_BTN_CONTINUE, BUTTON_CONTINUE);
+    textureManager.LoadTexture(TX_BTN_SAVE, BUTTON_SAVE);
 }
 
 void GameStatePause::RenderManagerPause::DrawButtons(sf::RectangleShape &newButtonContinue,
@@ -107,8 +102,10 @@ void GameStatePause::RenderManagerPause::DrawButtons(sf::RectangleShape &newButt
 
 }
 
-void GameStatePause::RenderManagerPause::DrawText(sf::Text &newTextPause) {
-    WindowLink.draw(newTextPause);
+void GameStatePause::RenderManagerPause::DrawText(BlinkingText &newTextPause) {
+    newTextPause.Update();
+    if(newTextPause.GetBlinkState())
+        WindowLink.draw(newTextPause);
 }
 
 void GameStatePause::RenderManagerPause::DrawBg(sf::RectangleShape &newBgShape) {

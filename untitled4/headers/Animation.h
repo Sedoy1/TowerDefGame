@@ -10,8 +10,10 @@ struct Animation{
     unsigned int GetLen() const;
     float timeStart=0.f;
     float timeStep=0.f;
+    //constructor for objects
     Animation(unsigned int new_startFrame, unsigned int new_endFrame, float new_duration, float new_timeStep);
-    Animation(Animation & other);
+    // constructor for text (or objects without frames)
+    Animation(float newDuration, float newTimeStep=1.0f);
     //default constructor for arr
     Animation();
 };

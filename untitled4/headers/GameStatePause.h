@@ -1,6 +1,7 @@
 #ifndef UNTITLED4_GAMESTATEPAUSE_H
 #define UNTITLED4_GAMESTATEPAUSE_H
 #include "GameState.h"
+#include "BlinkingText.h"
 
 class GameStatePause: public GameState{
 public:
@@ -21,13 +22,13 @@ private:
     class RenderManagerPause: public RenderManager{
     public:
         RenderManagerPause(sf::RenderWindow & window, TextureManager & textureManager): RenderManager(window, textureManager){}
-        void Draw(sf::Text &newTextPause, sf::RectangleShape &newButtonContinue,
+        void Draw(BlinkingText &newTextPause, sf::RectangleShape &newButtonContinue,
                   sf::RectangleShape &newButtonSave, sf::RectangleShape &bgShape);
         void LoadTexture();
 
     private:
         void DrawButtons(sf::RectangleShape & newButtonContinue, sf::RectangleShape &newButtonSave);
-        void DrawText(sf::Text & newTextPause);
+        void DrawText(BlinkingText &newTextPause);
         void DrawBg(sf::RectangleShape & newBgShape);
         friend GameStatePause;
     };
@@ -35,9 +36,8 @@ private:
     void ContinueGame();
     void InitText();
     RenderManagerPause renderManager;
-    sf::Text textPause; //TODO сделать текст мигающим
+    BlinkingText textPause;
     sf::RectangleShape buttonContinueGame;
-    //TODO сделать сохранение игры
     sf::RectangleShape buttonSaveGame;
     sf::RectangleShape bgShape;
     sf::Texture * bgTexture;

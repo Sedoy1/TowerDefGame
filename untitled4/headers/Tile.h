@@ -12,15 +12,19 @@ enum TileRes{
 };
 
 
-struct Tile{
+class Tile{
+public:
     int tileType;
-    AnimationSprite sprite;
+    AnimationSprite & GetTile(){
+        return sprite;
+    }
+    bool busy = false;
     Tile()= default;
     bool IsOpen() const {
         return tileType == TR_TRAIL;
     }
     bool IsBuildable() const {
-        return tileType == TR_PLAIN;
+        return tileType == TR_PLAIN && !busy;
     }
     bool IsFinish() const{
         return tileType == TR_FINISH;
@@ -28,6 +32,9 @@ struct Tile{
     bool IsStart() const{
         return tileType == TR_START;
     }
+
+private:
+    AnimationSprite sprite;
 };
 
 #endif //UNTITLED4_TILE_H

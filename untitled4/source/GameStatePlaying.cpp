@@ -2,11 +2,10 @@
 #include <memory>
 
 void GameStatePlaying::StateRealization() {
-    LogicEvent.MoveObject();
+    LogicEvent.GameRealization();
     if(LogicEvent.IsPlayerAlive()) {
         spawnerManager.UpdateWaves();
-        RenderMnr.Draw(Enemies, player, gameField, buttonPauseContinue, buttonSave);
-
+        RenderMnr.Draw();
         if(spawnerManager.GetWaveState()){
             Win();
         }
@@ -38,12 +37,18 @@ void GameStatePlaying::HandleInput() {
                 if(event.mouseButton.button == sf::Mouse::Left) {
                     int xPosition = event.mouseButton.x;
                     int yPosition = event.mouseButton.y;
-                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)) {
+                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)){
                         Pause();
                     }
                 }
-                break;
+                Coordinate position(event.mouseButton.x/50, event.mouseButton.y/50);
+                if(gameField.IsTileBuildable(position)){
+                    gameField.SetBusy(true, position);
+                    spawnerManager.CreateWeaponCannon(position);
+                    break;
+                }
             }
+
             default: break;
         }
     }
@@ -55,12 +60,13 @@ void GameStatePlaying::Update() {
 }
 
 GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &newTextureManager): GameState(game),
-RenderMnr(window, newTextureManager), spawnerManager(newTextureManager), textureManager(newTextureManager){
+RenderMnr(window, newTextureManager, Enemies, player, gameField, buttonPauseContinue, buttonSave, FriendObjects),
+spawnerManager(newTextureManager), textureManager(newTextureManager){
     LoadField();
     InitPlayer();
     InitButtons();
-    LogicEvent.SetPlayableRules(enemyPath, &Enemies, player);
-    spawnerManager.InitSpawnerOption(&Enemies, &enemyPath.begin()->second);
+    LogicEvent.SetPlayableRules(enemyPath, Enemies, player, FriendObjects, gameField);
+    spawnerManager.InitSpawnerOption(Enemies, &enemyPath.begin()->second, FriendObjects);
 }
 
 GameStatePlaying::~GameStatePlaying() {
@@ -70,14 +76,13 @@ GameStatePlaying::~GameStatePlaying() {
 }
 
 void GameStatePlaying::InitPlayer() {
-    player = std::make_shared<Player>(RenderMnr.TextureMnr.getTexture(TX_PLAYER), enemyPath.rbegin()->second);
+    player.InitPlayer(RenderMnr.GetTexture(TX_PLAYER), enemyPath.rbegin()->second);
 }
 
 
-void GameStatePlaying::RenderManagerPlay::DrawField(GameField &newGameField) {
-    for(GameField::Iterator iterator = newGameField.Begin(); iterator != newGameField.End(); iterator ++){
-        iterator.GetTile().sprite.Update();
-        WindowLink.draw(iterator.GetTile().sprite);
+void GameStatePlaying::RenderManagerPlay::DrawField() {
+    for(GameField::Iterator iterator = gameField->Begin(); iterator != gameField->End(); iterator ++){
+        WindowLink.draw(iterator.GetTile().GetTile());
     }
 }
 
@@ -87,38 +92,36 @@ void GameStatePlaying::LoadField() {
     for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
         int id = iterator.GetTile().tileType;
         sf::Texture & texture = textureManager.getTexture(TexturesID(id));
-        iterator.GetTile().sprite.setTexture(texture);
-        iterator.GetTile().sprite.setPosition(iterator.coordinates.x * RenderManagerPlay::TILE_WIDTH,
+        iterator.GetTile().GetTile().setTexture(texture);
+        iterator.GetTile().GetTile().setPosition(iterator.coordinates.x * RenderManagerPlay::TILE_WIDTH,
                                               iterator.coordinates.y * RenderManagerPlay::TILE_HEIGHT);
     }
     enemyPath = *gameField.ComputeEnemiesPath();
 }
 
 
-void GameStatePlaying::RenderManagerPlay::Draw(std::vector<std::shared_ptr<Enemy>> &enemyVector, const std::shared_ptr<Player> &player,
-                                               GameField &gameField,
-                                               sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave) {
-    DrawField(gameField);
-    DrawEnemies(enemyVector);
-    DrawPlayer(player);
-    DrawButtons(buttonPause, buttonSave);
+void GameStatePlaying::RenderManagerPlay::Draw() {
+    DrawField();
+    DrawFriendsObjects();
+    DrawEnemies();
+    DrawPlayer();
+    DrawButtons();
 }
 
 
-void GameStatePlaying::RenderManagerPlay::DrawEnemies(std::vector<std::shared_ptr<Enemy>> &enemyVector) {
-    for(auto object: enemyVector){
-        object->GetSprite().Update();
+void GameStatePlaying::RenderManagerPlay::DrawEnemies() {
+    for(auto object: *enemyVector)
         WindowLink.draw(object->GetSprite());
-    }
 }
 
 unsigned int GameStatePlaying::RenderManagerPlay::TILE_WIDTH = 50;
 unsigned int GameStatePlaying::RenderManagerPlay::TILE_HEIGHT = 50;
 
 void GameStatePlaying::RenderManagerPlay::LoadObjectsTexture() {
-    TextureMnr.LoadTexture(TX_BLACK_GHOST, BLACK_GHOST_TEXTURE);
-    TextureMnr.LoadTexture(TX_WHITE_GHOST, WHITE_GHOST_TEXTURE);
-    TextureMnr.LoadTexture(TX_PLAYER, PLAYER_TEXTURE);
+    textureManager.LoadTexture(TX_BLACK_GHOST, BLACK_GHOST_TEXTURE);
+    textureManager.LoadTexture(TX_WHITE_GHOST, WHITE_GHOST_TEXTURE);
+    textureManager.LoadTexture(TX_PLAYER, PLAYER_TEXTURE);
+    textureManager.LoadTexture(TX_CANNON, CANNON_TEXTURE);
 }
 
 GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
@@ -126,35 +129,47 @@ GameStatePlaying::RenderManagerPlay::~RenderManagerPlay() {
     std::cout<<"end renderManager play\n";
 }
 
-void GameStatePlaying::RenderManagerPlay::DrawPlayer(const std::shared_ptr<Player> &player) {
-    player->GetSprite().Update();
+void GameStatePlaying::RenderManagerPlay::DrawPlayer() {
     WindowLink.draw(player->GetSprite());
 }
 
 void GameStatePlaying::RenderManagerPlay::LoadFieldTexture() {
-    TextureMnr.LoadTexture(TX_GRASS, GRASS_TEXTURE);
-    TextureMnr.LoadTexture(TX_START, START_TEXTURE);
-    TextureMnr.LoadTexture(TX_PLAIN, PLAIN_TEXTURE);
-    TextureMnr.LoadTexture(TX_TRAIL, TRAIL_TEXTURE);
-    TextureMnr.LoadTexture(TX_FINISH, FINISH_TEXTURE);
+    textureManager.LoadTexture(TX_GRASS, GRASS_TEXTURE);
+    textureManager.LoadTexture(TX_START, START_TEXTURE);
+    textureManager.LoadTexture(TX_PLAIN, PLAIN_TEXTURE);
+    textureManager.LoadTexture(TX_TRAIL, TRAIL_TEXTURE);
+    textureManager.LoadTexture(TX_FINISH, FINISH_TEXTURE);
 }
 
 void GameStatePlaying::RenderManagerPlay::LoadButtonsTexture() {
-    TextureMnr.LoadTexture(TX_BTN_PAUSE, BUTTON_PAUSE_CONTINUE);
-    TextureMnr.LoadTexture(TX_BTN_SAVE, BUTTON_SAVE);
+    textureManager.LoadTexture(TX_BTN_PAUSE, BUTTON_PAUSE_CONTINUE);
+    textureManager.LoadTexture(TX_BTN_SAVE, BUTTON_SAVE);
 }
 
-GameStatePlaying::RenderManagerPlay::RenderManagerPlay(sf::RenderWindow &window, TextureManager &textureManager)
-        : RenderManager(window, textureManager) {
+void GameStatePlaying::RenderManagerPlay::DrawButtons() {
+    WindowLink.draw(*buttonSave);
+    WindowLink.draw(*buttonPause);
+}
+
+void GameStatePlaying::RenderManagerPlay::DrawFriendsObjects() {
+    for(auto weapon : *friendVector)
+        WindowLink.draw(weapon->GetSprite());
+}
+
+GameStatePlaying::RenderManagerPlay::RenderManagerPlay(sf::RenderWindow &window, TextureManager &textureManager,
+                                                       std::vector<std::shared_ptr<Enemy>> &enemyVector,
+                                                       Player & player, GameField &gameField,
+                                                       sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave,
+                                                       std::vector<std::shared_ptr<FriendObject>> &friendVector): RenderManager(window, textureManager){
+    this->enemyVector = &enemyVector;
+    this->player = &player;
+    this->gameField = &gameField;
+    this->buttonSave = &buttonSave;
+    this->buttonPause = &buttonPause;
+    this->friendVector = &friendVector;
     LoadFieldTexture();
     LoadObjectsTexture();
     LoadButtonsTexture();
-}
-
-void GameStatePlaying::RenderManagerPlay::DrawButtons(sf::RectangleShape &newButtonPause,
-                                                      sf::RectangleShape &newButtonSave) {
-    WindowLink.draw(newButtonPause);
-    WindowLink.draw(newButtonSave);
 }
 
 void GameStatePlaying::GameOver() {
@@ -186,7 +201,7 @@ void GameStatePlaying::Pause() {
     sf::IntRect bound(50, 0, 50, 50);
     buttonPauseContinue.setTextureRect(bound);
     Game_->Window.clear();
-    RenderMnr.Draw(Enemies, player, gameField, buttonPauseContinue, buttonSave);
+    RenderMnr.Draw();
     Game_->Window.display();
     auto bgTexture = new sf::Texture;
     bgTexture->create(SCREEN_WIDTH, SCREEN_HEIGHT);

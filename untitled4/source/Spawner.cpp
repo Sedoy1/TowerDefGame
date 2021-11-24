@@ -44,9 +44,11 @@ void Spawner::UpdateWaves() {
     }
 }
 
-void Spawner::InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> *newEnemiesVector, Coordinate *newStartEnemyPosition) {
-    enemiesVector = newEnemiesVector;
+void Spawner::InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> &newEnemiesVector, Coordinate *newStartEnemyPosition,
+                                std::vector<std::shared_ptr<FriendObject>> &friendsVector) {
+    enemiesVector = &newEnemiesVector;
     startEnemyPosition = newStartEnemyPosition;
+    friendsObjects = &friendsVector;
     InitWaves();
 }
 
@@ -64,4 +66,9 @@ void Spawner::CreateEnemies(int enemiesType) {
 
 bool Spawner::GetWaveState() {
     return isWaveEnd;
+}
+
+void Spawner::CreateWeaponCannon(Coordinate &position) {
+    std::shared_ptr<Cannon> cannon (new Cannon(textureManager.getTexture(TX_CANNON), *enemiesVector, position));
+    friendsObjects->push_back(cannon);
 }

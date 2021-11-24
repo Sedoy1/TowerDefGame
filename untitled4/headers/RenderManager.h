@@ -7,13 +7,15 @@
 class RenderManager{
 public:
     sf::RenderWindow & WindowLink;
-    TextureManager & TextureMnr;
-    RenderManager(sf::RenderWindow &window, TextureManager & textureManager):WindowLink(window), TextureMnr(textureManager){
+    RenderManager(sf::RenderWindow &window, TextureManager & textureManager): WindowLink(window), textureManager(textureManager){
         font.loadFromFile(TEXT_FONT);
     }
-
+    sf::Texture & GetTexture(int ID){
+        return textureManager.getTexture(ID);
+    }
 protected:
     sf::Font font;
+    TextureManager & textureManager;
 };
 
 

@@ -48,8 +48,13 @@ void AnimationSprite::SetAnimation(Animation & newAnimation) {
     animation = newAnimation;
 }
 
-void AnimationSprite::InitSprite(sf::Texture &newTexture, Coordinate &newPosition) {
+void
+AnimationSprite::InitSprite(sf::Texture &newTexture, Coordinate &newPosition, int newFrameWidth, int newFrameHeight) {
     this->setTexture(newTexture);
-    this->setPosition(newPosition.x * frameWidth, newPosition.y * frameHeight);
+    this->setPosition(newPosition.x * TileSize, newPosition.y * TileSize);
+    this->setScale(TileSize/newFrameWidth, TileSize/newFrameHeight);
+    this->setTextureRect(sf::IntRect(sf::Vector2i (0, 0),sf::Vector2i(newFrameWidth, newFrameHeight)));
+    frameWidth = newFrameWidth;
+    frameHeight = newFrameHeight;
 }
 

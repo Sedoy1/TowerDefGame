@@ -5,20 +5,24 @@
 #include "EnemyGhostWhite.h"
 #include "stack"
 #include "TextureManager.h"
+#include "Cannon.h"
 
 class Spawner {
 private:
     std::stack <EnemiesWave> enemiesWaves;
     std::vector<std::shared_ptr<Enemy>> * enemiesVector;
+    std::vector<std::shared_ptr<FriendObject>> * friendsObjects;
     TextureManager & textureManager;
     Coordinate * startEnemyPosition;
     void CreateGhostEnemy();
     void CreateWhiteGhostEnemy();
     void CreateEnemies(int enemiesType);
+
     bool isWaveEnd = false;
 public:
     Spawner(TextureManager &newTextureMng);
-    void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> *newEnemiesVector, Coordinate * newStartEnemyPosition);
+    void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> &newEnemiesVector, Coordinate *newStartEnemyPosition,
+                           std::vector<std::shared_ptr<FriendObject>> &friendsVector);
     void UpdateWaves();
     void CreateWeaponCannon(Coordinate & position);
     void InitWaves();

@@ -9,7 +9,6 @@ class GameObject {
         int health;
         int damage;
         AnimationSprite aSprite;
-
     public:
         int GetHealth();
         void SetHealth(int new_health);

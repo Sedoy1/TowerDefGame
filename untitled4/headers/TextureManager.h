@@ -11,8 +11,9 @@ enum TexturesID{
     TX_FINISH,
     TX_MENU_BG,
     TX_BTN_START,
+    TX_BTN_OPTIONS,
+    TX_BTN_LOAD_GAME,
     TX_BTN_EXIT,
-    TX_BTN_CONTINUE_PAUSE,
     TX_BTN_CONTINUE,
     TX_BTN_PAUSE,
     TX_BTN_SAVE,
@@ -20,7 +21,10 @@ enum TexturesID{
     TX_BTN_RESTART,
     TX_PLAYER,
     TX_BLACK_GHOST,
-    TX_WHITE_GHOST
+    TX_WHITE_GHOST,
+    TX_RED_GHOST, //TODO добавить еще 2 вида врагов
+    TX_BLUE_GHOST,
+    TX_CANNON
 };
 
 class TextureManager{

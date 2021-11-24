@@ -24,10 +24,10 @@ void GameField::InitField() {
         iter.GetTile().tileType = MAP[iter.coordinates.y][iter.coordinates.x];
         if(iter.GetTile().tileType == TR_GRASS){
             Animation grass(0, 2, 1.0f, 0.1f);
-            iter.GetTile().sprite.SetAnimation(grass);
+            iter.GetTile().GetTile().SetAnimation(grass);
         }
         else
-            iter.GetTile().sprite.SetAnimation(staticAnimation);
+            iter.GetTile().GetTile().SetAnimation(staticAnimation);
     }
 }
 
@@ -76,6 +76,13 @@ bool GameField::IsTileFinish(const Coordinate &coord) const {
     if (coord.x < 0 || coord.x > FIELD_WIDTH || coord.y < 0 || coord.y > FIELD_HEIGHT)
         return false;
     return GetTileAt(coord).IsFinish();
+}
+
+void GameField::SetBusy(bool newBusyStatus, const Coordinate &coord) const {
+    if (coord.x < 0 || coord.x > FIELD_WIDTH || coord.y < 0 || coord.y > FIELD_HEIGHT)
+        std::cout<<"coordinate out of range\n";
+    else
+        GetTileAt(coord).busy = newBusyStatus;
 }
 
 bool operator!=(const GameField::Iterator& first, const GameField::Iterator& second) {

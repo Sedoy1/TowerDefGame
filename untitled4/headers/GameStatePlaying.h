@@ -8,6 +8,7 @@
 #include "Spawner.h"
 #include "GameStateGameEnd.h"
 #include "GameStatePause.h"
+#include "Cannon.h"
 
 class   GameStatePlaying : public GameState{
 public:
@@ -19,21 +20,30 @@ public:
 private:
     // subclass of render objects
     class RenderManagerPlay: public RenderManager{
+        //TODO передавать параметры через функцию?
     private:
-        void DrawField(GameField &newGameField);
-        void DrawEnemies(std::vector<std::shared_ptr<Enemy>> &enemyVector);
-        void DrawButtons(sf::RectangleShape &newButtonPause, sf::RectangleShape &newButtonSave);
+        void DrawField();
+        void DrawEnemies();
+        void DrawButtons();
+        void DrawFriendsObjects();
+        void DrawPlayer();
         void LoadObjectsTexture();
         void LoadFieldTexture();
         void LoadButtonsTexture();
+        std::vector<std::shared_ptr<Enemy>> * enemyVector;
+        Player * player;
+        GameField *gameField;
+        sf::RectangleShape * buttonPause;
+        sf::RectangleShape * buttonSave;
+        std::vector<std::shared_ptr<FriendObject>> * friendVector;
     public:
-        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager);
+        RenderManagerPlay(sf::RenderWindow &window, TextureManager & textureManager, std::vector<std::shared_ptr<Enemy>> &enemyVector,
+                          Player & player, GameField &gameField,
+                          sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave, std::vector<std::shared_ptr<FriendObject>> &friendVector);
         ~RenderManagerPlay();
-        void Draw(std::vector<std::shared_ptr<Enemy>> &enemyVector, const std::shared_ptr<Player> &player, GameField &gameField,
-                  sf::RectangleShape &buttonPause, sf::RectangleShape &buttonSave);
+        void Draw();
         static unsigned int TILE_HEIGHT;
         static unsigned int TILE_WIDTH;
-        void DrawPlayer(const std::shared_ptr<Player> &player);
     };
 
     void GameOver();
@@ -47,8 +57,9 @@ private:
     RenderManagerPlay RenderMnr;
     Spawner spawnerManager;
     std::vector<std::shared_ptr<Enemy> > Enemies;
+    std::vector<std::shared_ptr<FriendObject>> FriendObjects;
     std::map<int, Coordinate> enemyPath;
-    std::shared_ptr<Player> player;
+    Player player;
     sf::RectangleShape buttonPauseContinue;
     sf::RectangleShape buttonSave;
     TextureManager & textureManager;

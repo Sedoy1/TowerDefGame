@@ -17,13 +17,7 @@ class GameField: public Tile{
         Tile & GetTile(){ return firstElement[coordinates.y][coordinates.x];}
     };
 
-        const Tile & GetTileAt(const Coordinate & cord) const {
-            assert(cord.x >= 0 && cord.x < FIELD_WIDTH);
-            assert(cord.y >= 0 && cord.y < FIELD_HEIGHT);
-            return field[cord.y][cord.x];
-        }
-
-        Tile & GetTileAt(const Coordinate & cord) {
+        Tile & GetTileAt(const Coordinate & cord) const{
             assert(cord.x >= 0 && cord.x < FIELD_WIDTH);
             assert(cord.y >= 0 && cord.y < FIELD_HEIGHT);
             return field[cord.y][cord.x];
@@ -34,6 +28,7 @@ class GameField: public Tile{
         bool IsTileBuildable(const Coordinate &coord) const;
         bool IsTileFinish(const Coordinate &coord) const;
         void InitField();
+        void SetBusy(bool newBusyStatus, const Coordinate & coord) const;
         // recursion function for find path
         void FindPath(std::map<int, Coordinate> & currentPath, GameField::Iterator & iter);
         std::map<int, Coordinate> * ComputeEnemiesPath();

@@ -9,15 +9,16 @@
 class AnimationSprite : public sf::Sprite{
 private:
     //TODO in future should init these param in constructor
-    const int frameWidth = 50;
-    const int frameHeight = 50;
+    int frameWidth=50;
+    int frameHeight=50;
     void UpdateAnimation();
     void UpdateMovements();
     Animation animation;
+    const float TileSize = 50.0f;
 public:
     //constructor for arr use only in tiles
     AnimationSprite() = default;
-    void InitSprite(sf::Texture &newTexture, Coordinate &newPosition);
+    void InitSprite(sf::Texture &newTexture, Coordinate &newPosition, const int newFrameWidth=50, const int newFrameHeight=50);
     void Update();
     bool IsArrived() const;
     void SetAnimation(Animation & newAnimation);

@@ -26,11 +26,11 @@ Animation::Animation() {
     currentAnim = 0;
 }
 
-Animation::Animation(Animation & other) {
-    startFrame = other.startFrame;
-    endFrame = other.endFrame;
-    duration = other.duration;
-    timeStart = other.timeStart;
-    timeStep = other.timeStep;
-    currentAnim = other.currentAnim;
+Animation::Animation(float newDuration, float newTimeStep) {
+    startFrame = 0;
+    endFrame = 1;
+    duration = newDuration;
+    timeStep = newTimeStep;
+    timeStart = 0.0f;
+    currentAnim = 0;
 }
