@@ -11,7 +11,7 @@ public:
         font.loadFromFile(TEXT_FONT);
     }
     sf::Texture & GetTexture(int ID){
-        return textureManager.getTexture(ID);
+        return textureManager.GetTexture(ID);
     }
 protected:
     sf::Font font;

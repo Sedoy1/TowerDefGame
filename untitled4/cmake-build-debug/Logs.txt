@@ -1,0 +1,4 @@
+Health - -2
+Damage - 5
+Speed - 1
+Step - 11

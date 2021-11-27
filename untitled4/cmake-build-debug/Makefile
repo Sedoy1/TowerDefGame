@@ -129,6 +129,30 @@ untitled4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/build
 .PHONY : untitled4/fast
 
+HandleController.o: HandleController.cpp.o
+.PHONY : HandleController.o
+
+# target to build an object file
+HandleController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/HandleController.cpp.o
+.PHONY : HandleController.cpp.o
+
+HandleController.i: HandleController.cpp.i
+.PHONY : HandleController.i
+
+# target to preprocess a source file
+HandleController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/HandleController.cpp.i
+.PHONY : HandleController.cpp.i
+
+HandleController.s: HandleController.cpp.s
+.PHONY : HandleController.s
+
+# target to generate assembly for a file
+HandleController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/HandleController.cpp.s
+.PHONY : HandleController.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -248,6 +272,30 @@ source/EnemiesWave.s: source/EnemiesWave.cpp.s
 source/EnemiesWave.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.s
 .PHONY : source/EnemiesWave.cpp.s
+
+source/Enemy.o: source/Enemy.cpp.o
+.PHONY : source/Enemy.o
+
+# target to build an object file
+source/Enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Enemy.cpp.o
+.PHONY : source/Enemy.cpp.o
+
+source/Enemy.i: source/Enemy.cpp.i
+.PHONY : source/Enemy.i
+
+# target to preprocess a source file
+source/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Enemy.cpp.i
+.PHONY : source/Enemy.cpp.i
+
+source/Enemy.s: source/Enemy.cpp.s
+.PHONY : source/Enemy.s
+
+# target to generate assembly for a file
+source/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Enemy.cpp.s
+.PHONY : source/Enemy.cpp.s
 
 source/FriendObject.o: source/FriendObject.cpp.o
 .PHONY : source/FriendObject.o
@@ -465,6 +513,54 @@ source/GameStatePlaying.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.s
 .PHONY : source/GameStatePlaying.cpp.s
 
+source/Logger.o: source/Logger.cpp.o
+.PHONY : source/Logger.o
+
+# target to build an object file
+source/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Logger.cpp.o
+.PHONY : source/Logger.cpp.o
+
+source/Logger.i: source/Logger.cpp.i
+.PHONY : source/Logger.i
+
+# target to preprocess a source file
+source/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Logger.cpp.i
+.PHONY : source/Logger.cpp.i
+
+source/Logger.s: source/Logger.cpp.s
+.PHONY : source/Logger.s
+
+# target to generate assembly for a file
+source/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Logger.cpp.s
+.PHONY : source/Logger.cpp.s
+
+source/Player.o: source/Player.cpp.o
+.PHONY : source/Player.o
+
+# target to build an object file
+source/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Player.cpp.o
+.PHONY : source/Player.cpp.o
+
+source/Player.i: source/Player.cpp.i
+.PHONY : source/Player.i
+
+# target to preprocess a source file
+source/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Player.cpp.i
+.PHONY : source/Player.cpp.i
+
+source/Player.s: source/Player.cpp.s
+.PHONY : source/Player.s
+
+# target to generate assembly for a file
+source/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Player.cpp.s
+.PHONY : source/Player.cpp.s
+
 source/Spawner.o: source/Spawner.cpp.o
 .PHONY : source/Spawner.o
 
@@ -522,6 +618,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled4"
+	@echo "... HandleController.o"
+	@echo "... HandleController.i"
+	@echo "... HandleController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -537,6 +636,9 @@ help:
 	@echo "... source/EnemiesWave.o"
 	@echo "... source/EnemiesWave.i"
 	@echo "... source/EnemiesWave.s"
+	@echo "... source/Enemy.o"
+	@echo "... source/Enemy.i"
+	@echo "... source/Enemy.s"
 	@echo "... source/FriendObject.o"
 	@echo "... source/FriendObject.i"
 	@echo "... source/FriendObject.s"
@@ -564,6 +666,12 @@ help:
 	@echo "... source/GameStatePlaying.o"
 	@echo "... source/GameStatePlaying.i"
 	@echo "... source/GameStatePlaying.s"
+	@echo "... source/Logger.o"
+	@echo "... source/Logger.i"
+	@echo "... source/Logger.s"
+	@echo "... source/Player.o"
+	@echo "... source/Player.i"
+	@echo "... source/Player.s"
 	@echo "... source/Spawner.o"
 	@echo "... source/Spawner.i"
 	@echo "... source/Spawner.s"

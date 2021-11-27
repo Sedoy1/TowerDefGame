@@ -5,7 +5,7 @@
 #include "../headers/GameObject.h"
 
 
-int GameObject::GetHealth() {
+int GameObject::GetHealth(){
     return health;
 }
 
@@ -23,4 +23,10 @@ void GameObject::SetDamage(int new_damage) {
 
 AnimationSprite & GameObject::GetSprite() {
     return aSprite;
+}
+
+
+std::ostream& operator<<(std::ostream &os, const GameObject & object) {
+    object.GetInfo(os);
+    return os;
 }

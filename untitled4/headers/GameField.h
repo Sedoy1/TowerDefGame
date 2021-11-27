@@ -34,7 +34,7 @@ class GameField: public Tile{
     void GeneratePathBetweenPoints(Coordinate point1, Coordinate point2, std::vector<Coordinate> &path);
     int MAP[FIELD_HEIGHT][FIELD_WIDTH] = {0};
     // recursion function for find path
-        void FindPath(std::map<int, Coordinate> & currentPath, GameField::Iterator & iter);
+    void FindPath(std::map<int, Coordinate> & currentPath, GameField::Iterator & iter);
     std::map<int, Coordinate> * ComputeEnemiesPath();
     Tile ** field;
 };

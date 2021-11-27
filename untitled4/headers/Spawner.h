@@ -31,6 +31,9 @@ public:
     void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> &newEnemiesVector, Coordinate *newStartEnemyPosition,
                            std::vector<std::shared_ptr<FriendObject>> &friendsVector);
     void UpdateWaves();
+
+    template<typename T>
+    void CreateWeapon(T & func, sf::Texture & texture, Coordinate & position);
     void CreateWeaponCannonBlue(Coordinate & position);
     void CreateWeaponCannonOrange(Coordinate & position);
     void CreateWeaponCannonBlack(Coordinate & position);

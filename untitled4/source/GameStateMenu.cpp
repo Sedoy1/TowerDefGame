@@ -82,7 +82,7 @@ void GameStateMenu::Update() {
 }
 
 void GameStateMenu::StartGame() {
-    Game_->pushState(new GameStatePlaying(Game_, Game_->Window, Game_->TextureMnr));
+    Game_->PushState(new GameStatePlaying(Game_, Game_->Window, Game_->TextureMnr));
 }
 
 GameStateMenu::~GameStateMenu() {

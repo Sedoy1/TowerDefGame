@@ -13,6 +13,7 @@ public:
         damage = 1;
         range = 10;
         shootDelay = 5.0f;
+        position = newPosition;
         this->enemyVector = &enemyVector;
     }
 };

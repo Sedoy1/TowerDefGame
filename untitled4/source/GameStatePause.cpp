@@ -7,7 +7,7 @@ void GameStatePause::InitText() {
     sf::FloatRect textRect = textPause.getLocalBounds();
     textPause.setOrigin(textRect.left + textRect.width / 2.0f,
                              textRect.top  + textRect.height/2.0f);
-    textPause.setPosition(sf::Vector2f(SCREEN_HEIGHT / 2.0f, SCREEN_WIDTH / 2.0f));
+    textPause.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f));
 }
 
 void GameStatePause::Update() {
@@ -60,18 +60,18 @@ void GameStatePause::SaveGame() {
 }
 
 void GameStatePause::ContinueGame() {
-    Game_->popState();
+    Game_->PopState();
 }
 
 void GameStatePause::InitButtons() {
     buttonContinueGame.setSize(sf::Vector2f (50, 50));
-    buttonContinueGame.setTexture(&renderManager.textureManager.getTexture(TX_BTN_CONTINUE));
+    buttonContinueGame.setTexture(&renderManager.textureManager.GetTexture(TX_BTN_CONTINUE));
     sf::FloatRect buttonRect = buttonContinueGame.getLocalBounds();
     buttonContinueGame.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonContinueGame.setPosition(SCREEN_WIDTH - 75, 25);
 
     buttonSaveGame.setSize(sf::Vector2f (50, 50));
-    buttonSaveGame.setTexture(&renderManager.textureManager.getTexture(TX_BTN_SAVE));
+    buttonSaveGame.setTexture(&renderManager.textureManager.GetTexture(TX_BTN_SAVE));
     buttonRect = buttonSaveGame.getLocalBounds();
     buttonSaveGame.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonSaveGame.setPosition(SCREEN_WIDTH - 25, 25);

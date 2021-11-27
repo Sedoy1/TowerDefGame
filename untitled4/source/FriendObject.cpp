@@ -36,10 +36,21 @@ void FriendObject::FindNewAim() {
     }
 }
 
-bool FriendObject::GetShootingState() {
+bool FriendObject::GetShootingState() const {
     return shotState;
 }
 
 void FriendObject::SetShootingState(bool newState) {
     shotState = newState;
+}
+
+void FriendObject::GetInfo(std::ostream &os) const {
+    os <<"Damage - "<<damage <<"\n"
+       <<"Shot speed - "<<shootDelay<<"\n"
+       <<"Position - "<<" x "<<position.x<<"  y "<<position.y<<"\n";
+       if (currentAim != nullptr) {
+           os <<"----------AIM DATA----------\n"
+           <<*currentAim
+           << "----------------------------\n";
+       }
 }

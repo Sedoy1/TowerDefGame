@@ -29,6 +29,8 @@
 #define BUTTON_CANNON_ORANGE "../assets/button_cannon_orange.png"
 #define BUTTON_CANNON_BLACK "../assets/button_cannon_black.png"
 #define HEALTH_TEXTURE "../assets/health.png"
+#define BG_GAME_OVER "../assets/bg_gameOver.png"
+#define BG_GAME_WIN "../assets/bg_win.png"
 #include <SFML/Graphics.hpp>
 
 #endif //UNTITLED4_ELEMENTSDEFINITION_H

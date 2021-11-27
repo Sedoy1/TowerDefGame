@@ -8,6 +8,8 @@
 #include "Spawner.h"
 #include "GameStateGameEnd.h"
 #include "GameStatePause.h"
+#include "CannonBlack.h"
+#include "Logger.h"
 
 class   GameStatePlaying : public GameState{
 public:
@@ -18,10 +20,10 @@ public:
     ~GameStatePlaying() override;
 private:
     enum{
-        NoCannon,
-        CannonBlue,
-        CannonOrange,
-        CannonBlack
+        NoCannonID,
+        CannonBlueID,
+        CannonOrangeID,
+        CannonBlackID
     };
     // subclass of render objects
     class RenderManagerPlay: public RenderManager{
@@ -65,6 +67,7 @@ private:
     void LoadField();
     void InitButtons();
     void InitHealth();
+    void LoggerAction();
     GameField gameField;
     GameLogic LogicEvent;
     RenderManagerPlay RenderMnr;
@@ -81,7 +84,8 @@ private:
     sf::Text healthInfo;
     sf::Font font;
     Player player;
-    int selectedCannonId = NoCannon;
+    int selectedCannonId = NoCannonID;
+    Logger logger;
 };
 
 #endif //UNTITLED4_GAMESTATEPLAYING_H

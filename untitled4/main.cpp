@@ -5,7 +5,7 @@
 int main()
 {
     Game game;
-    game.pushState(new GameStateMenu(&game, game.Window, game.TextureMnr));
-    game.gameLoop();
+    game.PushState(new GameStateMenu(&game, game.Window, game.TextureMnr));
+    game.GameLoop();
     return 0;
 }

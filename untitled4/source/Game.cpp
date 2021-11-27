@@ -4,43 +4,44 @@
 
 class GameState;
 
-void Game::gameLoop() {
+void Game::GameLoop() {
     while (this->Window.isOpen()){
-        if (getState() != nullptr) {
-            getState()->StateRealization();
-            getState()->HandleInput();
-            getState()->Update();
+        if (GetState() != nullptr) {
+            GetState()->StateRealization();
+            GetState()->HandleInput();
+            GetState()->Update();
         }
     }
 }
 
-GameState *Game::getState() {
+GameState *Game::GetState() {
     return (this->States.empty()) ? nullptr : this->States.top();
 }
 
-void Game::pushState(GameState *state) {
+void Game::PushState(GameState *state) {
     this->States.push(state);
 }
 
-void Game::popState() {
+void Game::PopState() {
     delete this->States.top();
     this->States.pop();
 }
 
-void Game::changeState(GameState *state) {
+void Game::ChangeState(GameState *state) {
     if(!this->States.empty()){
-        popState();
+        PopState();
     }
-    pushState(state);
+    PushState(state);
 }
 
 Game::Game() {
+    //TODO в настройках можно редачить размер поля
     Window.create(sf::VideoMode(500, 600), "Game");
-    Window.setFramerateLimit(60);
+    Window.setFramerateLimit(50);
     TextureMnr.LoadTexture(TX_MENU_BG, MENU_BG_TEXTURE);
 }
 
 Game::~Game() {
     std::cout<<"Game destructor"<<std::endl;
-    while(!States.empty()){popState();}
+    while(!States.empty()){ PopState();}
 }

@@ -12,11 +12,11 @@ class Game{
     public:
     sf::RenderWindow Window;
     TextureManager TextureMnr;
-    void gameLoop();
-    void pushState(GameState * state);
-    void popState();
-    void changeState(GameState * state);
-    GameState * getState();
+    void GameLoop();
+    void PushState(GameState * state);
+    void PopState();
+    void ChangeState(GameState * state);
+    GameState * GetState();
     Game();
     ~Game();
 };

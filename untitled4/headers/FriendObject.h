@@ -1,5 +1,7 @@
 #ifndef UNTITLED4_FRIENDOBJECT_H
 #define UNTITLED4_FRIENDOBJECT_H
+
+#include <ostream>
 #include "GameObject.h"
 #include "Enemy.h"
 
@@ -16,8 +18,9 @@ protected:
     void Shoot();
     void CheckAim();
     void FindNewAim();
+    void GetInfo(std:: ostream & os) const override;
 public:
-    bool GetShootingState();
+    bool GetShootingState() const;
     void SetShootingState(bool newState);
     void Update();
 };

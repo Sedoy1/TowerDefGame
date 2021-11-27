@@ -26,12 +26,14 @@ enum TexturesID{
     TX_BTN_WEAPON_BLACK,
     TX_BLACK_GHOST,
     TX_WHITE_GHOST,
-    TX_RED_GHOST, //TODO добавить еще 2 вида врагов
+    TX_RED_GHOST,
     TX_BROWN_GHOST,
     TX_BLUE_CANNON,
     TX_ORANGE_CANNON,
     TX_BLACK_CANNON,
-    TX_HEALTH
+    TX_HEALTH,
+    TX_BG_GAME_OVER,
+    TX_BG_GAME_WIN
 };
 
 class TextureManager{
@@ -39,7 +41,7 @@ class TextureManager{
         std::map<int , sf::Texture> Textures;
     public:
         void LoadTexture(int Id, const std::string & Path);
-        sf::Texture & getTexture(int Id);
+        sf::Texture & GetTexture(int Id);
 };
 
 #endif //UNTITLED4_TEXTUREMANAGER_H

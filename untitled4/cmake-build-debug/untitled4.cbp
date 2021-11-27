@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.cpp">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -154,6 +160,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Logger.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Map.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -190,6 +199,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Enemy.cpp">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/FriendObject.cpp">
 			<Option target="untitled4"/>
 		</Unit>
@@ -215,6 +227,12 @@
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Logger.cpp">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Player.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp">

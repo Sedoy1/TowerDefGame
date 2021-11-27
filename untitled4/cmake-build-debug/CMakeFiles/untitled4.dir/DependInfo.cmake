@@ -8,11 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/HandleController.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/main.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/main.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Animation.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Animation.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/AnimationSprite.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/BlinkingText.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/BlinkingText.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/EnemiesWave.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/EnemiesWave.cpp.o"
+  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Enemy.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Enemy.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/FriendObject.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/FriendObject.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Game.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Game.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameField.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameField.cpp.o"
@@ -22,6 +24,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePause.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStatePause.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
+  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Logger.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Logger.cpp.o"
+  "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Player.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Player.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/TextureManager.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
   )

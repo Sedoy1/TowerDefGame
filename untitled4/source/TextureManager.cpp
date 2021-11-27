@@ -1,6 +1,6 @@
 #include "../headers/TextureManager.h"
 
-sf::Texture &TextureManager::getTexture(const int Id) {
+sf::Texture &TextureManager::GetTexture(const int Id) {
     return Textures.at(Id);
 }
 

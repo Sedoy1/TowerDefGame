@@ -3,6 +3,7 @@
 
 void GameStatePlaying::StateRealization() {
     LogicEvent.GameRealization();
+    logger.GetLogs();
     if(LogicEvent.IsPlayerAlive()) {
         spawnerManager.UpdateWaves();
         RenderMnr.Draw();
@@ -29,9 +30,13 @@ void GameStatePlaying::HandleInput() {
             }
             case sf::Event::KeyPressed:
             {
-                if(event.key.code == sf::Keyboard::Escape) this->Game_->Window.close();
+                if(event.key.code == sf::Keyboard::Escape)
+                    this->Game_->Window.close();
+                else if(event.key.code == sf::Keyboard::L){
+                    LoggerAction();
+                    }
+                }
                 break;
-            }
             case sf::Event::MouseButtonPressed:
             {
                 if(event.mouseButton.button == sf::Mouse::Left) {
@@ -56,31 +61,31 @@ void GameStatePlaying::HandleInput() {
                 Coordinate position(event.mouseButton.x/50, event.mouseButton.y/50);
                 if(gameField.IsTileBuildable(position)){
                     switch (selectedCannonId) {
-                        case NoCannon: {
+                        case NoCannonID: {
                             break;
                         }
-                        case CannonBlue: {
+                        case CannonBlueID: {
                             gameField.SetBusy(true, position);
                             spawnerManager.CreateWeaponCannonBlue(position);
-                            selectedCannonId = NoCannon;
+                            selectedCannonId = NoCannonID;
                             break;
                         }
-                        case CannonOrange: {
+                        case CannonOrangeID: {
                             gameField.SetBusy(true, position);
                             spawnerManager.CreateWeaponCannonOrange(position);
-                            selectedCannonId = NoCannon;
+                            selectedCannonId = NoCannonID;
                             break;
                         }
-                        case CannonBlack: {
+                        case CannonBlackID: {
                             gameField.SetBusy(true, position);
                             spawnerManager.CreateWeaponCannonBlack(position);
-                            selectedCannonId = NoCannon;
+                            //spawnerManager.CreateWeapon(CannonBlack::CannonBlack, globalTextureManager.GetTexture(TX_BLACK_CANNON), position);
+                            selectedCannonId = NoCannonID;
                             break;
                         }
                     }
                 }
             }
-
             default: break;
         }
     }
@@ -134,7 +139,7 @@ void GameStatePlaying::LoadField() {
     gameField.InitField();
     for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
         int id = iterator.GetTile().tileType;
-        sf::Texture & texture = globalTextureManager.getTexture(TexturesID(id));
+        sf::Texture & texture = globalTextureManager.GetTexture(TexturesID(id));
         iterator.GetTile().GetTile().setTexture(texture);
         iterator.GetTile().GetTile().setPosition(iterator.coordinates.x * RenderManagerPlay::TILE_WIDTH,
                                               iterator.coordinates.y * RenderManagerPlay::TILE_HEIGHT);
@@ -240,16 +245,16 @@ void GameStatePlaying::RenderManagerPlay::DrawHealth() {
 }
 
 void GameStatePlaying::GameOver() {
-    Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, LOOSE));
+    Game_->ChangeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, LOOSE));
 }
 
 void GameStatePlaying::Win() {
-    Game_->changeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, WIN));
+    Game_->ChangeState(new GameStateGameEnd(Game_, Game_->Window, Game_->TextureMnr, WIN));
 }
 
 void GameStatePlaying::InitButtons() {
     buttonPauseContinue.setSize(sf::Vector2f (50, 50));
-    buttonPauseContinue.setTexture(&globalTextureManager.getTexture(TX_BTN_PAUSE));
+    buttonPauseContinue.setTexture(&globalTextureManager.GetTexture(TX_BTN_PAUSE));
     sf::FloatRect buttonRect = buttonPauseContinue.getLocalBounds();
     buttonPauseContinue.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonPauseContinue.setPosition(SCREEN_WIDTH - 75, 25);
@@ -257,13 +262,13 @@ void GameStatePlaying::InitButtons() {
     buttonPauseContinue.setTextureRect(bound);
 
     buttonSave.setSize(sf::Vector2f (50, 50));
-    buttonSave.setTexture(&globalTextureManager.getTexture(TX_BTN_SAVE));
+    buttonSave.setTexture(&globalTextureManager.GetTexture(TX_BTN_SAVE));
     buttonRect = buttonSave.getLocalBounds();
     buttonSave.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     buttonSave.setPosition(SCREEN_WIDTH - 25, 25);
 
     labelChoiceWeapons.setSize(sf::Vector2f (SCREEN_WIDTH, SCREEN_HEIGHT - 500));
-    labelChoiceWeapons.setTexture(&globalTextureManager.getTexture(TX_BG_BUTTONS));
+    labelChoiceWeapons.setTexture(&globalTextureManager.GetTexture(TX_BG_BUTTONS));
     buttonRect = labelChoiceWeapons.getGlobalBounds();
     labelChoiceWeapons.setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
     labelChoiceWeapons.setPosition(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT - 50);
@@ -278,11 +283,11 @@ void GameStatePlaying::InitButtons() {
         buttonsWeapon[i].setOrigin(buttonRect.left + buttonRect.width / 2.0f, buttonRect.top + buttonRect.height / 2.0);
         buttonsWeapon[i].setPosition(labelRect.left + (widthSize/2.0f) * (i + 1) + spaceBtn* (i+1), labelRect.top + 10 + heightSize/2.0f);
     }
-    buttonsWeapon[0].setTexture(&globalTextureManager.getTexture(TX_BTN_WEAPON_BLUE));
+    buttonsWeapon[0].setTexture(&globalTextureManager.GetTexture(TX_BTN_WEAPON_BLUE));
     buttonsWeapon[0].setTextureRect(bound);
-    buttonsWeapon[1].setTexture(&globalTextureManager.getTexture(TX_BTN_WEAPON_ORANGE));
+    buttonsWeapon[1].setTexture(&globalTextureManager.GetTexture(TX_BTN_WEAPON_ORANGE));
     buttonsWeapon[1].setTextureRect(bound);
-    buttonsWeapon[2].setTexture(&globalTextureManager.getTexture(TX_BTN_WEAPON_BLACK));
+    buttonsWeapon[2].setTexture(&globalTextureManager.GetTexture(TX_BTN_WEAPON_BLACK));
     buttonsWeapon[2].setTextureRect(bound);
 }
 
@@ -296,7 +301,7 @@ void GameStatePlaying::Pause() {
     auto bgTexture = new sf::Texture;
     bgTexture->create(SCREEN_WIDTH, SCREEN_HEIGHT);
     bgTexture->update(Game_->Window);
-    Game_->pushState(new GameStatePause(Game_, Game_->Window, Game_->TextureMnr, bgTexture));
+    Game_->PushState(new GameStatePause(Game_, Game_->Window, Game_->TextureMnr, bgTexture));
     bound.left -= 50;
     buttonPauseContinue.setTextureRect(bound);
 }
@@ -310,7 +315,41 @@ void GameStatePlaying::InitHealth() {
     healthInfo.setString(std::to_string(player.GetHealth()));
     healthInfo.setPosition(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT - labelChoiceWeapons.getSize().y - healthInfo.getLocalBounds().width);
     healthSprite.setScale(0.1f, 0.1f);
-    healthSprite.setTexture(globalTextureManager.getTexture(TX_HEALTH));
+    healthSprite.setTexture(globalTextureManager.GetTexture(TX_HEALTH));
     sf::FloatRect textRect = healthInfo.getGlobalBounds();
     healthSprite.setPosition(sf::Vector2f (textRect.left + textRect.width, textRect.top - textRect.height - 5));
+}
+
+void GameStatePlaying::LoggerAction() {
+    std::cout<<"Input logs params 0 - Exit\n 1 - Console\n 2 - File\n 3 - File&&Console\n Any keys - Disable log:";
+    int key;
+    std::cin>>key;
+    if (key<0 || key > 3)
+        return;
+    logger.SetLogsFormat(key);
+    std::cout<<"Name object 0 - Exit\n 1 - Cannon\n 2 - Enemy\n 3 - Player\n :";
+    std::cin>>key;
+    switch (key) {
+        case 1:
+            if (FriendObjects.empty()){
+                std::cout<<"No enemies on map\n";
+                break;
+            }
+            std::cout<<"Enter object number (total Cannons on map "<<FriendObjects.size()<<" )\n";
+            std::cin>>key;
+            logger.AddObject(FriendObjects[key-1]);
+            break;
+        case 2:
+            if (Enemies.empty()){
+                std::cout<<"No enemies on map\n";
+                break;
+            }
+            std::cout<<"Enter object number (total Enemies on map "<<Enemies.size()<<" )\n";
+            std::cin>>key;
+            logger.AddObject(Enemies[key-1]);
+            break;
+        case 3:
+            logger.AddObject(std::shared_ptr<Player>(&player));
+            break;
+    }
 }

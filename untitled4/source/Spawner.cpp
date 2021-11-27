@@ -2,25 +2,25 @@
 #include "iostream"
 
 void Spawner::CreateRedGhostEnemy() {
-    std::shared_ptr<Enemy> enemy(new EnemyGhostRed(textureManager.getTexture(TX_RED_GHOST), *startEnemyPosition));
+    std::shared_ptr<Enemy> enemy(new EnemyGhostRed(textureManager.GetTexture(TX_RED_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"Red ghost created\n";
 }
 
 void Spawner::CreateBrownGhostEnemy() {
-    std::shared_ptr<Enemy> enemy(new EnemyGhostBrown(textureManager.getTexture(TX_BROWN_GHOST), *startEnemyPosition));
+    std::shared_ptr<Enemy> enemy(new EnemyGhostBrown(textureManager.GetTexture(TX_BROWN_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"Brown ghost created\n";
 }
 
 void Spawner::CreateBlackGhostEnemy() {
-    std::shared_ptr<Enemy> enemy(new EnemyGhostBlack(textureManager.getTexture(TX_BLACK_GHOST), *startEnemyPosition));
+    std::shared_ptr<Enemy> enemy(new EnemyGhostBlack(textureManager.GetTexture(TX_BLACK_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"Black ghost created\n";
 }
 
 void Spawner::CreateWhiteGhostEnemy() {
-    std::shared_ptr<Enemy> enemy (new EnemyGhostWhite(textureManager.getTexture(TX_WHITE_GHOST), *startEnemyPosition));
+    std::shared_ptr<Enemy> enemy (new EnemyGhostWhite(textureManager.GetTexture(TX_WHITE_GHOST), *startEnemyPosition));
     enemiesVector->push_back(enemy);
     std::cout<<"White ghost created\n";
 }
@@ -88,16 +88,21 @@ bool Spawner::GetWaveState() {
 }
 
 void Spawner::CreateWeaponCannonBlue(Coordinate &position) {
-    std::shared_ptr<CannonBlue> cannon (new CannonBlue(textureManager.getTexture(TX_BLUE_CANNON), *enemiesVector, position));
+    std::shared_ptr<CannonBlue> cannon (new CannonBlue(textureManager.GetTexture(TX_BLUE_CANNON), *enemiesVector, position));
     friendsObjects->push_back(cannon);
 }
 
 void Spawner::CreateWeaponCannonOrange(Coordinate &position) {
-    std::shared_ptr<CannonOrange> cannon (new CannonOrange(textureManager.getTexture(TX_ORANGE_CANNON), *enemiesVector, position));
+    std::shared_ptr<CannonOrange> cannon (new CannonOrange(textureManager.GetTexture(TX_ORANGE_CANNON), *enemiesVector, position));
     friendsObjects->push_back(cannon);
 }
 
 void Spawner::CreateWeaponCannonBlack(Coordinate &position) {
-    std::shared_ptr<CannonBlack> cannon (new CannonBlack(textureManager.getTexture(TX_BLACK_CANNON), *enemiesVector, position));
+    std::shared_ptr<CannonBlack> cannon (new CannonBlack(textureManager.GetTexture(TX_BLACK_CANNON), *enemiesVector, position));
     friendsObjects->push_back(cannon);
+}
+
+template<typename T>
+void Spawner::CreateWeapon(T & func, sf::Texture &texture, Coordinate & position) {
+    std::shared_ptr<T> cannon (new T(texture, *enemiesVector, position));
 }
