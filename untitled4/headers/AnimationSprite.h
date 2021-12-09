@@ -19,6 +19,9 @@ public:
     //constructor for arr use only in tiles
     AnimationSprite() = default;
     void InitSprite(sf::Texture &newTexture, Coordinate &newPosition, int newFrameWidth=50, int newFrameHeight=50);
+    AnimationSprite(const AnimationSprite & other){
+        this->animation = other.animation;
+    }
     void Update();
     bool IsArrived() const;
     void SetAnimation(Animation & newAnimation);

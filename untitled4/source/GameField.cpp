@@ -129,12 +129,6 @@ void GameField::GenerateMap() {
     }
     MAP[start.x][start.y] = 3;
     MAP[finish.x][finish.y] = 4;
-//    for(int i=0; i<FIELD_HEIGHT; i++){
-//        for(int j=0; j<FIELD_WIDTH; j++){
-//            std::cout<<MAP[i][j]<<" ";
-//        }
-//        std::cout<<std::endl;
-//    }
 }
 
 void GameField::GeneratePathBetweenPoints(Coordinate point1, Coordinate point2, std::vector<Coordinate> &path) {
@@ -163,6 +157,29 @@ void GameField::GeneratePathBetweenPoints(Coordinate point1, Coordinate point2, 
             y1 += signY;
         }
     }
+}
+
+GameField::GameField(const GameField & other) : Tile(other) {
+    for(int i=0; i < FIELD_HEIGHT; i++){
+        for(int j=0; j < FIELD_WIDTH; j++){
+            this->field[i][j] = other.field[i][j];
+        }
+    }
+}
+
+GameField::GameField(GameField &&other) {
+    this->field = other.field;
+}
+
+Tile &GameField::GetTileAt(const Coordinate &cord) const
+{
+        assert(cord.x >= 0 && cord.x < FIELD_WIDTH);
+        assert(cord.y >= 0 && cord.y < FIELD_HEIGHT);
+        return field[cord.y][cord.x];
+}
+
+GameField::GameField() {
+    InitField();
 }
 
 bool operator!=(const GameField::Iterator& first, const GameField::Iterator& second) {

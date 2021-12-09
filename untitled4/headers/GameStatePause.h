@@ -41,7 +41,6 @@ private:
     sf::RectangleShape buttonSaveGame;
     sf::RectangleShape bgShape;
     sf::Texture * bgTexture;
-    sf::Font font;
 };
 
 #endif //UNTITLED4_GAMESTATEPAUSE_H

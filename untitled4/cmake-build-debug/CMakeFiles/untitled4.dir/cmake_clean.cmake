@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled4.dir/HandleController.cpp.o"
   "CMakeFiles/untitled4.dir/main.cpp.o"
   "CMakeFiles/untitled4.dir/source/Animation.cpp.o"
   "CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"

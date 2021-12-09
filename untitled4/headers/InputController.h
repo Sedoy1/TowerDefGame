@@ -1,18 +1,19 @@
 #ifndef UNTITLED4_INPUTCONTROLLER_H
 #define UNTITLED4_INPUTCONTROLLER_H
-
 #include "SFML/Graphics.hpp"
 
 enum HandleAnswer{
-    NONE,
+    NONE_INPUT,
     CLOSE_CLICK,
     LEFT_BUTTON_MOUSE_CLICK,
     ESCAPE_PRESSED,
-    L_PRESSED
+    L_PRESSED,
+    MOUSE_MOVED
 };
 
 class InputController {
-    static int CheckInput(sf::Event & event, int & xPosition, int & yPosition){
+public:
+    static int CheckInput(sf::Event & event){
         switch(event.type)
         {
             case sf::Event::Closed:
@@ -30,12 +31,12 @@ class InputController {
             case sf::Event::MouseButtonPressed:
             {
                 if(event.mouseButton.button == sf::Mouse::Left) {
-                    xPosition = event.mouseButton.x;
-                    yPosition = event.mouseButton.y;
                     return LEFT_BUTTON_MOUSE_CLICK;
                 }
             }
-            default: return NONE;
+            case sf::Event::MouseMoved:
+                return MOUSE_MOVED;
+            default: return NONE_INPUT;
         }
     }
 };

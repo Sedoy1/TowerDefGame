@@ -15,7 +15,6 @@ class GameObject {
         int GetHealth();
         void SetHealth(int new_health);
         int GetDamage();
-        void SetDamage(int new_damage);
         AnimationSprite & GetSprite();
     friend std::ostream& operator<<(std::ostream& os, const GameObject & object);
 };

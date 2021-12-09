@@ -24,7 +24,7 @@ void GameLogic::MoveEnemies() {
     }
 }
 
-void GameLogic::SetPlayableRules(std::map<int, Coordinate> &newEnemyPath,
+void GameLogic::SetPlayableLogic(std::map<int, Coordinate> &newEnemyPath,
                                  std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
                                  Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
                                  GameField &newGameField, sf::Text &newTextHealth) {
@@ -44,11 +44,11 @@ int GameLogic::ComputeDirection(int direction1, int direction2) {
     return 1;
 }
 
-bool GameLogic::IsPlayerAlive() {
+bool GameLogic::IsPlayerDead() {
     if(player->GetHealth() > 0)
-        return true;
-    else
         return false;
+    else
+        return true;
 }
 
 void GameLogic::GameRealization() {

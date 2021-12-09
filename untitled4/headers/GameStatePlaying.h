@@ -10,6 +10,8 @@
 #include "GameStatePause.h"
 #include "CannonBlack.h"
 #include "Logger.h"
+#include "InputController.h"
+#include "Rules.h"
 
 class   GameStatePlaying : public GameState{
 public:
@@ -38,6 +40,7 @@ private:
         void LoadObjectsTexture();
         void LoadFieldTexture();
         void LoadButtonsTexture();
+        //TODO реализовать конструктор перемещения и убрать учтеску памяти
         std::vector<std::shared_ptr<Enemy>> * enemyVector;
         GameField *gameField;
         sf::RectangleShape * buttonPause;
@@ -59,7 +62,8 @@ private:
         static unsigned int TILE_HEIGHT;
         static unsigned int TILE_WIDTH;
     };
-
+    bool isEnemiesOver();
+    bool isPlayerAlive();
     void GameOver();
     void Win();
     void Pause();
@@ -68,12 +72,14 @@ private:
     void InitButtons();
     void InitHealth();
     void LoggerAction();
+    void InitRules();
+    Rules <std::function<bool()>> rulesManager;
     GameField gameField;
     GameLogic LogicEvent;
     RenderManagerPlay RenderMnr;
     Spawner spawnerManager;
     TextureManager & globalTextureManager;
-    std::vector<std::shared_ptr<Enemy> > Enemies;
+    std::vector<std::shared_ptr<Enemy>> Enemies;
     std::vector<std::shared_ptr<FriendObject>> FriendObjects;
     std::map<int, Coordinate> enemyPath;
     std::vector<sf::RectangleShape> buttonsWeapon{3};

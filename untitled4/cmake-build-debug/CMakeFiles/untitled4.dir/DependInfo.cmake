@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/HandleController.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/main.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/main.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Animation.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/Animation.cpp.o"
   "/home/oleg/CLionProjects/TowerDefGame/untitled4/source/AnimationSprite.cpp" "/home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/source/AnimationSprite.cpp.o"

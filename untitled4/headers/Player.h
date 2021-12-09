@@ -12,7 +12,7 @@ public:
         damage = 0;
         money = 100;
     }
-
+    
 private:
     int money;
     void GetInfo(std:: ostream & os) const override;

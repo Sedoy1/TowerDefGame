@@ -17,10 +17,6 @@ int GameObject::GetDamage() {
     return damage;
 }
 
-void GameObject::SetDamage(int new_damage) {
-    damage = new_damage;
-}
-
 AnimationSprite & GameObject::GetSprite() {
     return aSprite;
 }

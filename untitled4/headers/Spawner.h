@@ -24,19 +24,21 @@ private:
     void CreateBrownGhostEnemy();
     void CreateWhiteGhostEnemy();
     void CreateEnemies(int enemiesType);
-
     bool isWaveEnd = false;
 public:
+
     Spawner(TextureManager &newTextureMng);
     void InitSpawnerOption(std::vector<std::shared_ptr<Enemy>> &newEnemiesVector, Coordinate *newStartEnemyPosition,
                            std::vector<std::shared_ptr<FriendObject>> &friendsVector);
     void UpdateWaves();
 
-    template<typename T>
-    void CreateWeapon(T & func, sf::Texture & texture, Coordinate & position);
-    void CreateWeaponCannonBlue(Coordinate & position);
-    void CreateWeaponCannonOrange(Coordinate & position);
-    void CreateWeaponCannonBlack(Coordinate & position);
+    template<class tObject, class tPlace>
+    void CreateObject(std::shared_ptr<tObject> object, std::vector<std::shared_ptr<tPlace>> & place){
+        place.push_back(object);
+    }
+    std::shared_ptr<CannonBlue> CreateWeaponCannonBlue(Coordinate & position);
+    std::shared_ptr<CannonOrange> CreateWeaponCannonOrange(Coordinate & position);
+    std::shared_ptr<CannonBlack> CreateWeaponCannonBlack(Coordinate & position);
     void InitWaves();
     bool GetWaveState();
 };

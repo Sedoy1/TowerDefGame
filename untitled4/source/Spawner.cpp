@@ -87,22 +87,17 @@ bool Spawner::GetWaveState() {
     return isWaveEnd;
 }
 
-void Spawner::CreateWeaponCannonBlue(Coordinate &position) {
+std::shared_ptr<CannonBlue> Spawner::CreateWeaponCannonBlue(Coordinate &position) {
     std::shared_ptr<CannonBlue> cannon (new CannonBlue(textureManager.GetTexture(TX_BLUE_CANNON), *enemiesVector, position));
-    friendsObjects->push_back(cannon);
+    return cannon;
 }
 
-void Spawner::CreateWeaponCannonOrange(Coordinate &position) {
+std::shared_ptr<CannonOrange> Spawner::CreateWeaponCannonOrange(Coordinate &position) {
     std::shared_ptr<CannonOrange> cannon (new CannonOrange(textureManager.GetTexture(TX_ORANGE_CANNON), *enemiesVector, position));
-    friendsObjects->push_back(cannon);
+    return cannon;
 }
 
-void Spawner::CreateWeaponCannonBlack(Coordinate &position) {
+std::shared_ptr<CannonBlack> Spawner::CreateWeaponCannonBlack(Coordinate &position) {
     std::shared_ptr<CannonBlack> cannon (new CannonBlack(textureManager.GetTexture(TX_BLACK_CANNON), *enemiesVector, position));
-    friendsObjects->push_back(cannon);
-}
-
-template<typename T>
-void Spawner::CreateWeapon(T & func, sf::Texture &texture, Coordinate & position) {
-    std::shared_ptr<T> cannon (new T(texture, *enemiesVector, position));
+    return cannon;
 }

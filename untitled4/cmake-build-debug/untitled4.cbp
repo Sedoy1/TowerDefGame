@@ -82,12 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.cpp">
-			<Option target="untitled4"/>
-		</Unit>
-		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/HandleController.h">
-			<Option target="untitled4"/>
-		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -160,6 +154,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/InputController.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Logger.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -173,6 +170,9 @@
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h">

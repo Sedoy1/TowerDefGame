@@ -4,90 +4,82 @@
 void GameStatePlaying::StateRealization() {
     LogicEvent.GameRealization();
     logger.GetLogs();
-    if(LogicEvent.IsPlayerAlive()) {
-        spawnerManager.UpdateWaves();
-        RenderMnr.Draw();
-        if(spawnerManager.GetWaveState()){
-            Win();
-        }
+    spawnerManager.UpdateWaves();
+    RenderMnr.Draw();
+    if(rulesManager.checkWinRules()){
+        Win();
     }
-    else{
+    else if(rulesManager.checkLooseRules()){
         GameOver();
     }
-
 }
 
 void GameStatePlaying::HandleInput() {
     sf::Event event;
-    while(this->Game_->Window.pollEvent(event))
-    {
-        switch(event.type)
-        {
-            case sf::Event::Closed:
-            {
+    int InputKeys;
+    while (this->Game_->Window.pollEvent(event)) {
+        InputKeys = InputController::CheckInput(event);
+        switch (InputKeys) {
+            case CLOSE_CLICK: {
                 Game_->Window.close();
                 break;
             }
-            case sf::Event::KeyPressed:
-            {
-                if(event.key.code == sf::Keyboard::Escape)
-                    this->Game_->Window.close();
-                else if(event.key.code == sf::Keyboard::L){
+            case ESCAPE_PRESSED: {
+                this->Game_->Window.close();
+                case L_PRESSED:
                     LoggerAction();
-                    }
-                }
-                break;
-            case sf::Event::MouseButtonPressed:
-            {
-                if(event.mouseButton.button == sf::Mouse::Left) {
+                case LEFT_BUTTON_MOUSE_CLICK: {
                     int xPosition = event.mouseButton.x;
                     int yPosition = event.mouseButton.y;
-                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)){
+                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)) {
                         Pause();
                     }
-                    for(int btnNumber = 0; btnNumber<buttonsWeapon.size(); btnNumber++){
-                        if(buttonsWeapon[btnNumber].getGlobalBounds().contains(xPosition, yPosition)){
+                    for (int btnNumber = 0; btnNumber < buttonsWeapon.size(); btnNumber++) {
+                        if (buttonsWeapon[btnNumber].getGlobalBounds().contains(xPosition, yPosition)) {
                             sf::IntRect bound(50, 0, 50, 50);
                             buttonsWeapon[btnNumber].setTextureRect(bound);
                             selectedCannonId = btnNumber + 1;
                             break;
-                        }
-                        else{
+                        } else {
                             sf::IntRect bound(0, 0, 50, 50);
                             buttonsWeapon[btnNumber].setTextureRect(bound);
                         }
                     }
-                }
-                Coordinate position(event.mouseButton.x/50, event.mouseButton.y/50);
-                if(gameField.IsTileBuildable(position)){
-                    switch (selectedCannonId) {
-                        case NoCannonID: {
-                            break;
-                        }
-                        case CannonBlueID: {
-                            gameField.SetBusy(true, position);
-                            spawnerManager.CreateWeaponCannonBlue(position);
-                            selectedCannonId = NoCannonID;
-                            break;
-                        }
-                        case CannonOrangeID: {
-                            gameField.SetBusy(true, position);
-                            spawnerManager.CreateWeaponCannonOrange(position);
-                            selectedCannonId = NoCannonID;
-                            break;
-                        }
-                        case CannonBlackID: {
-                            gameField.SetBusy(true, position);
-                            spawnerManager.CreateWeaponCannonBlack(position);
-                            //spawnerManager.CreateWeapon(CannonBlack::CannonBlack, globalTextureManager.GetTexture(TX_BLACK_CANNON), position);
-                            selectedCannonId = NoCannonID;
-                            break;
+                    Coordinate position(event.mouseButton.x / 50, event.mouseButton.y / 50);
+                    if (gameField.IsTileBuildable(position)) {
+                        switch (selectedCannonId) {
+                            case NoCannonID: {
+                                break;
+                            }
+                            case CannonBlueID: {
+                                gameField.SetBusy(true, position);
+                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlue(position),
+                                                            FriendObjects);
+                                selectedCannonId = NoCannonID;
+                                break;
+                            }
+                            case CannonOrangeID: {
+                                gameField.SetBusy(true, position);
+                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonOrange(position),
+                                                            FriendObjects);
+                                selectedCannonId = NoCannonID;
+                                break;
+                            }
+                            case CannonBlackID: {
+                                gameField.SetBusy(true, position);
+                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlack(position),
+                                                            FriendObjects);
+                                selectedCannonId = NoCannonID;
+                                break;
+                            }
                         }
                     }
                 }
+                default:
+                    break;
             }
-            default: break;
         }
+
     }
 }
 
@@ -98,23 +90,24 @@ void GameStatePlaying::Update() {
 
 GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, TextureManager &newTextureManager): GameState(game),
                                                                                                      RenderMnr(
-                                                                                                             window,
-                                                                                                             newTextureManager,
-                                                                                                             Enemies,
-                                                                                                             player,
-                                                                                                             gameField,
-                                                                                                             buttonPauseContinue,
-                                                                                                             buttonSave,
-                                                                                                             FriendObjects,
-                                                                                                             buttonsWeapon,
-                                                                                                             labelChoiceWeapons, healthInfo, healthSprite),
-                                                                                                             spawnerManager(newTextureManager), globalTextureManager(newTextureManager){
+                                                                                                     window,
+                                                                                                     newTextureManager,
+                                                                                                     Enemies,
+                                                                                                     player,
+                                                                                                     gameField,
+                                                                                                     buttonPauseContinue,
+                                                                                                     buttonSave,
+                                                                                                     FriendObjects,
+                                                                                                     buttonsWeapon,
+                                                                                                     labelChoiceWeapons, healthInfo, healthSprite),
+                                                                                                     spawnerManager(newTextureManager), globalTextureManager(newTextureManager){
     LoadField();
     InitPlayer();
     InitButtons();
     InitHealth();
-    LogicEvent.SetPlayableRules(enemyPath, Enemies, player, FriendObjects, gameField, healthInfo);
+    LogicEvent.SetPlayableLogic(enemyPath, Enemies, player, FriendObjects, gameField, healthInfo);
     spawnerManager.InitSpawnerOption(Enemies, &enemyPath.begin()->second, FriendObjects);
+    InitRules();
 }
 
 GameStatePlaying::~GameStatePlaying() {
@@ -136,7 +129,6 @@ void GameStatePlaying::RenderManagerPlay::DrawField() {
 
 
 void GameStatePlaying::LoadField() {
-    gameField.InitField();
     for(GameField::Iterator iterator = gameField.Begin(); iterator != gameField.End(); iterator ++){
         int id = iterator.GetTile().tileType;
         sf::Texture & texture = globalTextureManager.GetTexture(TexturesID(id));
@@ -324,8 +316,10 @@ void GameStatePlaying::LoggerAction() {
     std::cout<<"Input logs params 0 - Exit\n 1 - Console\n 2 - File\n 3 - File&&Console\n Any keys - Disable log:";
     int key;
     std::cin>>key;
-    if (key<0 || key > 3)
+    if (key<0 || key > 3){
+        logger.SetLogsFormat();
         return;
+    }
     logger.SetLogsFormat(key);
     std::cout<<"Name object 0 - Exit\n 1 - Cannon\n 2 - Enemy\n 3 - Player\n :";
     std::cin>>key;
@@ -351,5 +345,20 @@ void GameStatePlaying::LoggerAction() {
         case 3:
             logger.AddObject(std::shared_ptr<Player>(&player));
             break;
+        default:
+            break;
     }
+}
+
+void GameStatePlaying::InitRules() {
+    rulesManager.addRuleLoose(std::bind(&GameStatePlaying::isPlayerAlive, this));
+    rulesManager.addRuleWin(std::bind(&GameStatePlaying::isEnemiesOver, this));
+}
+
+bool GameStatePlaying::isEnemiesOver() {
+    return spawnerManager.GetWaveState();
+}
+
+bool GameStatePlaying::isPlayerAlive() {
+    return LogicEvent.IsPlayerDead();
 }

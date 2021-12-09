@@ -28,12 +28,12 @@ class GameLogic {
     GameField * gameField;
     Player * player;
     public:
-    void SetPlayableRules(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
+    void SetPlayableLogic(std::map<int, Coordinate> &newEnemyPath, std::vector<std::shared_ptr<Enemy>> &newVectorEnemy,
                           Player &newPlayer, std::vector<std::shared_ptr<FriendObject>> &newVectorFriends,
                           GameField &newGameField, sf::Text &newTextHealth);
     /*Add new Enemy to the vector*/
     void GameRealization();
-    bool IsPlayerAlive();
+    bool IsPlayerDead();
 };
 
 

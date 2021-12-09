@@ -20,6 +20,10 @@ public:
     }
     bool busy = false;
     Tile()= default;
+    Tile & operator = (const Tile & other){
+        this->tileType = other.tileType;
+        return *this;
+    }
     bool IsOpen() const {
         return tileType == TR_TRAIL;
     }
