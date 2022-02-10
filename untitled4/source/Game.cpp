@@ -35,7 +35,6 @@ void Game::ChangeState(GameState *state) {
 }
 
 Game::Game() {
-    //TODO в настройках можно редачить размер поля
     Window.create(sf::VideoMode(500, 600), "Game");
     Window.setFramerateLimit(50);
     TextureMnr.LoadTexture(TX_MENU_BG, MENU_BG_TEXTURE);

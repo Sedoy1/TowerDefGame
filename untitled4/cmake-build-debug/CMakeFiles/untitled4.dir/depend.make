@@ -33,6 +33,8 @@ CMakeFiles/untitled4.dir/main.cpp.o: \
  ../headers/Player.h \
  ../headers/RenderManager.h \
  ../headers/Rules.h \
+ ../headers/SaveAndLoadObjects.h \
+ ../headers/Snapshot.h \
  ../headers/Spawner.h \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
@@ -152,6 +154,8 @@ CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o: \
  ../headers/Player.h \
  ../headers/RenderManager.h \
  ../headers/Rules.h \
+ ../headers/SaveAndLoadObjects.h \
+ ../headers/Snapshot.h \
  ../headers/Spawner.h \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
@@ -188,6 +192,8 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o: \
  ../headers/Player.h \
  ../headers/RenderManager.h \
  ../headers/Rules.h \
+ ../headers/SaveAndLoadObjects.h \
+ ../headers/Snapshot.h \
  ../headers/Spawner.h \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
@@ -233,6 +239,8 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o: \
  ../headers/Player.h \
  ../headers/RenderManager.h \
  ../headers/Rules.h \
+ ../headers/SaveAndLoadObjects.h \
+ ../headers/Snapshot.h \
  ../headers/Spawner.h \
  ../headers/TextureManager.h \
  ../headers/Tile.h \
@@ -253,6 +261,17 @@ CMakeFiles/untitled4.dir/source/Player.cpp.o: \
  ../headers/Movement.h \
  ../headers/Player.h \
  ../source/Player.cpp
+CMakeFiles/untitled4.dir/source/Snapshot.cpp.o: \
+ ../headers/Animation.h \
+ ../headers/AnimationSprite.h \
+ ../headers/Coordinate.h \
+ ../headers/Enemy.h \
+ ../headers/FriendObject.h \
+ ../headers/GameObject.h \
+ ../headers/Movement.h \
+ ../headers/Player.h \
+ ../headers/Snapshot.h \
+ ../source/Snapshot.cpp
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o: \
  ../headers/Animation.h \
  ../headers/AnimationSprite.h \

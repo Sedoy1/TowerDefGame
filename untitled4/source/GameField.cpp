@@ -32,6 +32,28 @@ void GameField::InitField() {
     }
 }
 
+void GameField::ReloadField() {
+    for(int i=0; i<FIELD_HEIGHT; i++){
+        delete [] field[i];
+    }
+    delete [] field;
+
+    field = new Tile * [FIELD_HEIGHT];
+    for(int i=0; i<FIELD_HEIGHT; i++){
+        field[i] = new Tile[FIELD_WIDTH];
+    }
+    Animation staticAnimation(0, 0, 0.0f, 0.0f);
+    for(GameField::Iterator iter = Begin(); iter != End(); iter ++){
+        iter.GetTile().tileType = MAP[iter.coordinates.y][iter.coordinates.x];
+        if(iter.GetTile().tileType == TR_GRASS){
+            Animation grass(0, 2, 1.0f, 0.1f);
+            iter.GetTile().GetTile().SetAnimation(grass);
+        }
+        else
+            iter.GetTile().GetTile().SetAnimation(staticAnimation);
+    }
+}
+
 GameField::~GameField() {
     for(int i=0; i< FIELD_HEIGHT; i++){
         delete[] field[i];
@@ -180,6 +202,10 @@ Tile &GameField::GetTileAt(const Coordinate &cord) const
 
 GameField::GameField() {
     InitField();
+}
+
+void GameField::SetMap(const Coordinate &cord, int newType) {
+    MAP[cord.x][cord.y] = newType;
 }
 
 bool operator!=(const GameField::Iterator& first, const GameField::Iterator& second) {

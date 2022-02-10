@@ -17,69 +17,77 @@ void GameStatePlaying::StateRealization() {
 void GameStatePlaying::HandleInput() {
     sf::Event event;
     int InputKeys;
-    while (this->Game_->Window.pollEvent(event)) {
-        InputKeys = InputController::CheckInput(event);
+    while (Game_->Window.pollEvent(event)) {
+        InputKeys = inputController.CheckInput(event);
         switch (InputKeys) {
-            case CLOSE_CLICK: {
+            case CLOSE_CLICK:
                 Game_->Window.close();
                 break;
-            }
-            case ESCAPE_PRESSED: {
+            case ESCAPE_PRESSED:
                 this->Game_->Window.close();
-                case L_PRESSED:
-                    LoggerAction();
-                case LEFT_BUTTON_MOUSE_CLICK: {
-                    int xPosition = event.mouseButton.x;
-                    int yPosition = event.mouseButton.y;
-                    if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)) {
-                        Pause();
+                break;
+            case L_PRESSED:
+                LoggerAction();
+                break;
+            case LEFT_BUTTON_MOUSE_CLICK: {
+                int xPosition = event.mouseButton.x;
+                int yPosition = event.mouseButton.y;
+                if (buttonPauseContinue.getGlobalBounds().contains(xPosition, yPosition)) {
+                    Pause();
+                    break;
+                }
+                else if(buttonSave.getGlobalBounds().contains(xPosition, yPosition)){
+                    SaveGame();
+                    break;
+                }
+                for (int btnNumber = 0; btnNumber < buttonsWeapon.size(); btnNumber++) {
+                    if (buttonsWeapon[btnNumber].getGlobalBounds().contains(xPosition, yPosition)) {
+                        sf::IntRect bound(50, 0, 50, 50);
+                        buttonsWeapon[btnNumber].setTextureRect(bound);
+                        selectedCannonId = btnNumber + 1;
+                        break;
+                    } else {
+                        sf::IntRect bound(0, 0, 50, 50);
+                        buttonsWeapon[btnNumber].setTextureRect(bound);
                     }
-                    for (int btnNumber = 0; btnNumber < buttonsWeapon.size(); btnNumber++) {
-                        if (buttonsWeapon[btnNumber].getGlobalBounds().contains(xPosition, yPosition)) {
-                            sf::IntRect bound(50, 0, 50, 50);
-                            buttonsWeapon[btnNumber].setTextureRect(bound);
-                            selectedCannonId = btnNumber + 1;
+                }
+                Coordinate position(event.mouseButton.x / 50, event.mouseButton.y / 50);
+                if (gameField.IsTileBuildable(position)) {
+                    switch (selectedCannonId) {
+                        case NoCannonID:{
                             break;
-                        } else {
-                            sf::IntRect bound(0, 0, 50, 50);
-                            buttonsWeapon[btnNumber].setTextureRect(bound);
                         }
-                    }
-                    Coordinate position(event.mouseButton.x / 50, event.mouseButton.y / 50);
-                    if (gameField.IsTileBuildable(position)) {
-                        switch (selectedCannonId) {
-                            case NoCannonID: {
-                                break;
-                            }
-                            case CannonBlueID: {
-                                gameField.SetBusy(true, position);
-                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlue(position),
-                                                            FriendObjects);
-                                selectedCannonId = NoCannonID;
-                                break;
-                            }
-                            case CannonOrangeID: {
-                                gameField.SetBusy(true, position);
-                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonOrange(position),
-                                                            FriendObjects);
-                                selectedCannonId = NoCannonID;
-                                break;
-                            }
-                            case CannonBlackID: {
-                                gameField.SetBusy(true, position);
-                                spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlack(position),
-                                                            FriendObjects);
-                                selectedCannonId = NoCannonID;
-                                break;
-                            }
+                        case CannonBlueID: {
+                            gameField.SetBusy(true, position);
+                            spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlue(position),
+                                                        FriendObjects);
+                            selectedCannonId = NoCannonID;
+                            break;
+                        }
+                        case CannonOrangeID: {
+                            gameField.SetBusy(true, position);
+                            spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonOrange(position),
+                                                        FriendObjects);
+                            selectedCannonId = NoCannonID;
+                            break;
+                        }
+                        case CannonBlackID: {
+                            gameField.SetBusy(true, position);
+                            spawnerManager.CreateObject(spawnerManager.CreateWeaponCannonBlack(position),
+                                                        FriendObjects);
+                            selectedCannonId = NoCannonID;
+                            break;
                         }
                     }
                 }
-                default:
-                    break;
+                break;
             }
+            case LOAD_SAVE_PRESSED:
+                LoadGame();
+                break;
+            default:
+                break;
         }
-
     }
 }
 
@@ -108,6 +116,7 @@ GameStatePlaying::GameStatePlaying(Game *game, sf::RenderWindow &window, Texture
     LogicEvent.SetPlayableLogic(enemyPath, Enemies, player, FriendObjects, gameField, healthInfo);
     spawnerManager.InitSpawnerOption(Enemies, &enemyPath.begin()->second, FriendObjects);
     InitRules();
+    InitController();
 }
 
 GameStatePlaying::~GameStatePlaying() {
@@ -351,14 +360,103 @@ void GameStatePlaying::LoggerAction() {
 }
 
 void GameStatePlaying::InitRules() {
-    rulesManager.addRuleLoose(std::bind(&GameStatePlaying::isPlayerAlive, this));
-    rulesManager.addRuleWin(std::bind(&GameStatePlaying::isEnemiesOver, this));
+    rulesManager.addRuleLoose(std::bind(&GameLogic::IsPlayerDead, &this->LogicEvent));
+    rulesManager.addRuleWin(std::bind(&Spawner::GetWaveState, &this->spawnerManager));
 }
 
-bool GameStatePlaying::isEnemiesOver() {
-    return spawnerManager.GetWaveState();
+void GameStatePlaying::InitController() {
+    inputController.InitButtons(sf::Keyboard::Escape, sf::Keyboard::L, sf::Mouse::Button::Left, sf::Keyboard::K);
 }
 
-bool GameStatePlaying::isPlayerAlive() {
-    return LogicEvent.IsPlayerDead();
+void GameStatePlaying::SaveGame() {
+    std::string path = "../save";
+    std::filesystem::create_directory(path);
+    SaveObjects(player, path + "/player.txt");
+    SaveObjects(Enemies, path + "/enemies.txt");
+    SaveObjects(FriendObjects, path + "/items.txt");
+    SaveGameField();
 }
+
+void GameStatePlaying:: LoadGame() {
+    std::string path = "../save";
+    snapShot = new Snap(FriendObjects, Enemies, player);
+    FriendObjects.clear();
+    Enemies.clear();
+
+    if(!LoadPlayer()){
+        CallErrorLoad();
+        return;
+    }
+    if(!LoadFieldSaved()){
+        CallErrorLoad();
+        return;
+    }
+}
+
+bool GameStatePlaying::LoadPlayer() {
+    std::fstream in("../save/player.txt");
+    if (!in.is_open())
+        return false;
+    std::string buff;
+    in>>buff;
+    in>>buff;
+    if(!CheckDigit(buff))
+        return false;
+    player.SetHealth(stoi(buff));
+    in>>buff;
+    in>>buff;
+    if(!CheckDigit(buff))
+        return false;
+    return true;
+}
+
+void GameStatePlaying::CallErrorLoad() {
+    snapShot->GetSnap();
+    std::cout<<"Ошибка загрузки сохранения\n";
+    delete[] snapShot;
+}
+
+void GameStatePlaying::SaveGameField() {
+    std::string path = "../save";
+    std::ofstream out(path + "/field.txt");
+    out<<FIELD_HEIGHT<<" "<<FIELD_WIDTH<<"\n";
+    for(int i=0; i<FIELD_HEIGHT; i++){
+        for(int j=0; j<FIELD_WIDTH; j++){
+            out<<gameField.GetTileAt(Coordinate(i, j)).tileType<<" ";
+        }
+    }
+}
+
+bool GameStatePlaying::LoadFieldSaved() {
+    std::string path = "../save", buffer;
+    int newHeight, newWidth;
+    std::fstream in(path + "/field.txt");
+    if (!in.is_open())
+        return false;
+
+    in>>buffer;
+    if(!CheckDigit(buffer))
+        return false;
+
+    newHeight = stoi(buffer);
+
+    in>>buffer;
+    if(!CheckDigit(buffer))
+        return false;
+    newWidth = stoi(buffer);
+
+    for(int i=0; i<newHeight; i++){
+        for(int j=0; j<newWidth; j++){
+            in>>buffer;
+            if (!CheckDigit(buffer) and stoi(buffer)>4) {
+                return false;
+            }
+            gameField.SetMap(Coordinate(j, i), stoi(buffer));
+        }
+    }
+    gameField.ReloadField();
+    LoadField();
+    enemyPath = *gameField.ComputeEnemiesPath();
+    return true;
+}
+

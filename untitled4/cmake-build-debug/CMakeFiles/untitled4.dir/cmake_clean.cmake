@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o"
   "CMakeFiles/untitled4.dir/source/Logger.cpp.o"
   "CMakeFiles/untitled4.dir/source/Player.cpp.o"
+  "CMakeFiles/untitled4.dir/source/Snapshot.cpp.o"
   "CMakeFiles/untitled4.dir/source/Spawner.cpp.o"
   "CMakeFiles/untitled4.dir/source/TextureManager.cpp.o"
   "untitled4"

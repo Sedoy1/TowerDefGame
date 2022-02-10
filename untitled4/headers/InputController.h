@@ -8,38 +8,40 @@ enum HandleAnswer{
     LEFT_BUTTON_MOUSE_CLICK,
     ESCAPE_PRESSED,
     L_PRESSED,
+    LOAD_SAVE_PRESSED,
     MOUSE_MOVED
 };
 
-class InputController {
+class InputControllerTest {
+private:
+    sf::Keyboard::Key  exitButton;
+    sf::Keyboard::Key loggerButton;
+    sf::Keyboard::Key loadSavedGame;
+    sf::Mouse::Button clickMouseButton;
 public:
-    static int CheckInput(sf::Event & event){
-        switch(event.type)
-        {
-            case sf::Event::Closed:
-            {
-                return CLOSE_CLICK;
-            }
-            case sf::Event::KeyPressed:
-            {
-                if(event.key.code == sf::Keyboard::Escape)
-                    return ESCAPE_PRESSED;
-                else if(event.key.code == sf::Keyboard::L){
-                    return L_PRESSED;
-                }
-            }
-            case sf::Event::MouseButtonPressed:
-            {
-                if(event.mouseButton.button == sf::Mouse::Left) {
-                    return LEFT_BUTTON_MOUSE_CLICK;
-                }
-            }
-            case sf::Event::MouseMoved:
-                return MOUSE_MOVED;
-            default: return NONE_INPUT;
-        }
+
+    void InitButtons(sf::Keyboard::Key newButtonExit, sf::Keyboard::Key newButtonLogger,
+                     sf::Mouse::Button newClickMouseButton,
+                     sf::Keyboard::Key keyLoadSave) {
+        exitButton = newButtonExit;
+        loggerButton = newButtonLogger;
+        clickMouseButton = newClickMouseButton;
+        loadSavedGame = keyLoadSave;
+    }
+
+    int CheckInput(sf::Event & event) const {
+        if ((event.key.code == exitButton and event.type== sf::Event::KeyPressed) or event.type == sf::Event::Closed)
+            return CLOSE_CLICK;
+        else if (event.key.code == loggerButton and event.type== sf::Event::KeyPressed) {
+            return L_PRESSED;
+        } else if (event.mouseButton.button == clickMouseButton and event.type== sf::Event::MouseButtonPressed) {
+            return LEFT_BUTTON_MOUSE_CLICK;
+        } else if (event.type == sf::Event::MouseMoved) {
+            return MOUSE_MOVED;
+        } else if (event.key.code == loadSavedGame and event.type== sf::Event::KeyPressed)
+            return LOAD_SAVE_PRESSED;
+        return NONE_INPUT;
     }
 };
-
 
 #endif //UNTITLED4_INPUTCONTROLLER_H

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/175/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/180/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/180/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/oleg/CLionProjects/TowerDefGame/untitled4/cmake-build-d
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/175/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/175/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -537,6 +537,30 @@ source/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Player.cpp.s
 .PHONY : source/Player.cpp.s
 
+source/Snapshot.o: source/Snapshot.cpp.o
+.PHONY : source/Snapshot.o
+
+# target to build an object file
+source/Snapshot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Snapshot.cpp.o
+.PHONY : source/Snapshot.cpp.o
+
+source/Snapshot.i: source/Snapshot.cpp.i
+.PHONY : source/Snapshot.i
+
+# target to preprocess a source file
+source/Snapshot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Snapshot.cpp.i
+.PHONY : source/Snapshot.cpp.i
+
+source/Snapshot.s: source/Snapshot.cpp.s
+.PHONY : source/Snapshot.s
+
+# target to generate assembly for a file
+source/Snapshot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/source/Snapshot.cpp.s
+.PHONY : source/Snapshot.cpp.s
+
 source/Spawner.o: source/Spawner.cpp.o
 .PHONY : source/Spawner.o
 
@@ -645,6 +669,9 @@ help:
 	@echo "... source/Player.o"
 	@echo "... source/Player.i"
 	@echo "... source/Player.s"
+	@echo "... source/Snapshot.o"
+	@echo "... source/Snapshot.i"
+	@echo "... source/Snapshot.s"
 	@echo "... source/Spawner.o"
 	@echo "... source/Spawner.i"
 	@echo "... source/Spawner.s"

@@ -18,8 +18,8 @@ protected:
     void Shoot();
     void CheckAim();
     void FindNewAim();
-    void GetInfo(std:: ostream & os) const override;
 public:
+    void GetInfo(std:: ostream & os) const override;
     bool GetShootingState() const;
     void SetShootingState(bool newState);
     void Update();

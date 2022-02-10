@@ -12,12 +12,18 @@
 #include "Logger.h"
 #include "InputController.h"
 #include "Rules.h"
+#include "fstream"
+#include "SaveAndLoadObjects.h"
+#include "filesystem"
+#include "Snapshot.h"
 
-class   GameStatePlaying : public GameState{
+class GameStatePlaying : public GameState{
 public:
     void StateRealization() override;
     void HandleInput() override;
     void Update() override;
+    void SaveGame();
+    void LoadGame();
     GameStatePlaying(Game * game, sf::RenderWindow &window, TextureManager & newTextureManager);
     ~GameStatePlaying() override;
 private:
@@ -62,8 +68,14 @@ private:
         static unsigned int TILE_HEIGHT;
         static unsigned int TILE_WIDTH;
     };
-    bool isEnemiesOver();
-    bool isPlayerAlive();
+    void SaveGameField();
+    void SaveEnemiesPath();
+    bool LoadPlayer();
+    bool LoadFieldSaved();
+    bool LoadEnemiesPath();
+    bool LoadEnemies();
+    bool LoadFriends();
+    void CallErrorLoad();
     void GameOver();
     void Win();
     void Pause();
@@ -73,7 +85,9 @@ private:
     void InitHealth();
     void LoggerAction();
     void InitRules();
+    void InitController();
     Rules <std::function<bool()>> rulesManager;
+    InputControllerTest inputController;
     GameField gameField;
     GameLogic LogicEvent;
     RenderManagerPlay RenderMnr;
@@ -92,6 +106,7 @@ private:
     Player player;
     int selectedCannonId = NoCannonID;
     Logger logger;
+    Snap * snapShot;
 };
 
 #endif //UNTITLED4_GAMESTATEPLAYING_H

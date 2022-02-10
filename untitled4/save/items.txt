@@ -1,0 +1,12 @@
+Type- Damage- 2
+Shot speed- 20
+Position-  x 0  y 0
+Type- Damage- 1
+Shot speed- 5
+Position-  x 3  y 9
+Type- Damage- 0
+Shot speed- 10
+Position-  x 0  y 0
+Type- Damage- 0
+Shot speed- 10
+Position-  x 0  y 0

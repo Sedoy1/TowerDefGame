@@ -11,6 +11,7 @@ class EnemyGhostBlack : public Enemy{
             health = 10;
             damage = 10;
             speed = 2;
+            typeObject = GhostBlack;
         }
 };
 

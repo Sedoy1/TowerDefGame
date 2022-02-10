@@ -29,11 +29,12 @@ class GameField: public Tile{
     void InitField();
     void SetBusy(bool newBusyStatus, const Coordinate & coord) const;
     void GenerateMap();
-
+    void ReloadField();
     // recursion function for find path
     void FindPath(std::map<int, Coordinate> & currentPath, GameField::Iterator & iter);
     std::map<int, Coordinate> * ComputeEnemiesPath();
     Tile & GetTileAt(const Coordinate & cord) const;
+    void SetMap(const Coordinate & cord, int newType);
     Tile ** field{};
 
 private:

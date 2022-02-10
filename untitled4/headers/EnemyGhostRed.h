@@ -11,6 +11,7 @@ public:
         health = 20;
         damage = 5;
         speed = 1;
+        typeObject = GhostRed;
     }
 };
 

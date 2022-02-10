@@ -33,6 +33,8 @@ CMakeFiles/untitled4.dir/main.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Tile.h
@@ -152,6 +154,8 @@ CMakeFiles/untitled4.dir/source/GameStateGameEnd.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Tile.h
@@ -188,6 +192,8 @@ CMakeFiles/untitled4.dir/source/GameStateMenu.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Tile.h
@@ -233,6 +239,8 @@ CMakeFiles/untitled4.dir/source/GameStatePlaying.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/TextureManager.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Tile.h
@@ -253,6 +261,17 @@ CMakeFiles/untitled4.dir/source/Player.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Player.cpp
+CMakeFiles/untitled4.dir/source/Snapshot.cpp.o
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Coordinate.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/FriendObject.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameObject.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Movement.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
+ /home/oleg/CLionProjects/TowerDefGame/untitled4/source/Snapshot.cpp
 CMakeFiles/untitled4.dir/source/Spawner.cpp.o
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Animation.h
  /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h

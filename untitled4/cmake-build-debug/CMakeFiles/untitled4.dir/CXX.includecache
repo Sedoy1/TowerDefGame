@@ -152,14 +152,6 @@ GameState.h
 RenderManager.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/RenderManager.h
 
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h
-GameState.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
-GameStatePlaying.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
-BlinkingText.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/BlinkingText.h
-
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePause.h
 GameState.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameState.h
@@ -191,6 +183,14 @@ InputController.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/InputController.h
 Rules.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
+fstream
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/fstream
+SaveAndLoadObjects.h
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+filesystem
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/filesystem
+Snapshot.h
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
 
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/InputController.h
 SFML/Graphics.hpp
@@ -223,6 +223,24 @@ ElementsDefinition.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h
 Spawner.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
+
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/SaveAndLoadObjects.h
+fstream
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/fstream
+vector
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/vector
+memory
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/memory
+
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h
+memory
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/memory
+Player.h
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Player.h
+FriendObject.h
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/FriendObject.h
+Enemy.h
+/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Enemy.h
 
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h
 EnemiesWave.h
@@ -257,24 +275,6 @@ AnimationSprite.h
 /home/oleg/CLionProjects/TowerDefGame/untitled4/headers/AnimationSprite.h
 memory
 -
-
-/home/oleg/CLionProjects/TowerDefGame/untitled4/main.cpp
-iostream
-/home/oleg/CLionProjects/TowerDefGame/untitled4/iostream
-headers/Game.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Game.h
-headers/GameStateMenu.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h
-
-/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateGameEnd.cpp
-../headers/GameStateGameEnd.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateGameEnd.h
-../headers/GameStatePlaying.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStatePlaying.h
-
-/home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStateMenu.cpp
-../headers/GameStateMenu.h
-/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/GameStateMenu.h
 
 /home/oleg/CLionProjects/TowerDefGame/untitled4/source/GameStatePlaying.cpp
 ../headers/GameStatePlaying.h

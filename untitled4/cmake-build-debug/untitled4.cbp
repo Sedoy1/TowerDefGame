@@ -175,6 +175,9 @@
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Rules.h">
 			<Option target="untitled4"/>
 		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Snapshot.h">
+			<Option target="untitled4"/>
+		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/headers/Spawner.h">
 			<Option target="untitled4"/>
 		</Unit>
@@ -233,6 +236,9 @@
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Player.cpp">
+			<Option target="untitled4"/>
+		</Unit>
+		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Snapshot.cpp">
 			<Option target="untitled4"/>
 		</Unit>
 		<Unit filename="/home/oleg/CLionProjects/TowerDefGame/untitled4/source/Spawner.cpp">

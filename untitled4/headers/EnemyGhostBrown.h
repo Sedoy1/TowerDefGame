@@ -12,6 +12,7 @@ public:
         health = 5;
         damage = 7;
         speed = 7;
+        typeObject = GhostBrown;
     }
 };
 

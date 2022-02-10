@@ -1,0 +1,5 @@
+Type- 0
+Health- 4
+Damage- 10
+Speed- 2
+Step- 14

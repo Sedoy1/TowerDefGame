@@ -12,6 +12,7 @@ public:
         health = 15;
         damage = 5;
         speed = 3;
+        typeObject = GhostWhite;
     }
 };
 

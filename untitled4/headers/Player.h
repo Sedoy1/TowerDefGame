@@ -12,10 +12,14 @@ public:
         damage = 0;
         money = 100;
     }
-    
+    void GetInfo(std:: ostream & os) const override;
+    Player & operator = (const Player & other){
+        this->money = other.money;
+        this->health = other.health;
+        return *this;
+    }
 private:
     int money;
-    void GetInfo(std:: ostream & os) const override;
 };
 
 #endif //UNTITLED4_PLAYER_H
